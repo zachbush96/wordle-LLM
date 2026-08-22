@@ -1,0 +1,4 @@
+method: continued_sft
+learning_rate: [0.000005, 0.00001]
+max_steps: 100
+warm_start_required: true

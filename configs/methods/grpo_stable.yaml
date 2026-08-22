@@ -1,0 +1,36 @@
+method: grpo
+seed: 1337
+max_steps: 100
+learning_rate: 0.000001
+batch_size: 2
+gradient_accumulation_steps: 8
+group_size: 8
+temperature: 1.0
+warm_start_required: true
+reward_rubric:
+  version: wordle-shaped-v1
+  weights:
+    solve: 5.0
+    information_gain: 1.0
+    oracle_regret: -1.0
+    repeat: -2.0
+    format: -3.0
+virtual_support:
+  enabled: true
+  collapse_std_threshold: 0.000001
+  alpha: 0.5
+  zero_reward_anchor: 0.1
+  adaptive_threshold_initial: 0.5
+  adaptive_eta: 0.01
+  normalization_epsilon: 0.000001
+  usage: advantage_estimation_only
+stability:
+  advantage_std_threshold: 0.000001
+  maximum_advantage_collapse_rate: 0.80
+  minimum_groups_before_stop: 10
+  entropy_guard:
+    baseline_window: 5
+    minimum_observations: 8
+    absolute_floor: 0.25
+    relative_floor: 0.35
+    patience: 3

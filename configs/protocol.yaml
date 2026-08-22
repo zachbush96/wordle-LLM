@@ -1,0 +1,9 @@
+protocol_id: WORDLE-PROTOCOL-002
+model_id: google/gemma-3-270m-it
+model_revision: ac82b4e820549b854eebf28ce6dedaf9fdfa17b3
+max_valid_guesses: 6
+max_model_calls: 12
+generation:
+  do_sample: false
+  max_new_tokens: 128
+parser: final_nonempty_line_terminal_answer_v1

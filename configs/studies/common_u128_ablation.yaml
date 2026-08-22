@@ -1,0 +1,19 @@
+study_id: COMMON-U128-BALANCED-ABLATION-001
+scope: development-only
+universe_size: 128
+train_secrets: 96
+dev_secrets: 32
+optimizer_steps: 600
+decoder: greedy_rep105
+seeds: [2026, 2027, 2028]
+screen_seed: 2026
+cells:
+  - {dataset_version: current, word_token_weight: 1}
+  - {dataset_version: balanced, word_token_weight: 1}
+  - {dataset_version: current, word_token_weight: 8}
+  - {dataset_version: balanced, word_token_weight: 8}
+promotion_gates:
+  terminal_compliance_min: 0.99
+  turn_2_constraint_violation_max: 0.30
+  singleton_answer_accuracy_min: 0.80
+locked_test_access: forbidden

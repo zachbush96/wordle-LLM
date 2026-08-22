@@ -1,0 +1,25 @@
+method: q_sft
+objective: bellman_likelihood_uniform_wce
+protocol_id: WORDLE-PROTOCOL-002
+offline_only: true
+bellman_targets: frozen_offline_snapshots
+discount: 0.99
+seeds: [1337, 7331, 2026]
+max_steps: 100
+learning_rate: 0.00005
+batch_size: 4
+gradient_accumulation_steps: 4
+max_length: 512
+warmup_fraction: 0.05
+max_grad_norm: 1.0
+warm_start_required: true
+evaluation:
+  policy: trained_model_direct_generation
+  paper_policy_extraction: false
+  candidate_injection: false
+  reranking: false
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]

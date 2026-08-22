@@ -1,0 +1,20 @@
+dataset_id: GEMMA-270M-REPRESENTATION-COMPARISON-001
+model_id: google/gemma-3-270m-it
+model_revision: ac82b4e820549b854eebf28ce6dedaf9fdfa17b3
+model_exclusive: true
+universe_size: 128
+train_secrets: 96
+dev_secrets: 32
+source_training_states: 4096
+rendered_rows_per_partition: 4096
+rendered_training_rows_total: 12288
+dev_probe_states: 512
+dev_probe_role: evaluation_only
+partitions:
+  reasoning_single_step: state_rationale
+  non_reasoning_single_step: state_direct
+  non_reasoning_multi_step: episode_multiturn
+turn_quotas: {1: 128, 2: 1024, 3: 1024, 4: 819, 5: 614, 6: 487}
+comparison_control: identical source states and oracle targets across all three partitions
+locked_test_access: forbidden
+

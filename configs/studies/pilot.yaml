@@ -1,0 +1,9 @@
+study_id: STAGE1-PILOT-001
+purpose: pipeline and signal check; not a primary claim
+model_id: google/gemma-3-270m-it
+representations: [reasoning_single_step, non_reasoning_single_step, non_reasoning_multi_step]
+seeds: [1337]
+train_state_limit: 4096
+optimizer_steps: 20
+dev_games: 25
+test_access: forbidden

@@ -1,0 +1,59 @@
+study_id: NOTEBOOKLM-POSTTRAINING-001
+protocol_id: WORDLE-PROTOCOL-002
+status: components_implemented_or_registered_not_executed
+model:
+  id: google/gemma-3-270m-it
+  revision: ac82b4e820549b854eebf28ce6dedaf9fdfa17b3
+  exclusive: true
+adapter:
+  type: lora
+  r: 16
+  alpha: 32
+  dropout: 0.05
+matched_controls:
+  seed: 2026
+  max_steps: 600
+  learning_rate: 5.0e-5
+  effective_batch_size: 4
+  curriculum: GEMMA-270M-REPRESENTATION-COMPARISON-001
+  development_answers: 32
+  locked_test_access: false
+  representation_partitions:
+    - reasoning_single_step
+    - non_reasoning_single_step
+    - non_reasoning_multi_step
+cells:
+  - method: sft
+    readiness: trainer_existing
+  - method: dpo
+    readiness: trainer_existing_requires_preference_dataset_and_parent
+  - method: orpo
+    readiness: trainer_existing_requires_preference_dataset_and_parent
+  - method: grpo
+    readiness: trainer_existing_stable_avspo_path_added
+  - method: q_sft
+    readiness: trainer_added_requires_train_only_bellman_snapshot_builder
+  - method: sft_grpo
+    readiness: validated_callback_orchestrator_added
+grpo_diagnostics:
+  acr: true
+  avspo_ablation: true
+report_metrics:
+  - win_rate
+  - terminal_compliance
+  - invalid_guess_rate
+  - repeat_guess_rate
+  - turn_2_posterior_violation_rate
+  - singleton_answer_accuracy
+  - action_target_accuracy
+  - optimizer_tokens
+  - wall_time_s
+  - peak_allocated_vram_bytes
+promotion_gates:
+  terminal_compliance_min: 0.99
+  turn_2_posterior_violation_max: 0.30
+  singleton_answer_accuracy_target: 0.80
+  required_seed_matched_parents: 3
+excluded_from_canonical_protocol:
+  hardcoded_opener: harness-selected guesses violate natural generation
+  structured_letter_prompt: requires a separately frozen prompt protocol and matched baseline

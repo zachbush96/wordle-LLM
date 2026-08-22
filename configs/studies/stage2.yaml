@@ -1,0 +1,5 @@
+study_id: STAGE2-METHOD-SCREEN-001
+gate: requires a Stage-1 representation selected from three seed-matched SFT runs
+methods: [continued_sft, dpo, orpo, grpo]
+seeds: [1337, 7331, 2026]
+test_access: forbidden

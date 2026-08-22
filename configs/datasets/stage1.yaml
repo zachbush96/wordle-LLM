@@ -1,0 +1,9 @@
+dataset_id: GEMMA-270M-REPRESENTATION-COMPARISON-001
+canonical_states:
+  train: 4096
+  dev: 512
+representations: [reasoning_single_step, non_reasoning_single_step, non_reasoning_multi_step]
+preference_negative_mix:
+  hard_strategic: 0.8
+  behavioral: 0.1
+  malformed: 0.1

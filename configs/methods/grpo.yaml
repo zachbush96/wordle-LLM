@@ -1,0 +1,7 @@
+method: grpo
+learning_rate: [0.000001, 0.000005]
+max_steps: 100
+group_size: 8
+temperature: 1.0
+rewards: [wordle-shaped-v1, sparse-environment-v1]
+warm_start_required: true

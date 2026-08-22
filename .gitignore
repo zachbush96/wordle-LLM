@@ -1,0 +1,15 @@
+.cache/
+/checkpoints/
+/models/
+/results/
+/experiments/
+/plots/
+/artifacts/
+/data/
+!/data/
+/data/*
+!/data/gemma-270m-comparison-v1/
+!/data/gemma-270m-comparison-v1/**
+__pycache__/
+*.pyc
+.env

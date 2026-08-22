@@ -1,0 +1,21 @@
+method: grpo
+protocol_id: WORDLE-PROTOCOL-002
+learning_rate: 0.000001
+max_steps: 100
+group_size: 8
+temperature: 1.0
+warm_start_required: true
+reward_rubric:
+  version: notebooklm-multigranularity-v1
+  weights:
+    format: 0.05
+    validity: 0.20
+    completion: 1.00
+    repetition: -0.30
+    green_violation: -0.40
+    missing_yellow: -0.25
+    gray_reuse: -0.20
+evaluation_side_effects:
+  candidate_injection: false
+  reranking: false
+  output_repair: false

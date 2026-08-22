@@ -1,0 +1,10 @@
+method: sft
+adapter_parameterization: rslora
+adapter:
+  type: lora
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  use_rslora: true
+  use_dora: false
+
