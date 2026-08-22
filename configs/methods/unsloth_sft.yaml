@@ -1,0 +1,24 @@
+method: unsloth_sft
+backend_id: UNSLOTH-GEMMA-SFT-001
+model_id: google/gemma-3-270m-it
+model_revision: ac82b4e820549b854eebf28ce6dedaf9fdfa17b3
+partition: non_reasoning_single_step
+seeds: [2026]
+max_steps: 300
+learning_rate: 0.00005
+batch_size: 16
+gradient_accumulation_steps: 1
+max_length: 320
+precision: bfloat16
+quantization: none
+gradient_checkpointing: unsloth
+loss: completion_only
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+locked_test_access: false
+candidate_injection: false
+reranking: false
+output_repair: false

@@ -128,3 +128,21 @@ crossed the turn-2 violation gate at 29.8%, but gameplay compliance collapsed
 to 71.2% with 37.4% invalid guesses. Step 450 reached 16/32 but only 74.6%
 compliance. Every 3B dose was rejected. More parameters alone did not solve
 terminal reliability or singleton recovery.
+
+## 2026-08-22 Unsloth Gemma continuation
+
+The first audited Gemma-comparison training cell used Unsloth 2026.8.19 with
+the pinned Gemma 3 270M model and all 4,096 `non_reasoning_single_step` rows.
+The 16-bit LoRA run completed 300 steps and 619,673 optimizer tokens in 292.4
+seconds, with 3.22 GB peak allocated VRAM. The locked test remained closed.
+
+All 75/150/225/300-step checkpoints scored 0/32 held-out development wins.
+Terminal compliance improved from the matched base's 0% to 100%, but the final
+checkpoint had 83.3% gameplay constraint violations, 98.4% fixed-state
+posterior violations, 0% singleton accuracy, 0.2% action-target accuracy, and
+12.5% retention. The matched base retained 30%.
+
+The run therefore improved formatting, not Wordle play. Falling training loss
+and increasing guess diversity did not transfer to feedback-conditioned action
+selection. The complete recipe, dose table, hashes, and next-step decisions are
+in [UNSLOTH_GEMMA_WORDLE_EXPERIMENT.md](UNSLOTH_GEMMA_WORDLE_EXPERIMENT.md).

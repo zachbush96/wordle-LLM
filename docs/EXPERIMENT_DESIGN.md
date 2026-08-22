@@ -1,7 +1,8 @@
 # Wordle LLM Post-Training Experiment Design
 
 Status: a historical preregistration and design reference. The framework is
-implemented, but the costly, matched Gemma-only comparison has not yet run.
+implemented. One Unsloth direct-SFT cell has run and was rejected; the full
+matched technique comparison has not yet run.
 For completed development experiments, see
 [EXPERIMENT_RESULTS.md](EXPERIMENT_RESULTS.md); the root [README](../README.md)
 is the best starting point for the project’s current status.

@@ -1,0 +1,46 @@
+{
+  "experiment_id": "UNSLOTH-GEMMA-SFT-001",
+  "date": "2026-08-22",
+  "run_id": "unsloth-sft-non_reasoning_single_step-s2026-b04e5f76a5",
+  "protocol": "WORDLE-PROTOCOL-002",
+  "locked_test_access": false,
+  "model": {
+    "id": "google/gemma-3-270m-it",
+    "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3"
+  },
+  "data": {
+    "partition": "non_reasoning_single_step",
+    "training_rows": 4096,
+    "source_partition_sha256": "51c51c47097024dc829fd733d668cf70ae1d7ccb878c5b0fee4b3c88831731ad",
+    "selected_rows_sha256": "60ecc5807f8e28e6dafe5920cc9fe855fa5a65fb81c25b09f6c02f2de976740c",
+    "dev_games": 32,
+    "dev_probes": 512
+  },
+  "training": {
+    "optimizer_steps": 300,
+    "optimizer_tokens": 619673,
+    "wall_time_seconds": 292.38247259997297,
+    "peak_allocated_vram_bytes": 3221700608,
+    "effective_batch_size": 16,
+    "trainable_parameters": 3796992,
+    "total_parameters": 271895168,
+    "precision": "bfloat16",
+    "quantization": "none",
+    "final_adapter_sha256": "3b2c57fa44b8516cfaf6f680a4ee2b31481801ef7b541659685df2670876c1e3"
+  },
+  "matched_base": {
+    "wins": 0,
+    "games": 32,
+    "terminal_compliance": 0.0,
+    "valid_word_accuracy": 0.0,
+    "singleton_accuracy": 0.0,
+    "retention": 0.3
+  },
+  "checkpoints": [
+    {"step": 75, "wins": 0, "games": 32, "terminal_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_rate": 0.8333333333333334, "gameplay_constraint_violation_rate": 0.8333333333333334, "diagnostic_constraint_violation_rate": 0.982421875, "singleton_accuracy": 0.0, "action_target_accuracy": 0.005859375, "retention": 0.15},
+    {"step": 150, "wins": 0, "games": 32, "terminal_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_rate": 0.75, "gameplay_constraint_violation_rate": 0.8333333333333334, "diagnostic_constraint_violation_rate": 0.98046875, "singleton_accuracy": 0.0, "action_target_accuracy": 0.005859375, "retention": 0.125},
+    {"step": 225, "wins": 0, "games": 32, "terminal_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_rate": 0.65625, "gameplay_constraint_violation_rate": 0.8333333333333334, "diagnostic_constraint_violation_rate": 0.978515625, "singleton_accuracy": 0.0, "action_target_accuracy": 0.01171875, "retention": 0.125},
+    {"step": 300, "wins": 0, "games": 32, "terminal_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_rate": 0.5416666666666666, "gameplay_constraint_violation_rate": 0.8333333333333334, "diagnostic_constraint_violation_rate": 0.984375, "singleton_accuracy": 0.0, "action_target_accuracy": 0.001953125, "retention": 0.125}
+  ],
+  "decision": "not_improved_not_promotable_locked_test_closed"
+}

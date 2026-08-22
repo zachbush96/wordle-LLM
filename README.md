@@ -6,7 +6,7 @@ This project asks a deliberately difficult question: **can a small language mode
 
 The short answer is: not reliably yet. The strongest historical Gemma 3 270M run solved **8 of 32 development games (25%)**. A matched Qwen2.5 1.5B run reached **14 of 32 (43.75%)** and made much stronger feedback-dependent choices, but it still missed the reliability gates. Because it also changes model family, it is a useful capacity signal—not a clean Gemma result. Some Qwen2.5 3B checkpoints won 15–16 games, but too often failed to return a usable answer. That is why this project treats a win count as one important metric, not the verdict.
 
-The active work is a stricter, Gemma-only comparison. It includes an audited 4,096-state training bundle; launchers for LoRA, rsLoRA, and DoRA; implementations of SFT, DPO, ORPO, GRPO, and Q-SFT; a gated SFT-to-GRPO path; and **73 passing tests**. The costly matched Gemma training comparison has **not** run yet.
+The active work is a stricter, Gemma-only comparison. It includes an audited 4,096-state training bundle; launchers for LoRA, rsLoRA, and DoRA; implementations of SFT, DPO, ORPO, GRPO, and Q-SFT; a gated SFT-to-GRPO path; and **76 passing tests**. The first current-study cell has now run through Unsloth: it trained efficiently and learned perfect output formatting, but scored **0/32** held-out wins and did not learn feedback-conditioned play. See the [full Unsloth experiment report](docs/UNSLOTH_GEMMA_WORDLE_EXPERIMENT.md).
 
 One safeguard matters above all: no trained checkpoint has seen the frozen 1,000-answer test. That door stays closed until a candidate reaches at least 99% terminal compliance, fewer than 30% turn-2 posterior violations, clearly positive singleton accuracy, and the same result across three matched seeds.
 
@@ -33,6 +33,7 @@ There are two different statuses worth keeping separate:
 | Model / condition | Development wins | Terminal compliance | Repeat rate | Turn-2 violations | Singleton accuracy | Action-target accuracy | Decision |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | Gemma 3 270M, balanced-002 + word-focused SFT | 8/32 | 89.2% | 27.4% | 79.3% | 4/74 | 14.1% | Best historical Gemma strategy result; not promotable |
+| Gemma 3 270M, Unsloth direct SFT, step 300 | 0/32 | 100% | 54.2% | 96.7% | 0/326 | 0.2% | Rejected: learned format, not strategy |
 | Same Gemma adapter, repetition penalty 1.05 | 8/32 | 89.2% | 1.9% | — | — | — | Useful decoder diagnostic; did not improve wins |
 | Qwen2.5 1.5B, matched balanced-002 recipe | 14/32 | 94.1% | 2.0% | 35.1% | 7/74 | 41.3% | Best overall development artifact; cross-family and not promotable |
 | Qwen2.5 3B, final checkpoint | 15/32 | 71.2% | — | 29.8% | — | — | Rejected: 37.4% invalid guesses |
@@ -173,7 +174,7 @@ The 3B experiment demonstrates why wins are not enough: the final model reached 
 
 The current matched bundle contains 4,096 source states, three separate 4,096-row representations, and 512 evaluation-only development probes. Its manifest records hashes, split isolation, feedback recomputation, posterior checks, oracle-fact checks, and matched target IDs. See [the data manifest](data/gemma-270m-comparison-v1/u128-train96-n4096/manifest.json) and [design note](docs/research/GEMMA_270M_COMPARISON_DATA.md).
 
-The automated suite currently covers 73 cases across:
+The automated suite currently covers 76 cases across:
 
 - duplicate-letter scoring, strict parsing, prompt replay, and invalid-turn handling;
 - split/provenance checks and matched comparison data;
@@ -185,7 +186,7 @@ The automated suite currently covers 73 cases across:
 - GRPO advantage-collapse and virtual-support calculations;
 - rejection of secret, candidate-list, and evaluator-data injection.
 
-Implemented and tested code is not experimental evidence. The technique matrix is registered and tested, but the costly current-study training runs have not begun. Technique-specific notes live under [docs/research](docs/research).
+Implemented and tested code is not experimental evidence. The first current-study experiment used Unsloth for 300 steps on the direct single-step partition. It reached 100% compliance but 0/32 wins, 98.4% fixed-state posterior violations, 0% singleton accuracy, and 12.5% retention, so it was rejected without opening the locked test. The remaining technique matrix is registered but not yet trained. Technique-specific notes live under [docs/research](docs/research).
 
 ## Repository guide
 
@@ -249,14 +250,15 @@ Run scripts directly from the repository root. They use [scripts/_bootstrap.py](
 
 ## What we plan to try next
 
-1. **Run seed-matched Gemma learning curves at 1,024, 2,048, and 4,096 states.** This tests whether the audited representation bundle produces a real dose-response before adding a more complicated objective.
-2. **Compare the three matched representations under ordinary SFT.** Reasoning single-step, direct single-step, and non-reasoning multi-step share the same source states and oracle targets, so any difference is easier to attribute to representation.
-3. **Replicate promising parents across three seeds.** The current headline development numbers are one-seed diagnostics. Replication is required before a method winner or locked-test promotion.
-4. **Separate adapter and objective questions.** LoRA vs. rsLoRA vs. DoRA should not be conflated with SFT vs. preference/RL objectives. Each comparison needs the same data, seed policy, token budget, and evaluation.
-5. **Pursue Q-SFT only with frozen, training-only Bellman snapshots.** It is worth testing because Wordle decisions have delayed value, but the implementation must not derive targets from secrets, evaluator internals, or test data.
-6. **Advance SFT → GRPO only after the SFT parent passes its development gate.** GRPO may improve multi-turn recovery, but the earlier experiments show that extra optimization can quickly destroy output compliance.
-7. **Run a clean same-family capacity ablation later.** Qwen suggested that 270M may be a capacity bottleneck, but a larger Gemma run under a separately declared, matched configuration is needed to separate capacity from architecture and training history.
-8. **Keep attacking singleton and late-turn recovery.** Even the best Qwen 1.5B run solved only 7/74 singleton probes. This is the clearest remaining sign that the model is not reliably translating feedback into an action.
+1. **Reproduce the historical balanced-002, 8× action-token recipe through Unsloth.** The direct Unsloth SFT cell learned formatting but no strategy; a matched reproduction is needed to separate backend behavior from the data/objective change.
+2. **Run seed-matched Gemma learning curves at 1,024, 2,048, and 4,096 states.** This tests whether the audited representation bundle produces a real dose-response before adding a more complicated objective.
+3. **Compare the three matched representations under ordinary SFT.** Reasoning single-step, direct single-step, and non-reasoning multi-step share the same source states and oracle targets, so any difference is easier to attribute to representation.
+4. **Replicate promising parents across three seeds.** The current headline development numbers are one-seed diagnostics. Replication is required before a method winner or locked-test promotion.
+5. **Separate adapter and objective questions.** LoRA vs. rsLoRA vs. DoRA should not be conflated with SFT vs. preference/RL objectives. Each comparison needs the same data, seed policy, token budget, and evaluation.
+6. **Pursue Q-SFT only with frozen, training-only Bellman snapshots.** It is worth testing because Wordle decisions have delayed value, but the implementation must not derive targets from secrets, evaluator internals, or test data.
+7. **Advance SFT → GRPO only after the SFT parent passes its development gate.** GRPO may improve multi-turn recovery, but the earlier experiments show that extra optimization can quickly destroy output compliance.
+8. **Run a clean same-family capacity ablation later.** Qwen suggested that 270M may be a capacity bottleneck, but a larger Gemma run under a separately declared, matched configuration is needed to separate capacity from architecture and training history.
+9. **Keep attacking singleton and late-turn recovery.** Even the best Qwen 1.5B run solved only 7/74 singleton probes. This is the clearest remaining sign that the model is not reliably translating feedback into an action.
 
 The current stop rule is deliberate: do not churn more curricula or open the locked test simply because one checkpoint posts a higher win count. First establish reliable format, posterior consistency, singleton recovery, and seed replication.
 
