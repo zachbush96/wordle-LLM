@@ -146,3 +146,22 @@ The run therefore improved formatting, not Wordle play. Falling training loss
 and increasing guess diversity did not transfer to feedback-conditioned action
 selection. The complete recipe, dose table, hashes, and next-step decisions are
 in [UNSLOTH_GEMMA_WORDLE_EXPERIMENT.md](UNSLOTH_GEMMA_WORDLE_EXPERIMENT.md).
+
+## 2026-08-22 Unsloth data-format and representation continuation
+
+`GEMMA-270M-UNSLOTH-ALPACA-002` added 2,000 audited examples each for direct
+single-step, non-reasoning multi-step, and reasoning single-step training. Rows
+contain explicit instruction/input/output fields plus Gemma-native messages;
+all 6,000 renderings passed feedback, oracle, lexical-source, representation,
+hash, and split checks. The locked test remained unread.
+
+Three matched 300-step Unsloth runs and all 12 dose checkpoints were evaluated
+on 40 held-out games, 512 state probes, and 200 retention prompts. Every
+checkpoint scored 0/40 wins and 0% singleton accuracy. Direct variants learned
+100% terminal compliance but retained 98.2% or worse fixed-state violations.
+Reasoning was slower and less reliable, averaging 101.2 generated tokens at its
+final checkpoint with 25.9% invalid guesses and 98.8% fixed-state violations.
+
+The new data is broader, correctly formatted, and more auditable; the trained
+models did not improve Wordle strategy. Full results and artifact pointers are
+in [UNSLOTH_GEMMA_ALPACA_V2_EXPERIMENT.md](UNSLOTH_GEMMA_ALPACA_V2_EXPERIMENT.md).

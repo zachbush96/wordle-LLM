@@ -6,7 +6,7 @@ This project asks a deliberately difficult question: **can a small language mode
 
 The short answer is: not reliably yet. The strongest historical Gemma 3 270M run solved **8 of 32 development games (25%)**. A matched Qwen2.5 1.5B run reached **14 of 32 (43.75%)** and made much stronger feedback-dependent choices, but it still missed the reliability gates. Because it also changes model family, it is a useful capacity signal—not a clean Gemma result. Some Qwen2.5 3B checkpoints won 15–16 games, but too often failed to return a usable answer. That is why this project treats a win count as one important metric, not the verdict.
 
-The active work is a stricter, Gemma-only comparison. It includes an audited 4,096-state training bundle; launchers for LoRA, rsLoRA, and DoRA; implementations of SFT, DPO, ORPO, GRPO, and Q-SFT; a gated SFT-to-GRPO path; and **76 passing tests**. The first current-study cell has now run through Unsloth: it trained efficiently and learned perfect output formatting, but scored **0/32** held-out wins and did not learn feedback-conditioned play. See the [full Unsloth experiment report](docs/UNSLOTH_GEMMA_WORDLE_EXPERIMENT.md).
+The active work is a stricter, Gemma-only comparison. It includes audited training bundles; launchers for LoRA, rsLoRA, and DoRA; implementations of SFT, DPO, ORPO, GRPO, and Q-SFT; a gated SFT-to-GRPO path; and **79 passing tests**. The latest Unsloth experiment generated 2,000 examples each for direct single-step, multi-step, and reasoning training, then trained and evaluated all three. Every checkpoint scored **0/40** held-out wins and 0% singleton accuracy. See the [data-format and representation report](docs/UNSLOTH_GEMMA_ALPACA_V2_EXPERIMENT.md).
 
 One safeguard matters above all: no trained checkpoint has seen the frozen 1,000-answer test. That door stays closed until a candidate reaches at least 99% terminal compliance, fewer than 30% turn-2 posterior violations, clearly positive singleton accuracy, and the same result across three matched seeds.
 
@@ -28,12 +28,15 @@ One safeguard matters above all: no trained checkpoint has seen the frozen 1,000
 There are two different statuses worth keeping separate:
 
 1. **Best historical development model:** Qwen2.5 1.5B with the balanced curriculum. It is the strongest multi-metric artifact produced so far, but it is not accepted as a general Wordle result.
-2. **Current canonical study:** Gemma 3 270M only, pinned to one exact model revision. The data and training machinery are ready; the matched learning curves and technique comparison are still pending.
+2. **Current canonical study:** Gemma 3 270M only, pinned to one exact model revision. The first Unsloth backend run and the three-way data-representation screen are complete; none produced strategic development improvement.
 
 | Model / condition | Development wins | Terminal compliance | Repeat rate | Turn-2 violations | Singleton accuracy | Action-target accuracy | Decision |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | Gemma 3 270M, balanced-002 + word-focused SFT | 8/32 | 89.2% | 27.4% | 79.3% | 4/74 | 14.1% | Best historical Gemma strategy result; not promotable |
 | Gemma 3 270M, Unsloth direct SFT, step 300 | 0/32 | 100% | 54.2% | 96.7% | 0/326 | 0.2% | Rejected: learned format, not strategy |
+| Gemma 3 270M, new Unsloth single-step, step 300 | 0/40 | 100% | 82.9% | — | 0/299 | 0.59% | Rejected: wider audited data, same strategy failure |
+| Gemma 3 270M, new Unsloth multi-step, step 300 | 0/40 | 100% | 83.3% | — | 0/299 | 0.59% | Rejected: multi-turn history did not help |
+| Gemma 3 270M, new Unsloth reasoning, step 300 | 0/40 | 87.2% | 49.6% | — | 0/299 | 0.41% | Rejected: slower and less reliable |
 | Same Gemma adapter, repetition penalty 1.05 | 8/32 | 89.2% | 1.9% | — | — | — | Useful decoder diagnostic; did not improve wins |
 | Qwen2.5 1.5B, matched balanced-002 recipe | 14/32 | 94.1% | 2.0% | 35.1% | 7/74 | 41.3% | Best overall development artifact; cross-family and not promotable |
 | Qwen2.5 3B, final checkpoint | 15/32 | 71.2% | — | 29.8% | — | — | Rejected: 37.4% invalid guesses |
@@ -174,7 +177,7 @@ The 3B experiment demonstrates why wins are not enough: the final model reached 
 
 The current matched bundle contains 4,096 source states, three separate 4,096-row representations, and 512 evaluation-only development probes. Its manifest records hashes, split isolation, feedback recomputation, posterior checks, oracle-fact checks, and matched target IDs. See [the data manifest](data/gemma-270m-comparison-v1/u128-train96-n4096/manifest.json) and [design note](docs/research/GEMMA_270M_COMPARISON_DATA.md).
 
-The automated suite currently covers 76 cases across:
+The automated suite currently covers 79 cases across:
 
 - duplicate-letter scoring, strict parsing, prompt replay, and invalid-turn handling;
 - split/provenance checks and matched comparison data;
@@ -186,7 +189,7 @@ The automated suite currently covers 76 cases across:
 - GRPO advantage-collapse and virtual-support calculations;
 - rejection of secret, candidate-list, and evaluator-data injection.
 
-Implemented and tested code is not experimental evidence. The first current-study experiment used Unsloth for 300 steps on the direct single-step partition. It reached 100% compliance but 0/32 wins, 98.4% fixed-state posterior violations, 0% singleton accuracy, and 12.5% retention, so it was rejected without opening the locked test. The remaining technique matrix is registered but not yet trained. Technique-specific notes live under [docs/research](docs/research).
+Implemented and tested code is not experimental evidence. The first current-study Unsloth run reached 100% compliance but 0/32 wins and was rejected. The follow-up instruction/input/output experiment trained direct single-step, multi-step, and visible-reasoning variants on 2,000 matched examples each. Across 12 checkpoints, all scored 0/40 and 0% singleton accuracy; direct variants retained at least 98.2% fixed-state violations, while reasoning was slower and less reliable. The locked test remained closed. Technique-specific notes live under [docs/research](docs/research).
 
 ## Repository guide
 

@@ -47,15 +47,25 @@ def main() -> int:
 
     data_dir, all_rows, _, audit = comparison_context(args.data_dir, args.partition)
     rows = select_nested_rows(all_rows, args.train_states)
-    spec = build_spec(args.partition, args.seed, args.steps, args.learning_rate, args.train_states)
     selected_hash = hashlib.sha256("\n".join(canonical_json(row) for row in rows).encode("utf-8")).hexdigest()
+    source_hash = sha256_file(data_dir / f"{args.partition}.jsonl")
+    manifest_hash = sha256_file(data_dir / "manifest.json")
+    spec = build_spec(args.partition, args.seed, args.steps, args.learning_rate, args.train_states)
+    spec["data"] = {
+        "directory": str(data_dir),
+        "training_rows": len(rows),
+        "selected_rows_sha256": selected_hash,
+        "source_partition_sha256": source_hash,
+        "manifest_sha256": manifest_hash,
+    }
     if args.dry_run:
         print(json.dumps({
             "status": "dry_run_passed",
             "spec": spec,
             "training_rows": len(rows),
             "selected_rows_sha256": selected_hash,
-            "source_partition_sha256": sha256_file(data_dir / f"{args.partition}.jsonl"),
+            "source_partition_sha256": source_hash,
+            "manifest_sha256": manifest_hash,
             "data_audit": audit,
             "environment": unsloth_environment(),
         }, indent=2, sort_keys=True))
@@ -66,7 +76,8 @@ def main() -> int:
         "partition": args.partition,
         "training_rows": len(rows),
         "selected_rows_sha256": selected_hash,
-        "source_partition_sha256": sha256_file(data_dir / f"{args.partition}.jsonl"),
+        "source_partition_sha256": source_hash,
+        "manifest_sha256": manifest_hash,
         "audit": audit,
         "dev_probe_role": "evaluation_only_never_training",
     })

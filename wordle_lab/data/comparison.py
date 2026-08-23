@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import hashlib
 import random
+import urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Sequence
 
-from wordle_lab.common import ROOT, canonical_json, read_json, read_jsonl, sha256_file, write_json, write_jsonl
+from wordle_lab.common import DATA, ROOT, canonical_json, read_json, read_jsonl, sha256_file, write_json, write_jsonl
 from wordle_lab.data.builders import render_representation
 from wordle_lab.data.canonical import _facts, generate_canonical_states
 from wordle_lab.experiments.common_curriculum import ranked_common_words
@@ -18,12 +19,75 @@ from wordle_lab.protocol.oracle import GreedyPartitionOracle
 
 
 DATASET_ID = "GEMMA-270M-REPRESENTATION-COMPARISON-001"
+UNSLOTH_ALPACA_DATASET_ID = "GEMMA-270M-UNSLOTH-ALPACA-002"
 PARTITIONS = {
     "reasoning_single_step": "state_rationale",
     "non_reasoning_single_step": "state_direct",
     "non_reasoning_multi_step": "episode_multiturn",
 }
 DEFAULT_TURN_QUOTAS = {1: 128, 2: 1024, 3: 1024, 4: 819, 5: 614, 6: 487}
+STRATIFIED_COMPLEXITY_COUNTS = {"common": 80, "intermediate": 56, "advanced": 24}
+PINNED_SOLUTION_URL = (
+    "https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/"
+    "50838083dca5359b3cacf1ab677059b40c0e025e/wordle-answers-alphabetical.txt"
+)
+PINNED_SOLUTION_SHA256 = "5209b35f823f8b80f0404f863bd80df06d6a966c6eb1016d69f38badc6eed5d0"
+PINNED_SOLUTION_CACHE = ROOT / "data" / "wordlists" / "wordle_answers_original_pinned.txt"
+
+
+def _pinned_solution_words() -> list[str]:
+    if not PINNED_SOLUTION_CACHE.exists():
+        request = urllib.request.Request(PINNED_SOLUTION_URL, headers={"User-Agent": "wordle-lab/1.0"})
+        payload = urllib.request.urlopen(request, timeout=30).read()
+        if hashlib.sha256(payload).hexdigest() != PINNED_SOLUTION_SHA256:
+            raise RuntimeError("pinned Wordle answer source hash mismatch")
+        PINNED_SOLUTION_CACHE.parent.mkdir(parents=True, exist_ok=True)
+        PINNED_SOLUTION_CACHE.write_bytes(payload)
+    if sha256_file(PINNED_SOLUTION_CACHE) != PINNED_SOLUTION_SHA256:
+        raise RuntimeError("cached pinned Wordle answer source hash mismatch")
+    words = [line.strip().upper() for line in PINNED_SOLUTION_CACHE.read_text(encoding="utf-8").splitlines() if line]
+    if len(words) != 2315 or len(words) != len(set(words)):
+        raise RuntimeError("pinned Wordle answer source has an unexpected shape")
+    return words
+
+
+def stratified_complexity_words(universe_size: int) -> tuple[list[str], dict[str, str]]:
+    """Select real Wordle answer words across frequency bands.
+
+    The lexical source is the pinned original Wordle answer list. It is then
+    intersected with protocol-002's training split, which proves that none of
+    these words came from the development or locked-test answer files.
+    """
+    if universe_size != sum(STRATIFIED_COMPLEXITY_COUNTS.values()):
+        raise ValueError(
+            "the preregistered stratified profile requires exactly "
+            f"{sum(STRATIFIED_COMPLEXITY_COUNTS.values())} words"
+        )
+    protocol_train = set(read_json(DATA / "splits" / "train_answers.json"))
+    safe_answers = {word for word in _pinned_solution_words() if word in protocol_train}
+    if len(safe_answers) != 181:
+        raise AssertionError(f"expected 181 pinned training-only answers, found {len(safe_answers)}")
+    from wordfreq import zipf_frequency
+
+    ranked = sorted(safe_answers, key=lambda word: (-zipf_frequency(word.lower(), "en"), word))
+    bands = {
+        "common": ranked[:80],
+        "intermediate": ranked[80:136],
+        "advanced": ranked[136:181],
+    }
+    selected: list[str] = []
+    labels: dict[str, str] = {}
+    for label, pool in bands.items():
+        count = STRATIFIED_COMPLEXITY_COUNTS[label]
+        # Even spacing avoids taking only the easiest edge of a frequency band.
+        indices = [round(index * (len(pool) - 1) / max(1, count - 1)) for index in range(count)]
+        for index in indices:
+            word = pool[index]
+            selected.append(word)
+            labels[word] = label
+    if len(selected) != universe_size or len(set(selected)) != universe_size:
+        raise AssertionError("complexity profile did not produce a unique universe")
+    return selected, labels
 
 
 def default_directory(universe_size: int = 128, train_secret_count: int = 96, states: int = 4096) -> Path:
@@ -132,15 +196,29 @@ def _enrich(rendered: list[dict], sources: list[dict], partition: str) -> list[d
     output = []
     for source, row in zip(sources, rendered, strict=True):
         comparison_id = source["comparison_id"]
+        messages = row["prompt"] + row["completion"]
+        if partition == "non_reasoning_multi_step":
+            alpaca_input = "\n\n".join(
+                f"{message['role'].title()}: {message['content']}" for message in row["prompt"][1:]
+            )
+        else:
+            alpaca_input = row["prompt"][-1]["content"]
         output.append({
             **row,
-            "schema_version": "wordle-comparison-example-v1",
+            "schema_version": "wordle-comparison-example-v2",
             "example_id": f"{comparison_id}-{partition}",
             "comparison_id": comparison_id,
             "source_state_id": source["state_id"],
             "partition": partition,
             "target_word": source["facts"]["oracle_action"],
             "posterior_size": source["facts"]["posterior_count"],
+            # Unsloth's instruction schema remains explicit and inspectable,
+            # while messages preserve Gemma's native chat-template semantics.
+            "instruction": row["prompt"][0]["content"],
+            "input": alpaca_input,
+            "output": row["completion"][0]["content"],
+            "messages": messages,
+            "training_format": "unsloth_instruction_input_output_plus_gemma_messages_v1",
         })
     return output
 
@@ -153,6 +231,7 @@ def build_comparison_bundle(
     states: int = 4096,
     dev_states: int = 512,
     seed: int = 2026,
+    word_profile: str = "common",
     force: bool = False,
 ) -> tuple[Path, dict]:
     """Build three matched views. Dev probes are evaluation-only and never rendered as training rows."""
@@ -163,7 +242,13 @@ def build_comparison_bundle(
     manifest_path = directory / "manifest.json"
     if manifest_path.exists() and not force:
         return directory, read_json(manifest_path)
-    universe = ranked_common_words(universe_size)
+    if word_profile == "common":
+        universe = ranked_common_words(universe_size)
+        complexity_by_word = {word: "common" for word in universe}
+    elif word_profile == "stratified":
+        universe, complexity_by_word = stratified_complexity_words(universe_size)
+    else:
+        raise ValueError("word_profile must be 'common' or 'stratified'")
     shuffled = list(universe)
     random.Random(seed).shuffle(shuffled)
     train_secrets = sorted(shuffled[:train_secret_count])
@@ -172,7 +257,15 @@ def build_comparison_bundle(
         raise AssertionError("train/dev secret leakage")
     quotas = _turn_quotas(states)
     selected = _select(_candidate_pools(train_secrets, universe, quotas, seed), quotas, seed)
-    sources = [{**row, "comparison_id": f"train-{index:06d}"} for index, row in enumerate(selected)]
+    sources = [
+        {
+            **row,
+            "comparison_id": f"train-{index:06d}",
+            "secret_complexity": complexity_by_word[row["secret_answer"]],
+            "target_complexity": complexity_by_word[row["facts"]["oracle_action"]],
+        }
+        for index, row in enumerate(selected)
+    ]
     write_jsonl(directory / "source_states.jsonl", sources)
     paths: dict[str, Path] = {}
     for partition, representation in PARTITIONS.items():
@@ -186,9 +279,14 @@ def build_comparison_bundle(
     write_json(directory / "train_secrets.json", train_secrets)
     write_json(directory / "dev_secrets.json", dev_secrets)
     manifest = {
-        "dataset_id": DATASET_ID,
+        "dataset_id": UNSLOTH_ALPACA_DATASET_ID if word_profile == "stratified" else DATASET_ID,
         "model": {"model_id": SUPPORTED_MODEL_ID, "revision": SUPPORTED_REVISION, "exclusive": True},
         "seed": seed,
+        "word_profile": word_profile,
+        "complexity_bands": {
+            label: sum(complexity_by_word[word] == label for word in universe)
+            for label in sorted(set(complexity_by_word.values()))
+        },
         "universe_size": len(universe),
         "train_secret_count": len(train_secrets),
         "dev_secret_count": len(dev_secrets),
@@ -204,11 +302,26 @@ def build_comparison_bundle(
         "unique_source_states": len({row["state_id"] for row in sources}),
         "unique_oracle_targets": len({row["facts"]["oracle_action"] for row in sources}),
         "target_distribution": dict(sorted(Counter(row["facts"]["oracle_action"] for row in sources).items())),
+        "target_complexity_distribution": dict(sorted(Counter(row["target_complexity"] for row in sources).items())),
+        "secret_complexity_distribution": dict(sorted(Counter(row["secret_complexity"] for row in sources).items())),
         "training_secret_distribution": dict(sorted(Counter(row["secret_answer"] for row in sources).items())),
         "hashes": {name: sha256_file(path) for name, path in paths.items()},
         "source_states_sha256": sha256_file(directory / "source_states.jsonl"),
         "dev_probe_states_sha256": sha256_file(directory / "dev_probe_states.jsonl"),
-        "word_list_source": "data/wordlists/tabatkins_wordle_list_pinned.txt ranked by pinned wordfreq dependency",
+        "word_list_source": (
+            "pinned original Wordle answer list intersected with protocol-002 train_answers; locked test unread"
+            if word_profile == "stratified"
+            else "data/wordlists/tabatkins_wordle_list_pinned.txt ranked by pinned wordfreq dependency"
+        ),
+        "word_list_source_sha256": (
+            sha256_file(PINNED_SOLUTION_CACHE)
+            if word_profile == "stratified" else None
+        ),
+        "training_format": {
+            "semantic_fields": ["instruction", "input", "output"],
+            "model_native_field": "messages",
+            "rendering": "Gemma tokenizer.apply_chat_template",
+        },
     }
     write_json(manifest_path, manifest)
     audit = audit_comparison_bundle(directory, include_token_lengths=True)
@@ -273,6 +386,15 @@ def audit_comparison_bundle(directory: str | Path, *, include_token_lengths: boo
                 raise AssertionError(f"completion mismatch in {row['example_id']}")
             if row["representation"] != representation:
                 raise AssertionError(f"representation mismatch in {row['example_id']}")
+            if row.get("schema_version") == "wordle-comparison-example-v2":
+                if row.get("instruction") != row["prompt"][0]["content"]:
+                    raise AssertionError(f"instruction field mismatch in {row['example_id']}")
+                if row.get("output") != row["completion"][0]["content"]:
+                    raise AssertionError(f"output field mismatch in {row['example_id']}")
+                if row.get("messages") != row["prompt"] + row["completion"]:
+                    raise AssertionError(f"Gemma messages mismatch in {row['example_id']}")
+            if target not in universe or source["secret_answer"] not in universe:
+                raise AssertionError(f"non-universe English word in {row['example_id']}")
             content = row["completion"][0]["content"]
             has_reasoning = "Choice rationale:" in content and "Action assessment:" in content
             if has_reasoning != (partition == "reasoning_single_step"):

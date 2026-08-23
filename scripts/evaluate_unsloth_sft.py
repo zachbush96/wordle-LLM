@@ -24,6 +24,8 @@ def main() -> int:
     parser.add_argument("--data-dir", type=Path, default=default_directory())
     parser.add_argument("--dev-games", type=int, default=32)
     parser.add_argument("--diagnostic-items", type=int, default=512)
+    parser.add_argument("--eval-tag", help="Optional suffix for cross-dataset evaluations without overwriting prior results")
+    parser.add_argument("--compact", action="store_true", help="Print only headline metrics; full JSON is still saved")
     args = parser.parse_args()
 
     spec = read_json(args.run_dir / "spec.json")
@@ -39,6 +41,9 @@ def main() -> int:
     dev_probes = read_jsonl(args.data_dir / "dev_probe_states.jsonl")[: args.diagnostic_items]
     training_records = read_jsonl(args.data_dir / "source_states.jsonl")
     suffix = args.checkpoint.replace("/", "-")
+    if args.eval_tag:
+        safe_tag = "".join(character if character.isalnum() or character in "-_" else "-" for character in args.eval_tag)
+        suffix = f"{suffix}-{safe_tag}"
     try:
         games, gameplay = evaluate(model, tokenizer, dev_answers, allowed, universe)
         write_jsonl(args.run_dir / f"eval-{suffix}-games.jsonl", games)
@@ -59,7 +64,22 @@ def main() -> int:
             "retention": retention,
         }
         write_json(args.run_dir / f"eval-{suffix}-summary.json", summary)
-        print(json.dumps(summary, indent=2, sort_keys=True))
+        if args.compact:
+            print(json.dumps({
+                "run_dir": str(args.run_dir),
+                "checkpoint": args.checkpoint,
+                "gameplay": gameplay,
+                "diagnostics": {
+                    key: diagnostics.get(key) for key in (
+                        "terminal_compliance", "valid_word_accuracy", "repeat_rate",
+                        "posterior_constraint_violation_rate", "singleton_answer_accuracy",
+                        "action_target_accuracy", "train_state_coverage",
+                    )
+                },
+                "retention": retention,
+            }, indent=2, sort_keys=True))
+        else:
+            print(json.dumps(summary, indent=2, sort_keys=True))
         return 0
     finally:
         del model

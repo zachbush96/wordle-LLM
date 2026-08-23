@@ -15,6 +15,13 @@ unsloth_compiled_cache/
 /data/*
 !/data/gemma-270m-comparison-v1/
 !/data/gemma-270m-comparison-v1/**
+!/data/gemma-270m-unsloth-alpaca-v2/
+/data/gemma-270m-unsloth-alpaca-v2/*
+!/data/gemma-270m-unsloth-alpaca-v2/u160-train120-n2000/
+!/data/gemma-270m-unsloth-alpaca-v2/u160-train120-n2000/**
+!/data/wordlists/
+/data/wordlists/*
+!/data/wordlists/wordle_answers_original_pinned.txt
 __pycache__/
 *.pyc
 .coverage

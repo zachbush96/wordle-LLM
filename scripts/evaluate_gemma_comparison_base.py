@@ -9,7 +9,7 @@ import torch
 
 import _bootstrap  # noqa: F401
 from wordle_lab.analysis.state_diagnostics import run_state_diagnostics
-from wordle_lab.common import ARTIFACTS, DATA, read_json, read_jsonl, write_json, write_jsonl
+from wordle_lab.common import ARTIFACTS, DATA, read_json, read_jsonl, sha256_file, write_json, write_jsonl
 from wordle_lab.data.comparison import audit_comparison_bundle, default_directory
 from wordle_lab.models import load_base_model, load_tokenizer, model_metadata
 from wordle_lab.protocol.evaluator import evaluate
@@ -21,10 +21,13 @@ def main() -> int:
     parser.add_argument("--data-dir", type=Path, default=default_directory())
     parser.add_argument("--dev-games", type=int, default=32)
     parser.add_argument("--diagnostic-items", type=int, default=512)
+    parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
 
     audit = audit_comparison_bundle(args.data_dir)
-    output_dir = ARTIFACTS / "runs" / "base-gemma-270m-u128-comparison-v1-dev"
+    output_dir = args.output_dir or (
+        ARTIFACTS / "runs" / f"base-gemma-270m-{args.data_dir.name}-dev-{sha256_file(args.data_dir / 'manifest.json')[:10]}"
+    )
     tokenizer = load_tokenizer()
     model = load_base_model(training=False)
     allowed = [line.strip().upper() for line in (DATA / "wordlists" / "allowed_words.txt").read_text(encoding="utf-8").splitlines() if line.strip()]
