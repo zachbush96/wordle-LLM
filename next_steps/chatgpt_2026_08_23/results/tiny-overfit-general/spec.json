@@ -1,0 +1,61 @@
+{
+  "acceptance": {
+    "contrast_pair_exact_accuracy_goal": 0.99,
+    "loss_goal": 0.05,
+    "natural_exact_accuracy_goal": 0.99,
+    "singleton_exact_accuracy_goal": null
+  },
+  "backend": "UNSLOTH-GEMMA-WEIGHTED-SFT-002",
+  "batch_size": 16,
+  "candidate_injection": false,
+  "data": {
+    "path": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\next_steps\\chatgpt_2026_08_23\\generated\\tiny_overfit\\general_32.jsonl",
+    "role": "training-set memorization only",
+    "rows": 32,
+    "sha256": "911767a1feda7ab3320fb97ef6870e305447811f2359b038b50a5aea7168fd3b"
+  },
+  "dataset": "general",
+  "effective_batch_size": 16,
+  "experiment_id": "GEMMA-270M-TINY-OVERFIT-001",
+  "gradient_accumulation_steps": 1,
+  "gradient_checkpointing": "unsloth",
+  "learning_rate": 5e-05,
+  "locked_test_access": false,
+  "lora": {
+    "alpha": 32,
+    "dropout": 0.05,
+    "r": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "max_length": 320,
+  "max_steps": 400,
+  "method": "unsloth_tiny_overfit",
+  "model": {
+    "architecture": "Gemma3ForCausalLM",
+    "downloaded_at": "2026-08-14T12:40:39.993342+00:00",
+    "gemma_270m_only": true,
+    "hidden_size": 640,
+    "local_path": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\models\\base\\google--gemma-3-270m-it",
+    "model_id": "google/gemma-3-270m-it",
+    "model_type": "gemma3_text",
+    "num_hidden_layers": 18,
+    "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3"
+  },
+  "output_repair": false,
+  "protocol_id": "WORDLE-PROTOCOL-002",
+  "protocol_sha256": "afb9884a341f51fbf9c902e07bb130c0a4d742f189aadb3dd0f9ce92fa0f681a",
+  "quantization": "none_16bit",
+  "representation": "tiny_overfit_general_32",
+  "reranking": false,
+  "seed": 2026,
+  "warmup_fraction": 0.05,
+  "word_token_weight": 8.0
+}

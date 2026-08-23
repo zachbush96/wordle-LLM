@@ -1,0 +1,283 @@
+{
+  "checkpoint": "step-000300",
+  "decoder": "greedy",
+  "diagnostics": {
+    "action_target_accuracy": 0.0625,
+    "artifact_id": "6109015736af",
+    "by_posterior_size": {
+      "1": {
+        "action_target_accuracy": 0.013513513513513514,
+        "items": 74,
+        "posterior_consistency": 0.013513513513513514,
+        "posterior_constraint_violation_rate": 0.9864864864864865,
+        "repeat_rate": 0.04054054054054054,
+        "singleton_answer_accuracy": 0.013513513513513514,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 0.0,
+        "valid_word_accuracy": 1.0
+      },
+      "10": {
+        "action_target_accuracy": 0.0,
+        "items": 2,
+        "posterior_consistency": 0.5,
+        "posterior_constraint_violation_rate": 0.5,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "12": {
+        "action_target_accuracy": 0.0,
+        "items": 1,
+        "posterior_consistency": 0.0,
+        "posterior_constraint_violation_rate": 1.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "128": {
+        "action_target_accuracy": 1.0,
+        "items": 1,
+        "posterior_consistency": 1.0,
+        "posterior_constraint_violation_rate": 0.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "15": {
+        "action_target_accuracy": 0.0,
+        "items": 1,
+        "posterior_consistency": 1.0,
+        "posterior_constraint_violation_rate": 0.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "2": {
+        "action_target_accuracy": 0.09090909090909091,
+        "items": 22,
+        "posterior_consistency": 0.13636363636363635,
+        "posterior_constraint_violation_rate": 0.8636363636363636,
+        "repeat_rate": 0.045454545454545456,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "3": {
+        "action_target_accuracy": 0.2857142857142857,
+        "items": 7,
+        "posterior_consistency": 0.2857142857142857,
+        "posterior_constraint_violation_rate": 0.7142857142857143,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 0.8571428571428571,
+        "valid_word_accuracy": 1.0
+      },
+      "33": {
+        "action_target_accuracy": 0.0,
+        "items": 1,
+        "posterior_consistency": 1.0,
+        "posterior_constraint_violation_rate": 0.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "4": {
+        "action_target_accuracy": 0.2,
+        "items": 5,
+        "posterior_consistency": 0.2,
+        "posterior_constraint_violation_rate": 0.8,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 0.8,
+        "valid_word_accuracy": 1.0
+      },
+      "43": {
+        "action_target_accuracy": 0.0,
+        "items": 1,
+        "posterior_consistency": 1.0,
+        "posterior_constraint_violation_rate": 0.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "5": {
+        "action_target_accuracy": 0.25,
+        "items": 4,
+        "posterior_consistency": 0.25,
+        "posterior_constraint_violation_rate": 0.75,
+        "repeat_rate": 0.25,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "6": {
+        "action_target_accuracy": 0.0,
+        "items": 4,
+        "posterior_consistency": 0.0,
+        "posterior_constraint_violation_rate": 1.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "8": {
+        "action_target_accuracy": 0.0,
+        "items": 2,
+        "posterior_consistency": 0.0,
+        "posterior_constraint_violation_rate": 1.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "9": {
+        "action_target_accuracy": 0.0,
+        "items": 3,
+        "posterior_consistency": 0.3333333333333333,
+        "posterior_constraint_violation_rate": 0.6666666666666667,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      }
+    },
+    "by_turn": {
+      "1": {
+        "action_target_accuracy": 1.0,
+        "items": 1,
+        "posterior_consistency": 1.0,
+        "posterior_constraint_violation_rate": 0.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": null,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 1.0,
+        "valid_word_accuracy": 1.0
+      },
+      "2": {
+        "action_target_accuracy": 0.08620689655172414,
+        "items": 58,
+        "posterior_consistency": 0.1896551724137931,
+        "posterior_constraint_violation_rate": 0.8103448275862069,
+        "repeat_rate": 0.034482758620689655,
+        "singleton_answer_accuracy": 0.0,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 0.7068965517241379,
+        "valid_word_accuracy": 1.0
+      },
+      "3": {
+        "action_target_accuracy": 0.03225806451612903,
+        "items": 62,
+        "posterior_consistency": 0.03225806451612903,
+        "posterior_constraint_violation_rate": 0.967741935483871,
+        "repeat_rate": 0.04838709677419355,
+        "singleton_answer_accuracy": 0.019230769230769232,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 0.16129032258064516,
+        "valid_word_accuracy": 1.0
+      },
+      "4": {
+        "action_target_accuracy": 0.0,
+        "items": 7,
+        "posterior_consistency": 0.0,
+        "posterior_constraint_violation_rate": 1.0,
+        "repeat_rate": 0.0,
+        "singleton_answer_accuracy": 0.0,
+        "terminal_compliance": 1.0,
+        "train_state_coverage": 0.0,
+        "valid_word_accuracy": 1.0
+      }
+    },
+    "diagnostic_id": "COMMON-STATE-DIAGNOSTICS-001",
+    "error_counts": {
+      "constraint_violation": 109,
+      "none": 14,
+      "repeat": 5
+    },
+    "items": 128,
+    "items_sha256": "11a6f13d589eb24b638d4474919c299b447361f836a703c67888ae9a694bfede",
+    "posterior_consistency": 0.109375,
+    "posterior_constraint_violation_rate": 0.890625,
+    "repeat_rate": 0.0390625,
+    "singleton_answer_accuracy": 0.013513513513513514,
+    "terminal_compliance": 1.0,
+    "train_state_coverage": 0.40625,
+    "valid_word_accuracy": 1.0
+  },
+  "diagnostics_dir": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\artifacts\\runs\\unsloth-balanced-002-word8-s2026-467ae5da73\\evaluations\\step-000300-greedy\\diagnostics\\6109015736af",
+  "experiment_id": "UNSLOTH-BALANCED-002-WORD8-001",
+  "gameplay": {
+    "constraint_violation_rate": 0.7931034482758621,
+    "format_failure_rate": 0.10309278350515463,
+    "invalid_guess_rate": 0.10309278350515463,
+    "mean_generated_tokens": 5.345360824742268,
+    "mean_guesses_on_wins": 2,
+    "mean_latency_s": 0.05347704381493554,
+    "mean_reasoning_tokens": 0.5979381443298969,
+    "model_calls": 194,
+    "n_games": 32,
+    "reasoning_presence_rate": 0.10309278350515463,
+    "repeat_guess_rate": 0.3793103448275862,
+    "terminal_marker_compliance": 0.8969072164948454,
+    "win_rate": 0.09375,
+    "wins": 3,
+    "wins_by_guess": {
+      "1": 0,
+      "2": 3,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    }
+  },
+  "locked_test_access": false,
+  "promotion_gates": {
+    "checks": {
+      "singleton_answer_accuracy": false,
+      "terminal_compliance": false,
+      "turn_2_constraint_violation": false
+    },
+    "observed": {
+      "singleton_answer_accuracy": 0.013513513513513514,
+      "terminal_compliance": 0.8969072164948454,
+      "turn_2_constraint_violation": 0.8103448275862069
+    },
+    "passed": false,
+    "thresholds": {
+      "singleton_answer_accuracy_min": 0.8,
+      "terminal_compliance_min": 0.99,
+      "turn_2_constraint_violation_max": 0.3
+    }
+  },
+  "prompt_variant": "explicit_feedback",
+  "retention": {
+    "category_scores": {
+      "arithmetic": 0.0,
+      "instructions": 0.4,
+      "language": 0.1,
+      "logic": 0.5
+    },
+    "overall_score": 0.25,
+    "probe_count": 200
+  },
+  "split": "balanced_002_dev_32",
+  "status": "dev_evaluated"
+}

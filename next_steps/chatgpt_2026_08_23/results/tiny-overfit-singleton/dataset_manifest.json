@@ -1,0 +1,8 @@
+{
+  "dataset": "singleton",
+  "experiment_id": "GEMMA-270M-TINY-OVERFIT-001",
+  "locked_test_access": false,
+  "rows": 32,
+  "rows_sha256": "f2c4a92299a0bdf69e3c6fe034e2fced572903d138763c39991138a2a0c33266",
+  "suite_manifest_sha256": "b01b108efd913edb99ffb7c116f7feb6b6404817044336926e0484c63012ac99"
+}

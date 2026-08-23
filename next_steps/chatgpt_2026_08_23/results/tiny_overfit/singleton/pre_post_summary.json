@@ -1,0 +1,52 @@
+{
+  "adapter": {
+    "exact_match_count": 32,
+    "items": 32,
+    "mean_reciprocal_rank": 1.0,
+    "mean_target_probability": 0.9999865365706847,
+    "mean_target_rank": 1,
+    "median_target_rank": 1.0,
+    "natural_exact_accuracy": 1.0,
+    "top_1_rank_accuracy": 1.0
+  },
+  "adapter_checkpoint": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\artifacts\\runs\\tiny-overfit-singleton-s2026-0fe89d7a95\\checkpoints\\final",
+  "adapter_items_path": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\next_steps\\chatgpt_2026_08_23\\results\\tiny_overfit\\singleton\\evaluations\\adapter-items.jsonl",
+  "adapter_items_sha256": "b1835eefab9842c26c8463d674e28ea2a92317e838476b15dba65556bb2b72c7",
+  "base": {
+    "exact_match_count": 0,
+    "items": 32,
+    "mean_reciprocal_rank": 0.04332377597647851,
+    "mean_target_probability": 0.00705147374648184,
+    "mean_target_rank": 56.21875,
+    "median_target_rank": 53.0,
+    "natural_exact_accuracy": 0.0,
+    "top_1_rank_accuracy": 0.0
+  },
+  "base_items_path": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\next_steps\\chatgpt_2026_08_23\\results\\tiny_overfit\\singleton\\evaluations\\base-items.jsonl",
+  "base_items_sha256": "324e76113c9d17780cbc568fd0be4255c0ea076292e91a5d672abc860cf6d355",
+  "bundle_manifest_sha256": "b01b108efd913edb99ffb7c116f7feb6b6404817044336926e0484c63012ac99",
+  "comparison": "paired_base_vs_adapter_on_identical_training_states",
+  "deltas": {
+    "exact_match_count": 32,
+    "mean_reciprocal_rank": 0.9566762240235215,
+    "mean_target_probability": 0.9929350628242029,
+    "mean_target_rank": -55.21875,
+    "mean_target_rank_improvement": 55.21875,
+    "natural_exact_accuracy": 1.0,
+    "top_1_rank_accuracy": 1.0
+  },
+  "experiment_id": "GEMMA-270M-TINY-OVERFIT-001",
+  "items": 32,
+  "joined_items_sha256": "467069c97c7028477359da340698906d09282e7778d184457afbca4b2b6eb8e4",
+  "locked_test_access": false,
+  "mode": "evaluated_base_and_adapter",
+  "rows_sha256": "f2c4a92299a0bdf69e3c6fe034e2fced572903d138763c39991138a2a0c33266",
+  "state_changes": {
+    "exact_gained": 32,
+    "exact_lost": 0,
+    "rank_improved": 32,
+    "rank_unchanged": 0,
+    "rank_worsened": 0
+  },
+  "universe_sha256": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac"
+}

@@ -1,0 +1,51 @@
+{
+  "adapter": {
+    "alpha": 32,
+    "dropout": 0.05,
+    "r": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "type": "lora"
+  },
+  "backend": {
+    "backend_id": "UNSLOTH-GEMMA-WEIGHTED-SFT-002",
+    "bf16_supported": true,
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "packages": {
+      "peft": "0.20.0",
+      "torch": "2.10.0+cu128",
+      "transformers": "5.5.0",
+      "triton-windows": "3.7.1.post27",
+      "trl": "0.24.0",
+      "unsloth": "2026.8.19",
+      "unsloth_zoo": "2026.8.13"
+    }
+  },
+  "checkpoint_steps": [
+    150,
+    300,
+    450,
+    600
+  ],
+  "effective_batch_size": 4,
+  "loss_mode": "word_focused",
+  "optimizer_steps": 600,
+  "optimizer_tokens": 363758,
+  "peak_allocated_vram_bytes": 2404819456,
+  "quantization": "none_16bit",
+  "total_parameters": 271895168,
+  "train_examples": 512,
+  "trainable_fraction": 0.013964911653008854,
+  "trainable_parameters": 3796992,
+  "wall_time_s": 549.9902834000532,
+  "weighted_completion_tokens": 36120.0,
+  "word_token_weight": 8.0
+}

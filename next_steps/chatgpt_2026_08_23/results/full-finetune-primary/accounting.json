@@ -1,0 +1,36 @@
+{
+  "backend_id": "GEMMA-270M-FULL-FINETUNE-001",
+  "checkpoint_steps": [
+    150,
+    300,
+    450,
+    600
+  ],
+  "effective_batch_size": 4,
+  "estimated_weights_gradients_adam_bytes": 3217178112,
+  "final_checkpoint": "step-000600",
+  "gradient_checkpointing": false,
+  "loss_mode": "word_focused",
+  "model": {
+    "architecture": "Gemma3ForCausalLM",
+    "downloaded_at": "2026-08-14T12:40:39.993342+00:00",
+    "gemma_270m_only": true,
+    "hidden_size": 640,
+    "local_path": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\models\\base\\google--gemma-3-270m-it",
+    "model_id": "google/gemma-3-270m-it",
+    "model_type": "gemma3_text",
+    "num_hidden_layers": 18,
+    "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3"
+  },
+  "optimizer_steps": 600,
+  "optimizer_tokens": 363758,
+  "peak_allocated_vram_bytes": 4422610944,
+  "quantization": "none_16bit",
+  "total_parameters": 268098176,
+  "train_examples": 512,
+  "trainable_fraction": 1.0,
+  "trainable_parameters": 268098176,
+  "wall_time_s": 133.59417810000014,
+  "weighted_completion_tokens": 36120.0,
+  "word_token_weight": 8.0
+}

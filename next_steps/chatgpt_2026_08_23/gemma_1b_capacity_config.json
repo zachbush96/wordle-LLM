@@ -1,0 +1,39 @@
+{
+  "experiment_id": "GEMMA-SAME-FAMILY-CAPACITY-001",
+  "model_id": "google/gemma-3-1b-it",
+  "model_revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+  "source_model_revision_checked_at": "2026-08-23",
+  "training_backend": "transformers_peft",
+  "matched_270m_comparator": {
+    "run_id": "sft-common-balanced-word-s2026-0649b4deeb",
+    "backend": "transformers_peft",
+    "spec_sha256": "655972a100f33ca26d0e7834f602de9856f88aed89107aed67e6426f9d8c95bc",
+    "dataset_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+    "accounting_sha256": "4a46e116d8d998ec20c6f05ebd74b2cd8c4525feb52f9dad8cc22327940625b4",
+    "final_adapter_sha256": "6404d0d4c06f2c2cc2dcd871fc7a6dd7b05201057d11d6be613e3188c76a2817"
+  },
+  "curriculum_id": "COMMON-WORD-CURRICULUM-002",
+  "training_rows": 512,
+  "training_rows_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+  "seed": 2026,
+  "max_steps": 600,
+  "learning_rate": 0.00005,
+  "batch_size": 4,
+  "gradient_accumulation_steps": 1,
+  "effective_batch_size": 4,
+  "max_length": 320,
+  "word_token_weight": 8.0,
+  "checkpoint_steps": [150, 300, 450, 600],
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  },
+  "locked_test_access": false,
+  "candidate_injection": false,
+  "vocabulary_masking": false,
+  "reranking": false,
+  "repeat_ban": false,
+  "output_repair": false
+}

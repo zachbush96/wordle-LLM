@@ -1,0 +1,256 @@
+{
+  "builder_version": "WORDLE-STRUCTURED-MICROTASKS-001",
+  "checks": [
+    "source_hashes",
+    "evaluation_allowed_words_hash",
+    "train_dev_secret_separation",
+    "train_dev_history_separation",
+    "primitive_label_recomputation",
+    "candidate_50_50_balance",
+    "six_invalid_reasons_balanced",
+    "duplicate_heavy_examples_preserved",
+    "machine_readable_auxiliary_outputs",
+    "natural_full_policy_outputs",
+    "locked_test_unread"
+  ],
+  "config_sha256": "5d121d99a63f0b6b866c7f101286bc9aed682cab2fb2cde4cc31643892934ba8",
+  "development_file": "dev/mixed.jsonl",
+  "evaluation_source": {
+    "allowed_word_count": 14855,
+    "allowed_words": "data/wordlists/tabatkins_wordle_list_pinned.txt",
+    "allowed_words_sha256": "9df5dad1b44cf1b9e0fa7c3ebff94d69ff7efb59f8691ac88e74e1c7b3da121e",
+    "locked_test_access": false,
+    "status": "passed"
+  },
+  "experiment_id": "STRUCTURED-MICROTASKS-SFT-001",
+  "locked_test_access": false,
+  "natural_generation_evaluation": true,
+  "protocol_id": "WORDLE-PROTOCOL-002",
+  "seed": 2026,
+  "source": {
+    "dataset_id": "COMMON-WORD-CURRICULUM-002",
+    "dev_secret_count": 32,
+    "hashes": {
+      "dev_secrets.json": "e94dea81d06f464a55ea7463b36837c998d1e405ef3f1e6e0500c78ea627c8a2",
+      "manifest.json": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+      "train.jsonl": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+      "train_secrets.json": "e8ace1e06a6f35a1b600702099c029e232b6124fe76265a5cf4da2d981386a4e",
+      "universe.json": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac"
+    },
+    "locked_test_access": false,
+    "status": "passed",
+    "train_dev_overlap": 0,
+    "train_secret_count": 96,
+    "training_rows": 512,
+    "universe_size": 128
+  },
+  "splits": {
+    "dev": {
+      "candidate_balance": {
+        "invalid": 48,
+        "invalid_reasons": {
+          "duplicate-count": 8,
+          "gray": 8,
+          "green": 8,
+          "missing-required": 8,
+          "repeated-guess": 8,
+          "yellow": 8
+        },
+        "valid": 48
+      },
+      "context": {
+        "answer_universe_sha256": "c9a07a9798757f3dfc689086515fa4430885bb2d9278ab1869fb5e8e668646dc",
+        "declared_secret_set_sha256": "a1f21aead6fbd9c70b959d5b04f14012e37e26362d93a0327fc9c006f9cf5bdc",
+        "secret_source": "common-curriculum-002/dev_secrets.json:evaluation_only",
+        "source_dataset_id": "COMMON-WORD-CURRICULUM-002-DEV-EVALUATION-ONLY",
+        "source_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889"
+      },
+      "duplicate_heavy_distribution": {
+        "candidate_validity": 48,
+        "constraint_merge": 76,
+        "feedback_decode": 52,
+        "full_policy": 69,
+        "singleton_solve": 81
+      },
+      "files": {
+        "candidate_validity.jsonl": "50d49d48ddb81329a592c8013784381228a449b7a34fb23f3b1a6c573e2b9574",
+        "constraint_merge.jsonl": "7eb4d8e4f5a160a8bd7bee192809a74cbb19ded6c40d0ed4a1e38016399afa17",
+        "feedback_decode.jsonl": "1ce3fbf0f51048508acf91fd5e6f9cd560dbd6e6f21a9f53145a362ff5ef2956",
+        "full_policy.jsonl": "d74e60451a5f6eb1c443b6e62b517b9398902197091f3e9ead1bafc7c55011d7",
+        "mixed.jsonl": "39f80bf9b5ef28e810817ba254a1127f134b2b5d4a85a40341406d3bb68fcf1b",
+        "records.jsonl": "4d5e000e223c5c1da66c4e01cda751f2c17d82625bee1b2e8ba8e1d7d46469f4",
+        "singleton_solve.jsonl": "5fb70bfbc8252da02c518fd5281a37eb9da960f3bb44912a776030b4e880efb3",
+        "source_states_private.jsonl": "f3b067391f1ec8eebfa72726fe9de1a538dc7768cfe6612c91e33b4a065ad8b3"
+      },
+      "locked_test_access": false,
+      "mixed_rows": 608,
+      "primitive_audit": {
+        "builder_version": "WORDLE-STRUCTURED-MICROTASKS-001",
+        "candidate_balance": {
+          "invalid": 48,
+          "invalid_reasons": {
+            "duplicate-count": 8,
+            "gray": 8,
+            "green": 8,
+            "missing-required": 8,
+            "repeated-guess": 8,
+            "yellow": 8
+          },
+          "valid": 48
+        },
+        "checks": [
+          "protocol_frozen",
+          "training_secret_membership",
+          "feedback_recomputed_with_frozen_scorer",
+          "secret_retained_by_public_history",
+          "no_post_solve_states",
+          "no_secret_or_candidate_list_fields",
+          "record_content_hashes",
+          "source_provenance_hashes",
+          "labels_recomputed",
+          "candidate_50_50_balance",
+          "invalid_reason_balance",
+          "locked_test_unread"
+        ],
+        "hashes": {
+          "answer_universe_sha256": "c9a07a9798757f3dfc689086515fa4430885bb2d9278ab1869fb5e8e668646dc",
+          "records_sha256": "55ee299494c40a5cb96c8d34517b29c6775f24d5f07e0cbd97d681c4343d92fe",
+          "source_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+          "source_state_provenance_sha256": "58adafa78f5cb50f07cf553a8c34689363d16fc8e7aa44597b78f5cde3b0d8e3",
+          "training_secret_set_sha256": "a1f21aead6fbd9c70b959d5b04f14012e37e26362d93a0327fc9c006f9cf5bdc"
+        },
+        "locked_test_access": false,
+        "protocol_id": "WORDLE-PROTOCOL-002",
+        "records": 608,
+        "schema_version": "wordle-structured-curriculum-v1",
+        "secret_role": "evaluation_only",
+        "source_states": 446,
+        "split": "dev",
+        "status": "passed",
+        "task_distribution": {
+          "candidate_validity": 96,
+          "constraint_merge": 128,
+          "feedback_decode": 128,
+          "full_policy": 128,
+          "singleton_solve": 128
+        }
+      },
+      "records": 608,
+      "rendered_prompt_secret_fields": false,
+      "source_states": 446,
+      "split": "dev",
+      "task_distribution": {
+        "candidate_validity": 96,
+        "constraint_merge": 128,
+        "feedback_decode": 128,
+        "full_policy": 128,
+        "singleton_solve": 128
+      }
+    },
+    "train": {
+      "candidate_balance": {
+        "invalid": 144,
+        "invalid_reasons": {
+          "duplicate-count": 24,
+          "gray": 24,
+          "green": 24,
+          "missing-required": 24,
+          "repeated-guess": 24,
+          "yellow": 24
+        },
+        "valid": 144
+      },
+      "context": {
+        "answer_universe_sha256": "c9a07a9798757f3dfc689086515fa4430885bb2d9278ab1869fb5e8e668646dc",
+        "declared_secret_set_sha256": "ed14a9138cfa78e92aaff8225ae38e16eba8f2758d9710cf55abd187ca0dbe38",
+        "secret_source": "common-curriculum-002/train_secrets.json",
+        "source_dataset_id": "COMMON-WORD-CURRICULUM-002",
+        "source_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889"
+      },
+      "duplicate_heavy_distribution": {
+        "candidate_validity": 139,
+        "constraint_merge": 77,
+        "feedback_decode": 84,
+        "full_policy": 135,
+        "singleton_solve": 36
+      },
+      "files": {
+        "candidate_validity.jsonl": "7bfc33f35220e2a1f34f7d2bfeef7fba3c9a782cb565ef77f17fe322f3dea87b",
+        "constraint_merge.jsonl": "35053e44fc4da50ab37ad557ac27850c7257e092dc413793f24b8252c60a4b86",
+        "feedback_decode.jsonl": "dc3a01a69fe5a4681016078107e4e32610bd9a3ca457ee7c574f9e0a2f4436e8",
+        "full_policy.jsonl": "326a5d357416d43c23a5c7ab25f7ee71d55ec358456a0392d25c91531f3a4bcb",
+        "mixed.jsonl": "f46ee9bc586c8a2383f038220522849374194de16f95169ddd5e848074ebd5e0",
+        "records.jsonl": "b4fba58dbd1fc66a050c874435e93223aa37f59af6fe3ab2fad9adc6f7157acb",
+        "singleton_solve.jsonl": "b1d8c965ccff1fef98a0a347886afed33c619d5c066dbab43cb17caf282093aa",
+        "source_states_private.jsonl": "8229ff22117cb653e0da14deac9087f8581586c8176e911ecb4aaf094ad8f7f1"
+      },
+      "locked_test_access": false,
+      "mixed_rows": 1216,
+      "primitive_audit": {
+        "builder_version": "WORDLE-STRUCTURED-MICROTASKS-001",
+        "candidate_balance": {
+          "invalid": 144,
+          "invalid_reasons": {
+            "duplicate-count": 24,
+            "gray": 24,
+            "green": 24,
+            "missing-required": 24,
+            "repeated-guess": 24,
+            "yellow": 24
+          },
+          "valid": 144
+        },
+        "checks": [
+          "protocol_frozen",
+          "training_secret_membership",
+          "feedback_recomputed_with_frozen_scorer",
+          "secret_retained_by_public_history",
+          "no_post_solve_states",
+          "no_secret_or_candidate_list_fields",
+          "record_content_hashes",
+          "source_provenance_hashes",
+          "labels_recomputed",
+          "candidate_50_50_balance",
+          "invalid_reason_balance",
+          "locked_test_unread"
+        ],
+        "hashes": {
+          "answer_universe_sha256": "c9a07a9798757f3dfc689086515fa4430885bb2d9278ab1869fb5e8e668646dc",
+          "records_sha256": "2cfb567b17179b052f65869020b8a096b4d525f5d334bea92c05a8571d9d6b2e",
+          "source_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+          "source_state_provenance_sha256": "a5058fed832d2375d04e263d7913016ed58c81b27706eaada4f4397a3218febd",
+          "training_secret_set_sha256": "ed14a9138cfa78e92aaff8225ae38e16eba8f2758d9710cf55abd187ca0dbe38"
+        },
+        "locked_test_access": false,
+        "protocol_id": "WORDLE-PROTOCOL-002",
+        "records": 1216,
+        "schema_version": "wordle-structured-curriculum-v1",
+        "secret_role": "training",
+        "source_states": 368,
+        "split": "train",
+        "status": "passed",
+        "task_distribution": {
+          "candidate_validity": 288,
+          "constraint_merge": 192,
+          "feedback_decode": 256,
+          "full_policy": 400,
+          "singleton_solve": 80
+        }
+      },
+      "records": 1216,
+      "rendered_prompt_secret_fields": false,
+      "source_states": 368,
+      "split": "train",
+      "task_distribution": {
+        "candidate_validity": 288,
+        "constraint_merge": 192,
+        "feedback_decode": 256,
+        "full_policy": 400,
+        "singleton_solve": 80
+      }
+    }
+  },
+  "train_dev_history_overlap": 0,
+  "train_dev_record_overlap": 0,
+  "training_file": "train/mixed.jsonl"
+}

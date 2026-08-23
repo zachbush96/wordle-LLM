@@ -4,7 +4,12 @@ import pytest
 
 from wordle_lab.common import DATA, ROOT, read_json, read_jsonl
 from wordle_lab.data.comparison import audit_comparison_bundle
-from wordle_lab.methods.unsloth_sft import UNSLOTH_BACKEND_ID, select_nested_rows
+from wordle_lab.methods import unsloth_sft
+from wordle_lab.methods.unsloth_sft import (
+    UNSLOTH_BACKEND_ID,
+    UNSLOTH_WEIGHTED_BACKEND_ID,
+    select_nested_rows,
+)
 from wordle_lab.data.comparison import STRATIFIED_COMPLEXITY_COUNTS, stratified_complexity_words
 
 
@@ -31,6 +36,28 @@ def test_state_dose_validation_and_full_selection():
 
 def test_backend_id_is_versioned():
     assert UNSLOTH_BACKEND_ID == "UNSLOTH-GEMMA-SFT-001"
+
+
+@pytest.mark.parametrize("previous", [None, "legacy"])
+def test_weighted_logit_environment_is_scoped(monkeypatch: pytest.MonkeyPatch, tmp_path, previous):
+    import os
+
+    if previous is None:
+        monkeypatch.delenv("UNSLOTH_RETURN_LOGITS", raising=False)
+    else:
+        monkeypatch.setenv("UNSLOTH_RETURN_LOGITS", previous)
+
+    observed = {}
+
+    def fake_impl(rows, run_dir, spec):
+        observed["during"] = os.environ.get("UNSLOTH_RETURN_LOGITS")
+        return object(), object(), {}
+
+    monkeypatch.setattr(unsloth_sft, "_train_unsloth_sft_impl", fake_impl)
+    spec = {"backend": UNSLOTH_WEIGHTED_BACKEND_ID, "word_token_weight": 8.0}
+    unsloth_sft.train_unsloth_sft([], tmp_path, spec)
+    assert observed["during"] == "1"
+    assert os.environ.get("UNSLOTH_RETURN_LOGITS") == previous
 
 
 def test_stratified_words_are_unique_and_match_declared_bands():

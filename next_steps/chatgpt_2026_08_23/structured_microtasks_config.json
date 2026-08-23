@@ -1,0 +1,87 @@
+{
+  "experiment_id": "STRUCTURED-MICROTASKS-SFT-001",
+  "builder_version": "WORDLE-STRUCTURED-MICROTASKS-001",
+  "protocol_id": "WORDLE-PROTOCOL-002",
+  "seed": 2026,
+  "source": {
+    "dataset_id": "COMMON-WORD-CURRICULUM-002",
+    "directory": "data/common-curriculum-002/u128-train96",
+    "manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+    "train_rows_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+    "universe_sha256": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac",
+    "train_secrets_sha256": "e8ace1e06a6f35a1b600702099c029e232b6124fe76265a5cf4da2d981386a4e",
+    "dev_secrets_sha256": "e94dea81d06f464a55ea7463b36837c998d1e405ef3f1e6e0500c78ea627c8a2",
+    "dev_generated_states": 1024,
+    "exclude_train_history_from_dev": true
+  },
+  "selection": {
+    "duplicate_heavy_min_fraction": 0.25,
+    "train": {
+      "feedback_decode": 256,
+      "constraint_merge": 192,
+      "candidate_validity_per_invalid_reason": 24,
+      "singleton_solve": 80,
+      "full_policy": 400
+    },
+    "dev": {
+      "feedback_decode": 128,
+      "constraint_merge": 128,
+      "candidate_validity_per_invalid_reason": 8,
+      "singleton_solve": 128,
+      "full_policy": 128
+    }
+  },
+  "bundle_directory": "next_steps/chatgpt_2026_08_23/generated/structured_microtasks_v1",
+  "model": {
+    "model_id": "google/gemma-3-270m-it",
+    "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3"
+  },
+  "training": {
+    "max_steps": 600,
+    "learning_rate": 0.00005,
+    "batch_size": 16,
+    "gradient_accumulation_steps": 1,
+    "max_length": 768,
+    "precision": "bfloat16",
+    "quantization": "none_16bit",
+    "word_token_weight": 1.0,
+    "lora": {
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ]
+    }
+  },
+  "evaluation": {
+    "allowed_words": "data/wordlists/tabatkins_wordle_list_pinned.txt",
+    "allowed_words_sha256": "9df5dad1b44cf1b9e0fa7c3ebff94d69ff7efb59f8691ac88e74e1c7b3da121e",
+    "batch_size": 16,
+    "max_new_tokens": 512,
+    "gates": {
+      "coverage_min": 1.0,
+      "feedback_decode_accuracy_min": 0.80,
+      "constraint_merge_accuracy_min": 0.80,
+      "candidate_validity_accuracy_min": 0.85,
+      "candidate_invalid_reason_accuracy_min": 0.75,
+      "singleton_solve_accuracy_min": 0.80,
+      "full_policy_accuracy_min": 0.20,
+      "full_policy_format_compliance_min": 0.99
+    }
+  },
+  "locked_test_access": false,
+  "candidate_injection": false,
+  "vocabulary_masking": false,
+  "reranking": false,
+  "repeat_ban": false,
+  "output_repair": false,
+  "harness_selected_guess": false,
+  "run_output_root": "artifacts/runs"
+}

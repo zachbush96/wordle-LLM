@@ -1,0 +1,533 @@
+{
+  "schema_version": "wordle-results-collection-v1",
+  "collection_id": "chatgpt-2026-08-23-next-steps-results",
+  "locked_test_access": false,
+  "experiments": [
+    {
+      "experiment_id": "tiny-overfit-general-s2026-15451a8514",
+      "output_name": "tiny-overfit-general",
+      "status": "complete",
+      "run_dir": "artifacts/runs/tiny-overfit-general-s2026-15451a8514",
+      "artifacts": [
+        {
+          "source": "spec.json",
+          "destination": "spec.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "dataset_manifest.json",
+          "destination": "dataset_manifest.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "accounting.json",
+          "destination": "accounting.json",
+          "role": "accounting",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "summary.json",
+          "destination": "train_summary.json",
+          "role": "gate_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "train_metrics.jsonl",
+          "destination": "train_metrics.jsonl",
+          "role": "train_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        }
+      ]
+    },
+    {
+      "experiment_id": "tiny-overfit-singleton-s2026-0fe89d7a95",
+      "output_name": "tiny-overfit-singleton",
+      "status": "complete",
+      "run_dir": "artifacts/runs/tiny-overfit-singleton-s2026-0fe89d7a95",
+      "artifacts": [
+        {
+          "source": "spec.json",
+          "destination": "spec.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "dataset_manifest.json",
+          "destination": "dataset_manifest.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "accounting.json",
+          "destination": "accounting.json",
+          "role": "accounting",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "summary.json",
+          "destination": "train_summary.json",
+          "role": "gate_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "train_metrics.jsonl",
+          "destination": "train_metrics.jsonl",
+          "role": "train_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        }
+      ]
+    },
+    {
+      "experiment_id": "unsloth-balanced-002-word8-s2026-467ae5da73",
+      "output_name": "balanced-002-unsloth",
+      "status": "complete",
+      "run_dir": "artifacts/runs/unsloth-balanced-002-word8-s2026-467ae5da73",
+      "artifacts": [
+        {
+          "source": "spec.json",
+          "destination": "spec.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "dataset_manifest.json",
+          "destination": "dataset_manifest.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "preflight_audit.json",
+          "destination": "preflight_audit.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "accounting.json",
+          "destination": "accounting.json",
+          "role": "accounting",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "summary.json",
+          "destination": "train_summary.json",
+          "role": "gate_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "train_metrics.jsonl",
+          "destination": "train_metrics.jsonl",
+          "role": "train_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "evaluation_summary.json",
+          "destination": "dev/evaluation_summary.json",
+          "role": "comparison_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "evaluations/step-000150-greedy/summary.json",
+          "destination": "dev/step-000150-greedy-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "evaluations/step-000300-greedy/summary.json",
+          "destination": "dev/step-000300-greedy-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "evaluations/step-000450-greedy/summary.json",
+          "destination": "dev/step-000450-greedy-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "evaluations/step-000600-greedy/summary.json",
+          "destination": "dev/step-000600-greedy-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "evaluations/final-greedy_rep105/summary.json",
+          "destination": "dev/final-greedy-rep105-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "evaluations/final-greedy_rep105/games.jsonl",
+          "destination": "dev/final-greedy-rep105-games.jsonl",
+          "role": "raw_jsonl",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 262144
+        },
+        {
+          "source": "evaluations/step-000600-greedy/retention.jsonl",
+          "destination": "dev/step-000600-retention.jsonl",
+          "role": "raw_jsonl",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 262144
+        }
+      ]
+    },
+    {
+      "experiment_id": "full-finetune-primary-s2026-57ba532ae7",
+      "output_name": "full-finetune-primary",
+      "status": "complete",
+      "run_dir": "artifacts/runs/full-finetune-balanced-word-primary-s2026-57ba532ae7",
+      "artifacts": [
+        {
+          "source": "spec.json",
+          "destination": "spec.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "dataset_manifest.json",
+          "destination": "dataset_manifest.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "comparison_manifest.json",
+          "destination": "comparison_manifest.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "preflight.json",
+          "destination": "preflight.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "accounting.json",
+          "destination": "accounting.json",
+          "role": "accounting",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "summary.json",
+          "destination": "train_summary.json",
+          "role": "gate_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "train_metrics.jsonl",
+          "destination": "train_metrics.jsonl",
+          "role": "train_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000150-summary.json",
+          "destination": "dev/step-000150-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000300-summary.json",
+          "destination": "dev/step-000300-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000450-summary.json",
+          "destination": "dev/step-000450-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000600-summary.json",
+          "destination": "dev/step-000600-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "paired-step-000600-summary.json",
+          "destination": "dev/paired-step-000600-summary.json",
+          "role": "comparison_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000600-games.jsonl",
+          "destination": "dev/step-000600-games.jsonl",
+          "role": "raw_jsonl",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 262144
+        },
+        {
+          "source": "eval-step-000600-retention.jsonl",
+          "destination": "dev/step-000600-retention.jsonl",
+          "role": "raw_jsonl",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 262144
+        }
+      ]
+    },
+    {
+      "experiment_id": "structured-microtasks-s2026-30990a0c2c",
+      "output_name": "structured-microtasks",
+      "status": "complete",
+      "run_dir": "artifacts/runs/structured-microtasks-unsloth-s2026-30990a0c2c",
+      "artifacts": [
+        {
+          "source": "spec.json",
+          "destination": "spec.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "dataset_manifest.json",
+          "destination": "dataset_manifest.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "accounting.json",
+          "destination": "accounting.json",
+          "role": "accounting",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "summary.json",
+          "destination": "train_summary.json",
+          "role": "gate_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "train_metrics.jsonl",
+          "destination": "train_metrics.jsonl",
+          "role": "train_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "microtask-evaluation/final/summary.json",
+          "destination": "dev/final-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "microtask-evaluation/final/raw_outputs.jsonl",
+          "destination": "dev/raw_outputs.jsonl",
+          "role": "raw_jsonl",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 262144
+        },
+        {
+          "source": "microtask-evaluation/final/parsed_outputs.jsonl",
+          "destination": "dev/parsed_outputs.jsonl",
+          "role": "raw_jsonl",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 524288
+        }
+      ]
+    },
+    {
+      "experiment_id": "constraint-first-s2026-ac97761439",
+      "output_name": "constraint-first",
+      "status": "complete",
+      "run_dir": "artifacts/runs/constraint-first-s2026-ac97761439",
+      "artifacts": [
+        {
+          "source": "spec.json",
+          "destination": "spec.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "dataset_manifest.json",
+          "destination": "dataset_manifest.json",
+          "role": "spec",
+          "scope": "metadata",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "accounting.json",
+          "destination": "accounting.json",
+          "role": "accounting",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "summary.json",
+          "destination": "train_summary.json",
+          "role": "gate_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "train_metrics.jsonl",
+          "destination": "train_metrics.jsonl",
+          "role": "train_metrics",
+          "scope": "train",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "evaluation_summary.json",
+          "destination": "dev/evaluation_summary.json",
+          "role": "comparison_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000150-summary.json",
+          "destination": "dev/step-000150-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000300-summary.json",
+          "destination": "dev/step-000300-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000450-summary.json",
+          "destination": "dev/step-000450-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000600-summary.json",
+          "destination": "dev/step-000600-summary.json",
+          "role": "eval_summary",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 131072
+        },
+        {
+          "source": "eval-step-000600-games.jsonl",
+          "destination": "dev/step-000600-games.jsonl",
+          "role": "raw_jsonl",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 262144
+        },
+        {
+          "source": "eval-step-000600-retention.jsonl",
+          "destination": "dev/step-000600-retention.jsonl",
+          "role": "raw_jsonl",
+          "scope": "dev",
+          "required": true,
+          "max_bytes": 262144
+        }
+      ]
+    },
+    {
+      "experiment_id": "q-sft-frozen-prerequisite-blocked",
+      "output_name": "q-sft-frozen-blocked",
+      "status": "blocked",
+      "reason": "Q-SFT was not run because the frozen balanced-002 parent failed its prerequisite development promotion gates; training and development metrics are unavailable.",
+      "artifacts": []
+    },
+    {
+      "experiment_id": "gemma-1b-capacity-auth-blocked",
+      "output_name": "gemma-1b-capacity-blocked",
+      "status": "blocked",
+      "reason": "Gemma 3 1B training was not run because the pinned model revision is gated and no authenticated Hugging Face token was configured; training and development metrics are unavailable.",
+      "artifacts": []
+    }
+  ]
+}

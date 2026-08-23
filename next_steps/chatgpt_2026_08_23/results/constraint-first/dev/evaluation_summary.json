@@ -1,0 +1,581 @@
+{
+  "checkpoints": [
+    "step-000150",
+    "step-000300",
+    "step-000450",
+    "step-000600"
+  ],
+  "decision": "development_gates_failed_no_promotable_checkpoint_locked_test_closed",
+  "doses": [
+    {
+      "checkpoint": "step-000150",
+      "development_gates": {
+        "checks": {
+          "gameplay_constraint_violation_rate": {
+            "group": "legality",
+            "observed": 0.0,
+            "op": "<=",
+            "passed": true,
+            "value": 0.3
+          },
+          "invalid_guess_rate": {
+            "group": "legality",
+            "observed": 1.0,
+            "op": "<=",
+            "passed": false,
+            "value": 0.01
+          },
+          "posterior_constraint_violation_rate": {
+            "group": "posterior",
+            "observed": 0.9814814814814815,
+            "op": "<=",
+            "passed": false,
+            "value": 0.3
+          },
+          "repeat_guess_rate": {
+            "group": "legality",
+            "observed": 0.0,
+            "op": "<=",
+            "passed": true,
+            "value": 0.1
+          },
+          "retention_overall_score": {
+            "group": "retention",
+            "observed": 0.175,
+            "op": ">=",
+            "passed": false,
+            "value": 0.2
+          },
+          "singleton_answer_accuracy": {
+            "group": "singleton",
+            "observed": 0.0,
+            "op": ">=",
+            "passed": false,
+            "value": 0.8
+          },
+          "terminal_marker_compliance": {
+            "group": "format",
+            "observed": 0.0,
+            "op": ">=",
+            "passed": false,
+            "value": 0.99
+          },
+          "turn_2_posterior_constraint_violation_rate": {
+            "group": "posterior",
+            "observed": 0.9655172413793104,
+            "op": "<",
+            "passed": false,
+            "value": 0.3
+          },
+          "win_rate": {
+            "group": "gameplay",
+            "observed": 0.0,
+            "op": ">=",
+            "passed": false,
+            "value": 0.25
+          }
+        },
+        "failures": [
+          "threshold_failed:terminal_marker_compliance",
+          "threshold_failed:invalid_guess_rate",
+          "threshold_failed:posterior_constraint_violation_rate",
+          "threshold_failed:turn_2_posterior_constraint_violation_rate",
+          "threshold_failed:singleton_answer_accuracy",
+          "threshold_failed:retention_overall_score",
+          "threshold_failed:win_rate"
+        ],
+        "groups": {
+          "format": false,
+          "gameplay": false,
+          "legality": false,
+          "posterior": false,
+          "retention": false,
+          "singleton": false
+        },
+        "locked_test_access": false,
+        "metrics": {
+          "action_target_accuracy": 0.0,
+          "gameplay_constraint_violation_rate": 0.0,
+          "invalid_guess_rate": 1.0,
+          "n_games": 32,
+          "posterior_consistency": 0.018518518518518517,
+          "posterior_constraint_violation_rate": 0.9814814814814815,
+          "repeat_guess_rate": 0.0,
+          "retention_overall_score": 0.175,
+          "singleton_answer_accuracy": 0.0,
+          "terminal_marker_compliance": 0.0,
+          "turn_2_posterior_constraint_violation_rate": 0.9655172413793104,
+          "win_rate": 0.0,
+          "wins": 0
+        },
+        "passed": false,
+        "preregistered": false,
+        "registration_status": "post_hoc_after_training_started",
+        "schema_version": "constraint-first-development-gates-v1"
+      }
+    },
+    {
+      "checkpoint": "step-000300",
+      "development_gates": {
+        "checks": {
+          "gameplay_constraint_violation_rate": {
+            "group": "legality",
+            "observed": 0.8333333333333334,
+            "op": "<=",
+            "passed": false,
+            "value": 0.3
+          },
+          "invalid_guess_rate": {
+            "group": "legality",
+            "observed": 0.0,
+            "op": "<=",
+            "passed": true,
+            "value": 0.01
+          },
+          "posterior_constraint_violation_rate": {
+            "group": "posterior",
+            "observed": 0.9765625,
+            "op": "<=",
+            "passed": false,
+            "value": 0.3
+          },
+          "repeat_guess_rate": {
+            "group": "legality",
+            "observed": 0.8072916666666666,
+            "op": "<=",
+            "passed": false,
+            "value": 0.1
+          },
+          "retention_overall_score": {
+            "group": "retention",
+            "observed": 0.2,
+            "op": ">=",
+            "passed": true,
+            "value": 0.2
+          },
+          "singleton_answer_accuracy": {
+            "group": "singleton",
+            "observed": 0.0,
+            "op": ">=",
+            "passed": false,
+            "value": 0.8
+          },
+          "terminal_marker_compliance": {
+            "group": "format",
+            "observed": 1.0,
+            "op": ">=",
+            "passed": true,
+            "value": 0.99
+          },
+          "turn_2_posterior_constraint_violation_rate": {
+            "group": "posterior",
+            "observed": 0.9655172413793104,
+            "op": "<",
+            "passed": false,
+            "value": 0.3
+          },
+          "win_rate": {
+            "group": "gameplay",
+            "observed": 0.0,
+            "op": ">=",
+            "passed": false,
+            "value": 0.25
+          }
+        },
+        "failures": [
+          "threshold_failed:repeat_guess_rate",
+          "threshold_failed:gameplay_constraint_violation_rate",
+          "threshold_failed:posterior_constraint_violation_rate",
+          "threshold_failed:turn_2_posterior_constraint_violation_rate",
+          "threshold_failed:singleton_answer_accuracy",
+          "threshold_failed:win_rate"
+        ],
+        "groups": {
+          "format": true,
+          "gameplay": false,
+          "legality": false,
+          "posterior": false,
+          "retention": true,
+          "singleton": false
+        },
+        "locked_test_access": false,
+        "metrics": {
+          "action_target_accuracy": 0.0,
+          "gameplay_constraint_violation_rate": 0.8333333333333334,
+          "invalid_guess_rate": 0.0,
+          "n_games": 32,
+          "posterior_consistency": 0.0234375,
+          "posterior_constraint_violation_rate": 0.9765625,
+          "repeat_guess_rate": 0.8072916666666666,
+          "retention_overall_score": 0.2,
+          "singleton_answer_accuracy": 0.0,
+          "terminal_marker_compliance": 1.0,
+          "turn_2_posterior_constraint_violation_rate": 0.9655172413793104,
+          "win_rate": 0.0,
+          "wins": 0
+        },
+        "passed": false,
+        "preregistered": false,
+        "registration_status": "post_hoc_after_training_started",
+        "schema_version": "constraint-first-development-gates-v1"
+      }
+    },
+    {
+      "checkpoint": "step-000450",
+      "development_gates": {
+        "checks": {
+          "gameplay_constraint_violation_rate": {
+            "group": "legality",
+            "observed": 0.7891891891891892,
+            "op": "<=",
+            "passed": false,
+            "value": 0.3
+          },
+          "invalid_guess_rate": {
+            "group": "legality",
+            "observed": 0.08415841584158416,
+            "op": "<=",
+            "passed": false,
+            "value": 0.01
+          },
+          "posterior_constraint_violation_rate": {
+            "group": "posterior",
+            "observed": 0.8828125,
+            "op": "<=",
+            "passed": false,
+            "value": 0.3
+          },
+          "repeat_guess_rate": {
+            "group": "legality",
+            "observed": 0.2864864864864865,
+            "op": "<=",
+            "passed": false,
+            "value": 0.1
+          },
+          "retention_overall_score": {
+            "group": "retention",
+            "observed": 0.25,
+            "op": ">=",
+            "passed": true,
+            "value": 0.2
+          },
+          "singleton_answer_accuracy": {
+            "group": "singleton",
+            "observed": 0.013513513513513514,
+            "op": ">=",
+            "passed": false,
+            "value": 0.8
+          },
+          "terminal_marker_compliance": {
+            "group": "format",
+            "observed": 0.9158415841584159,
+            "op": ">=",
+            "passed": false,
+            "value": 0.99
+          },
+          "turn_2_posterior_constraint_violation_rate": {
+            "group": "posterior",
+            "observed": 0.7931034482758621,
+            "op": "<",
+            "passed": false,
+            "value": 0.3
+          },
+          "win_rate": {
+            "group": "gameplay",
+            "observed": 0.03125,
+            "op": ">=",
+            "passed": false,
+            "value": 0.25
+          }
+        },
+        "failures": [
+          "threshold_failed:terminal_marker_compliance",
+          "threshold_failed:invalid_guess_rate",
+          "threshold_failed:repeat_guess_rate",
+          "threshold_failed:gameplay_constraint_violation_rate",
+          "threshold_failed:posterior_constraint_violation_rate",
+          "threshold_failed:turn_2_posterior_constraint_violation_rate",
+          "threshold_failed:singleton_answer_accuracy",
+          "threshold_failed:win_rate"
+        ],
+        "groups": {
+          "format": false,
+          "gameplay": false,
+          "legality": false,
+          "posterior": false,
+          "retention": true,
+          "singleton": false
+        },
+        "locked_test_access": false,
+        "metrics": {
+          "action_target_accuracy": 0.0234375,
+          "gameplay_constraint_violation_rate": 0.7891891891891892,
+          "invalid_guess_rate": 0.08415841584158416,
+          "n_games": 32,
+          "posterior_consistency": 0.1171875,
+          "posterior_constraint_violation_rate": 0.8828125,
+          "repeat_guess_rate": 0.2864864864864865,
+          "retention_overall_score": 0.25,
+          "singleton_answer_accuracy": 0.013513513513513514,
+          "terminal_marker_compliance": 0.9158415841584159,
+          "turn_2_posterior_constraint_violation_rate": 0.7931034482758621,
+          "win_rate": 0.03125,
+          "wins": 1
+        },
+        "passed": false,
+        "preregistered": false,
+        "registration_status": "post_hoc_after_training_started",
+        "schema_version": "constraint-first-development-gates-v1"
+      }
+    },
+    {
+      "checkpoint": "step-000600",
+      "development_gates": {
+        "checks": {
+          "gameplay_constraint_violation_rate": {
+            "group": "legality",
+            "observed": 0.8052631578947368,
+            "op": "<=",
+            "passed": false,
+            "value": 0.3
+          },
+          "invalid_guess_rate": {
+            "group": "legality",
+            "observed": 0.05472636815920398,
+            "op": "<=",
+            "passed": false,
+            "value": 0.01
+          },
+          "posterior_constraint_violation_rate": {
+            "group": "posterior",
+            "observed": 0.8968253968253969,
+            "op": "<=",
+            "passed": false,
+            "value": 0.3
+          },
+          "repeat_guess_rate": {
+            "group": "legality",
+            "observed": 0.18947368421052632,
+            "op": "<=",
+            "passed": false,
+            "value": 0.1
+          },
+          "retention_overall_score": {
+            "group": "retention",
+            "observed": 0.25,
+            "op": ">=",
+            "passed": true,
+            "value": 0.2
+          },
+          "singleton_answer_accuracy": {
+            "group": "singleton",
+            "observed": 0.013513513513513514,
+            "op": ">=",
+            "passed": false,
+            "value": 0.8
+          },
+          "terminal_marker_compliance": {
+            "group": "format",
+            "observed": 0.945273631840796,
+            "op": ">=",
+            "passed": false,
+            "value": 0.99
+          },
+          "turn_2_posterior_constraint_violation_rate": {
+            "group": "posterior",
+            "observed": 0.8035714285714286,
+            "op": "<",
+            "passed": false,
+            "value": 0.3
+          },
+          "win_rate": {
+            "group": "gameplay",
+            "observed": 0.03125,
+            "op": ">=",
+            "passed": false,
+            "value": 0.25
+          }
+        },
+        "failures": [
+          "threshold_failed:terminal_marker_compliance",
+          "threshold_failed:invalid_guess_rate",
+          "threshold_failed:repeat_guess_rate",
+          "threshold_failed:gameplay_constraint_violation_rate",
+          "threshold_failed:posterior_constraint_violation_rate",
+          "threshold_failed:turn_2_posterior_constraint_violation_rate",
+          "threshold_failed:singleton_answer_accuracy",
+          "threshold_failed:win_rate"
+        ],
+        "groups": {
+          "format": false,
+          "gameplay": false,
+          "legality": false,
+          "posterior": false,
+          "retention": true,
+          "singleton": false
+        },
+        "locked_test_access": false,
+        "metrics": {
+          "action_target_accuracy": 0.023809523809523808,
+          "gameplay_constraint_violation_rate": 0.8052631578947368,
+          "invalid_guess_rate": 0.05472636815920398,
+          "n_games": 32,
+          "posterior_consistency": 0.10317460317460317,
+          "posterior_constraint_violation_rate": 0.8968253968253969,
+          "repeat_guess_rate": 0.18947368421052632,
+          "retention_overall_score": 0.25,
+          "singleton_answer_accuracy": 0.013513513513513514,
+          "terminal_marker_compliance": 0.945273631840796,
+          "turn_2_posterior_constraint_violation_rate": 0.8035714285714286,
+          "win_rate": 0.03125,
+          "wins": 1
+        },
+        "passed": false,
+        "preregistered": false,
+        "registration_status": "post_hoc_after_training_started",
+        "schema_version": "constraint-first-development-gates-v1"
+      }
+    }
+  ],
+  "evaluation_policy": {
+    "checkpoints": [
+      "step-000150",
+      "step-000300",
+      "step-000450",
+      "step-000600"
+    ],
+    "gate_thresholds": {
+      "gameplay_constraint_violation_rate": {
+        "group": "legality",
+        "op": "<=",
+        "value": 0.3
+      },
+      "invalid_guess_rate": {
+        "group": "legality",
+        "op": "<=",
+        "value": 0.01
+      },
+      "posterior_constraint_violation_rate": {
+        "group": "posterior",
+        "op": "<=",
+        "value": 0.3
+      },
+      "repeat_guess_rate": {
+        "group": "legality",
+        "op": "<=",
+        "value": 0.1
+      },
+      "retention_overall_score": {
+        "group": "retention",
+        "op": ">=",
+        "value": 0.2
+      },
+      "singleton_answer_accuracy": {
+        "group": "singleton",
+        "op": ">=",
+        "value": 0.8
+      },
+      "terminal_marker_compliance": {
+        "group": "format",
+        "op": ">=",
+        "value": 0.99
+      },
+      "turn_2_posterior_constraint_violation_rate": {
+        "group": "posterior",
+        "op": "<",
+        "value": 0.3
+      },
+      "win_rate": {
+        "group": "gameplay",
+        "op": ">=",
+        "value": 0.25
+      }
+    },
+    "interpretation_boundary": "post-hoc single-seed development comparison; thresholds and selection order were not used to define or alter the completed training run",
+    "locked_test_access": false,
+    "preregistered": false,
+    "registration_status": "post_hoc_after_training_started",
+    "schema_version": "constraint-first-post-hoc-evaluation-policy-v1",
+    "selection": "among gate-passing doses, minimize overall then turn-2 posterior violation; maximize singleton accuracy, format compliance, retention, and win rate; then minimize gameplay violations/repeats and prefer the earlier dose",
+    "training_objective": {
+      "description": "word-focused SFT over up to four deterministic legal labels per state; sampled support approximation, not a set-normalized loss",
+      "family": "sampled_multi_label_word_focused_sft",
+      "set_normalized_loss": false
+    }
+  },
+  "experiment_id": "GEMMA-CONSTRAINT-FIRST-POLICY-001",
+  "locked_test_access": false,
+  "locked_test_authorized": false,
+  "promotable_checkpoints": [],
+  "replication_allowed": false,
+  "run_dir": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\artifacts\\runs\\constraint-first-s2026-ac97761439",
+  "schema_version": "constraint-first-dose-evaluation-v1",
+  "selected_checkpoint": null,
+  "selection_contract": {
+    "preregistered": false,
+    "rank_order": [
+      "posterior_constraint_violation_rate ascending",
+      "turn_2_posterior_constraint_violation_rate ascending",
+      "singleton_answer_accuracy descending",
+      "terminal_marker_compliance descending",
+      "retention_overall_score descending",
+      "win_rate descending",
+      "gameplay_constraint_violation_rate ascending",
+      "repeat_guess_rate ascending",
+      "earlier checkpoint dose"
+    ],
+    "registration_status": "post_hoc_after_training_started",
+    "scope": "post-hoc single-seed development selection for replication only",
+    "singleton_correctness_mandatory": true
+  },
+  "single_seed": true,
+  "split": "dev",
+  "status": "evaluation_complete",
+  "thresholds": {
+    "gameplay_constraint_violation_rate": {
+      "group": "legality",
+      "op": "<=",
+      "value": 0.3
+    },
+    "invalid_guess_rate": {
+      "group": "legality",
+      "op": "<=",
+      "value": 0.01
+    },
+    "posterior_constraint_violation_rate": {
+      "group": "posterior",
+      "op": "<=",
+      "value": 0.3
+    },
+    "repeat_guess_rate": {
+      "group": "legality",
+      "op": "<=",
+      "value": 0.1
+    },
+    "retention_overall_score": {
+      "group": "retention",
+      "op": ">=",
+      "value": 0.2
+    },
+    "singleton_answer_accuracy": {
+      "group": "singleton",
+      "op": ">=",
+      "value": 0.8
+    },
+    "terminal_marker_compliance": {
+      "group": "format",
+      "op": ">=",
+      "value": 0.99
+    },
+    "turn_2_posterior_constraint_violation_rate": {
+      "group": "posterior",
+      "op": "<",
+      "value": 0.3
+    },
+    "win_rate": {
+      "group": "gameplay",
+      "op": ">=",
+      "value": 0.25
+    }
+  }
+}

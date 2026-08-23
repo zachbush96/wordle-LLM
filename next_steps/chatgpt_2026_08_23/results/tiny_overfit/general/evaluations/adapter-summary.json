@@ -1,0 +1,21 @@
+{
+  "bundle_manifest_sha256": "b01b108efd913edb99ffb7c116f7feb6b6404817044336926e0484c63012ac99",
+  "checkpoint": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\artifacts\\runs\\tiny-overfit-general-s2026-15451a8514\\checkpoints\\final",
+  "contrast_pair_exact_accuracy": 0.0,
+  "elapsed_s": 42.00083229999291,
+  "evaluation_label": "adapter",
+  "experiment_id": "GEMMA-270M-TINY-OVERFIT-001",
+  "items": 32,
+  "items_sha256": "cf680dbc2a283de380c118d0cff0915f04f24a0484102fdc343e3364dfda2f5e",
+  "locked_test_access": false,
+  "mean_reciprocal_rank": 1.0,
+  "mean_target_probability": 0.9999854245699916,
+  "mean_target_rank": 1,
+  "median_target_rank": 1.0,
+  "natural_exact_accuracy": 1.0,
+  "rows_sha256": "911767a1feda7ab3320fb97ef6870e305447811f2359b038b50a5aea7168fd3b",
+  "task": "state_action",
+  "terminal_compliance": 1.0,
+  "top_1_rank_accuracy": 1.0,
+  "universe_sha256": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac"
+}

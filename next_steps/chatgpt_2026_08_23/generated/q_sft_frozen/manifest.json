@@ -1,0 +1,165 @@
+{
+  "behavior_contract": {
+    "behavior_action": "top-level target_word exactly equal to the completion final answer",
+    "behavior_probability": "1 / behavior_support_size",
+    "behavior_support": "distinct behavior_action values grouped by source_state_id",
+    "policy_id": "BALANCED-002-EMPIRICAL-UNIFORM-001",
+    "source_state_id": "top-level state_id exactly equal to source_state.state_id",
+    "support_commitment": "sha256(canonical_json(sorted(behavior_support)))",
+    "uniform": true
+  },
+  "behavior_provenance": {
+    "behavior_actions": 378,
+    "checks": [
+      "duplicate_samples_share_state_action_metadata",
+      "uniform_probability_equals_reciprocal_support_size",
+      "probabilities_sum_to_one_per_state",
+      "support_hashes_recomputed_from_snapshot_actions"
+    ],
+    "locked_test_access": false,
+    "policy_id": "BALANCED-002-EMPIRICAL-UNIFORM-001",
+    "probability_bounds": [
+      1.0,
+      1.0
+    ],
+    "snapshot_rows": 512,
+    "source_states": 378,
+    "state_supports_sha256": "515e5ee91348cbfdeba46f0f0744803230e45ef2011631904c225727ebe89694",
+    "status": "passed",
+    "support_size_bounds": [
+      1,
+      1
+    ],
+    "support_size_distribution": {
+      "1": 378
+    },
+    "unique_behavior_actions": 117
+  },
+  "config_sha256": "b9bb589fb207a3c272474fdd641ab421b5e73770b5797bbb3ed5a0fc250f9fdd",
+  "emitted_snapshot_fields": [
+    "behavior_action",
+    "behavior_policy_id",
+    "behavior_probability",
+    "behavior_support_sha256",
+    "behavior_support_size",
+    "bellman_target",
+    "comparison_id",
+    "posterior_size",
+    "source_state_id",
+    "turn"
+  ],
+  "emitted_training_fields": [
+    "behavior_action",
+    "behavior_policy_id",
+    "behavior_probability",
+    "behavior_support_sha256",
+    "behavior_support_size",
+    "bellman_target",
+    "comparison_id",
+    "completion",
+    "example_id",
+    "posterior_size",
+    "prompt",
+    "source_state_id",
+    "turn"
+  ],
+  "experiment_id": "QSFT-BALANCED-002-FROZEN-001",
+  "files": {
+    "snapshots.jsonl": {
+      "rows": 512,
+      "sha256": "5a9efa4f88d7c0c07ac208dd2d57c1e69b27665627afc9617e5029003c9d8798"
+    },
+    "training_rows.jsonl": {
+      "rows": 512,
+      "sha256": "090e05b445a72b61e80ed33c7da552c1ec730e9863f7397cb8601ea93e328566"
+    }
+  },
+  "forbidden_fields_absent": true,
+  "locked_test_access": false,
+  "manifest_content_sha256": "74a0e2ddf5053eb5947d7511cb43353c3ecae114f07121edd073295b6d7909c8",
+  "protocol": {
+    "component_files_verified": 6,
+    "lock_file_sha256": "afb074f6aafa5d30b16595890c1087556c0b8078c92bceacc283a296c3a462e7",
+    "protocol_id": "WORDLE-PROTOCOL-002",
+    "protocol_sha256": "afb9884a341f51fbf9c902e07bb130c0a4d742f189aadb3dd0f9ce92fa0f681a",
+    "status": "passed"
+  },
+  "schema_version": "q-sft-frozen-bundle-v2",
+  "source": {
+    "curriculum_id": "COMMON-WORD-CURRICULUM-002",
+    "directory": "data/common-curriculum-002/u128-train96",
+    "source_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+    "source_training_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+    "state_manifest_sha256": "4ab23b5cd883d8ad9b542befadc23c2aec3a3d631b78f239bb551ca998fd6a3c",
+    "training_rows": 512
+  },
+  "target": {
+    "behavior_provenance": {
+      "behavior_actions": 378,
+      "checks": [
+        "duplicate_samples_share_state_action_metadata",
+        "uniform_probability_equals_reciprocal_support_size",
+        "probabilities_sum_to_one_per_state",
+        "support_hashes_recomputed_from_snapshot_actions"
+      ],
+      "locked_test_access": false,
+      "policy_id": "BALANCED-002-EMPIRICAL-UNIFORM-001",
+      "probability_bounds": [
+        1.0,
+        1.0
+      ],
+      "snapshot_rows": 512,
+      "source_states": 378,
+      "state_supports_sha256": "515e5ee91348cbfdeba46f0f0744803230e45ef2011631904c225727ebe89694",
+      "status": "passed",
+      "support_size_bounds": [
+        1,
+        1
+      ],
+      "support_size_distribution": {
+        "1": 378
+      },
+      "unique_behavior_actions": 117
+    },
+    "bounds": [
+      0.044845245811,
+      1.0
+    ],
+    "checks": [
+      "training_split_only",
+      "unique_comparison_ids",
+      "stable_source_state_ids",
+      "uniform_behavior_probabilities",
+      "behavior_support_commitments_recomputed",
+      "target_inputs_preserved_and_recomputed",
+      "bounded_targets",
+      "deterministic_sorted_output",
+      "no_secret_candidate_or_evaluator_fields"
+    ],
+    "contract_audit": {
+      "bounded_0_1": true,
+      "maximum": 1.0,
+      "minimum": 0.0078125,
+      "nondecreasing_with_guesses_remaining": true,
+      "nonincreasing_with_posterior_size": true,
+      "states_checked": 768,
+      "status": "passed"
+    },
+    "formula": "V0=0; Vk=1/P+(1-1/P)*gamma*V(k-1)",
+    "gamma": 0.99,
+    "locked_test_access": false,
+    "public_source_envelope_sha256": "19a5ea6dc2817710ba99819f077e37fe136f95f280b27053a5538167fa07668f",
+    "rows": 512,
+    "snapshot_rows_sha256": "5a9efa4f88d7c0c07ac208dd2d57c1e69b27665627afc9617e5029003c9d8798",
+    "status": "passed",
+    "target_id": "WORDLE-CONSERVATIVE-BELLMAN-001",
+    "turn_distribution": {
+      "1": 4,
+      "2": 279,
+      "3": 201,
+      "4": 19,
+      "5": 6,
+      "6": 3
+    }
+  }
+}

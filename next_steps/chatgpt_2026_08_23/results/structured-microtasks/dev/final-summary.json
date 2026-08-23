@@ -1,0 +1,133 @@
+{
+  "checkpoint": "final",
+  "decision": "development_gates_failed_stop_locked_test_closed",
+  "experiment_id": "STRUCTURED-MICROTASKS-SFT-001",
+  "gates": {
+    "checks": {
+      "candidate_invalid_reason_accuracy": false,
+      "candidate_validity_accuracy": false,
+      "constraint_merge_accuracy": false,
+      "coverage": false,
+      "feedback_decode_accuracy": false,
+      "full_policy_accuracy": false,
+      "full_policy_format_compliance": true,
+      "singleton_solve_accuracy": false
+    },
+    "passed": false,
+    "thresholds": {
+      "candidate_invalid_reason_accuracy_min": 0.75,
+      "candidate_validity_accuracy_min": 0.85,
+      "constraint_merge_accuracy_min": 0.8,
+      "coverage_min": 1.0,
+      "feedback_decode_accuracy_min": 0.8,
+      "full_policy_accuracy_min": 0.2,
+      "full_policy_format_compliance_min": 0.99,
+      "singleton_solve_accuracy_min": 0.8
+    }
+  },
+  "locked_test_access": false,
+  "metrics": {
+    "accuracy": 0.08388157894736842,
+    "by_task": {
+      "candidate_validity": {
+        "accuracy": 0.4270833333333333,
+        "correct": 41,
+        "predicted": 96,
+        "total": 96
+      },
+      "constraint_merge": {
+        "accuracy": 0.0078125,
+        "correct": 1,
+        "predicted": 121,
+        "total": 128
+      },
+      "feedback_decode": {
+        "accuracy": 0.0703125,
+        "correct": 9,
+        "predicted": 125,
+        "total": 128
+      },
+      "full_policy": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "predicted": 128,
+        "total": 128
+      },
+      "singleton_solve": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "predicted": 115,
+        "total": 128
+      }
+    },
+    "candidate_invalid_reason_accuracy": {
+      "duplicate-count": {
+        "accuracy": 0.125,
+        "correct": 1,
+        "total": 8
+      },
+      "gray": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 8
+      },
+      "green": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 8
+      },
+      "missing-required": {
+        "accuracy": 0.625,
+        "correct": 5,
+        "total": 8
+      },
+      "repeated-guess": {
+        "accuracy": 0.125,
+        "correct": 1,
+        "total": 8
+      },
+      "yellow": {
+        "accuracy": 0.125,
+        "correct": 1,
+        "total": 8
+      }
+    },
+    "correct": 51,
+    "coverage": 0.962171052631579,
+    "format_by_task": {
+      "candidate_validity": {
+        "compliance": 1.0,
+        "total": 96,
+        "valid": 96
+      },
+      "constraint_merge": {
+        "compliance": 0.9453125,
+        "total": 128,
+        "valid": 121
+      },
+      "feedback_decode": {
+        "compliance": 0.9765625,
+        "total": 128,
+        "valid": 125
+      },
+      "full_policy": {
+        "compliance": 1.0,
+        "total": 128,
+        "valid": 128
+      },
+      "singleton_solve": {
+        "compliance": 0.8984375,
+        "total": 128,
+        "valid": 115
+      }
+    },
+    "locked_test_access": false,
+    "natural_generation": true,
+    "output_repair": false,
+    "predicted": 585,
+    "records": 608
+  },
+  "natural_generation": true,
+  "split": "development_only",
+  "status": "dev_evaluated"
+}

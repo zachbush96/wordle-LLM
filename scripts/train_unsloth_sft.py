@@ -11,21 +11,34 @@ import unsloth  # noqa: F401
 import _bootstrap  # noqa: F401
 from wordle_lab.common import canonical_json, set_seed, sha256_file, write_json
 from wordle_lab.data.comparison import PARTITIONS
-from wordle_lab.methods.unsloth_sft import UNSLOTH_BACKEND_ID, select_nested_rows, train_unsloth_sft, unsloth_environment
+from wordle_lab.methods.unsloth_sft import (
+    UNSLOTH_BACKEND_ID,
+    UNSLOTH_WEIGHTED_BACKEND_ID,
+    select_nested_rows,
+    train_unsloth_sft,
+    unsloth_environment,
+)
 from wordle_lab.standalone import base_spec, comparison_context, prepare_run
 
 
-def build_spec(partition: str, seed: int, steps: int, learning_rate: float, train_states: int | None) -> dict:
+def build_spec(
+    partition: str,
+    seed: int,
+    steps: int,
+    learning_rate: float,
+    train_states: int | None,
+    word_token_weight: float = 1.0,
+) -> dict:
     spec = base_spec("unsloth-sft", partition, seed, steps, learning_rate)
     spec.update(
         {
-            "backend": UNSLOTH_BACKEND_ID,
+            "backend": UNSLOTH_WEIGHTED_BACKEND_ID if word_token_weight > 1 else UNSLOTH_BACKEND_ID,
             # The 16 GB 4060 Ti fits the declared effective batch directly;
             # one launch is materially faster than 4 x 4-step accumulation.
             "batch_size": 16,
             "gradient_accumulation_steps": 1,
             "train_state_limit": train_states,
-            "word_token_weight": 1.0,
+            "word_token_weight": word_token_weight,
             "quantization": "none_16bit",
             "gradient_checkpointing": "unsloth",
         }
@@ -42,6 +55,7 @@ def main() -> int:
     parser.add_argument("--steps", type=int, default=600)
     parser.add_argument("--seed", type=int, default=2026)
     parser.add_argument("--learning-rate", type=float, default=5e-5)
+    parser.add_argument("--word-token-weight", type=float, default=1.0)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -50,7 +64,14 @@ def main() -> int:
     selected_hash = hashlib.sha256("\n".join(canonical_json(row) for row in rows).encode("utf-8")).hexdigest()
     source_hash = sha256_file(data_dir / f"{args.partition}.jsonl")
     manifest_hash = sha256_file(data_dir / "manifest.json")
-    spec = build_spec(args.partition, args.seed, args.steps, args.learning_rate, args.train_states)
+    spec = build_spec(
+        args.partition,
+        args.seed,
+        args.steps,
+        args.learning_rate,
+        args.train_states,
+        args.word_token_weight,
+    )
     spec["data"] = {
         "directory": str(data_dir),
         "training_rows": len(rows),

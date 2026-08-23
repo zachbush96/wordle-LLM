@@ -1,0 +1,14 @@
+{
+  "activation_allocator_margin_bytes": 2147483648,
+  "bf16_supported": true,
+  "estimated_parameter_state_bytes": 3217178112,
+  "free_vram_bytes": 15975055360,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "model_loaded": false,
+  "parameter_count": 268098176,
+  "read_only": true,
+  "ready": true,
+  "required_free_vram_bytes": 5364661760,
+  "status": "ready_for_full_allocation",
+  "total_vram_bytes": 17175150592
+}

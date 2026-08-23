@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import importlib.metadata
 import math
+import os
 import time
 from pathlib import Path
 from typing import Sequence
@@ -11,11 +12,28 @@ import torch
 from torch.utils.data import DataLoader
 
 from wordle_lab.common import MODEL_DIR, write_json, write_jsonl
-from wordle_lab.methods.sft import Collator, CompletionDataset
+from wordle_lab.methods.sft import Collator, CompletionDataset, weighted_causal_lm_loss
 from wordle_lab.models import assert_supported_model
 
 
 UNSLOTH_BACKEND_ID = "UNSLOTH-GEMMA-SFT-001"
+UNSLOTH_WEIGHTED_BACKEND_ID = "UNSLOTH-GEMMA-WEIGHTED-SFT-002"
+UNSLOTH_BACKEND_IDS = frozenset({UNSLOTH_BACKEND_ID, UNSLOTH_WEIGHTED_BACKEND_ID})
+
+
+def validate_unsloth_objective(spec: dict) -> tuple[str, float]:
+    """Validate the versioned loss contract without loading a model."""
+    backend = str(spec.get("backend", UNSLOTH_BACKEND_ID))
+    if backend not in UNSLOTH_BACKEND_IDS:
+        raise ValueError(f"unsupported Unsloth backend: {backend}")
+    word_token_weight = float(spec.get("word_token_weight", 1.0))
+    if word_token_weight < 1.0:
+        raise ValueError("word_token_weight must be at least 1")
+    if backend == UNSLOTH_BACKEND_ID and word_token_weight != 1.0:
+        raise ValueError("UNSLOTH-GEMMA-SFT-001 preregisters completion-only loss")
+    if backend == UNSLOTH_WEIGHTED_BACKEND_ID and word_token_weight <= 1.0:
+        raise ValueError("UNSLOTH-GEMMA-WEIGHTED-SFT-002 requires word_token_weight > 1")
+    return backend, word_token_weight
 
 
 def select_nested_rows(rows: Sequence[dict], limit: int | None) -> list[dict]:
@@ -46,13 +64,12 @@ def unsloth_environment() -> dict:
     }
 
 
-def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[object, object, dict]:
+def _train_unsloth_sft_impl(rows: list[dict], run_dir: Path, spec: dict) -> tuple[object, object, dict]:
     """Train a 16-bit LoRA through Unsloth while preserving the existing SFT envelope."""
     assert_supported_model()
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA is required for Unsloth model experiments")
-    if float(spec.get("word_token_weight", 1.0)) != 1.0:
-        raise ValueError("UNSLOTH-GEMMA-SFT-001 preregisters completion-only loss")
+    backend_id, word_token_weight = validate_unsloth_objective(spec)
 
     try:
         from unsloth import FastModel
@@ -73,6 +90,7 @@ def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[obje
         use_exact_model_name=True,
         local_files_only=True,
         fullgraph=False,
+        return_logits=word_token_weight > 1,
         random_state=int(spec["seed"]),
     )
     if tokenizer.pad_token_id is None:
@@ -88,7 +106,12 @@ def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[obje
         random_state=int(spec["seed"]),
     )
 
-    dataset = CompletionDataset(rows, tokenizer, int(spec["max_length"]))
+    dataset = CompletionDataset(
+        rows,
+        tokenizer,
+        int(spec["max_length"]),
+        word_token_weight=word_token_weight,
+    )
     generator = torch.Generator().manual_seed(int(spec["seed"]))
     loader = DataLoader(
         dataset,
@@ -118,6 +141,7 @@ def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[obje
     optimizer.zero_grad(set_to_none=True)
     log_rows = []
     optimizer_tokens = 0
+    weighted_completion_tokens = 0.0
     checkpoints = sorted({max(1, round(max_steps * fraction)) for fraction in (0.25, 0.5, 0.75, 1.0)})
     iterator = iter(loader)
     for step in range(1, max_steps + 1):
@@ -129,11 +153,21 @@ def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[obje
             except StopIteration:
                 iterator = iter(loader)
                 batch = next(iterator)
-            batch = {key: value.to("cuda") for key, value in batch.items() if key != "loss_weights"}
-            loss = model(**batch).loss
+            batch = {key: value.to("cuda") for key, value in batch.items()}
+            loss_weights = batch.pop("loss_weights")
+            if word_token_weight == 1.0:
+                loss = model(**batch).loss
+            else:
+                output = model(
+                    input_ids=batch["input_ids"],
+                    attention_mask=batch["attention_mask"],
+                    use_cache=False,
+                )
+                loss = weighted_causal_lm_loss(output.logits, batch["labels"], loss_weights)
             (loss / accumulation).backward()
             losses.append(float(loss.detach()))
             step_tokens += int(batch["attention_mask"].sum())
+            weighted_completion_tokens += float(loss_weights.sum())
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         optimizer.step()
         scheduler.step()
@@ -157,7 +191,7 @@ def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[obje
     model.save_pretrained(final)
     tokenizer.save_pretrained(final)
     accounting = {
-        "backend": unsloth_environment(),
+        "backend": {**unsloth_environment(), "backend_id": backend_id},
         "train_examples": len(dataset),
         "optimizer_steps": max_steps,
         "effective_batch_size": int(spec["batch_size"]) * accumulation,
@@ -168,7 +202,9 @@ def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[obje
         "total_parameters": total,
         "trainable_fraction": trainable / total,
         "checkpoint_steps": checkpoints,
-        "loss_mode": "completion",
+        "loss_mode": "word_focused" if word_token_weight > 1 else "completion",
+        "word_token_weight": word_token_weight,
+        "weighted_completion_tokens": weighted_completion_tokens,
         "quantization": "none_16bit",
         "adapter": {
             "type": "lora",
@@ -183,3 +219,21 @@ def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[obje
     model.config.use_cache = True
     model.eval()
     return model, tokenizer, accounting
+
+
+def train_unsloth_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[object, object, dict]:
+    """Run Unsloth with any weighted-logit opt-in scoped to this call."""
+    _, word_token_weight = validate_unsloth_objective(spec)
+    env_name = "UNSLOTH_RETURN_LOGITS"
+    previous = os.environ.get(env_name)
+    if word_token_weight > 1:
+        # Unsloth normally substitutes an EmptyLogits sentinel to save memory.
+        # The weighted causal objective needs real logits, so opt in explicitly.
+        os.environ[env_name] = "1"
+    try:
+        return _train_unsloth_sft_impl(rows, run_dir, spec)
+    finally:
+        if previous is None:
+            os.environ.pop(env_name, None)
+        else:
+            os.environ[env_name] = previous

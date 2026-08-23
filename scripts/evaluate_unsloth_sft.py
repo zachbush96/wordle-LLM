@@ -11,7 +11,7 @@ import _bootstrap  # noqa: F401
 from wordle_lab.analysis.state_diagnostics import run_state_diagnostics
 from wordle_lab.common import DATA, read_json, read_jsonl, write_json, write_jsonl
 from wordle_lab.data.comparison import audit_comparison_bundle, default_directory
-from wordle_lab.methods.unsloth_sft import UNSLOTH_BACKEND_ID
+from wordle_lab.methods.unsloth_sft import UNSLOTH_BACKEND_IDS
 from wordle_lab.models import load_adapter, load_tokenizer
 from wordle_lab.protocol.evaluator import evaluate
 from wordle_lab.protocol.retention import evaluate_retention
@@ -29,7 +29,7 @@ def main() -> int:
     args = parser.parse_args()
 
     spec = read_json(args.run_dir / "spec.json")
-    if spec.get("backend") != UNSLOTH_BACKEND_ID or spec.get("locked_test_access") is not False:
+    if spec.get("backend") not in UNSLOTH_BACKEND_IDS or spec.get("locked_test_access") is not False:
         raise RuntimeError("run is not a locked-test-free Unsloth Gemma SFT artifact")
     audit = audit_comparison_bundle(args.data_dir)
     checkpoint = args.run_dir / "checkpoints" / args.checkpoint

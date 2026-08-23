@@ -1,0 +1,184 @@
+{
+  "comparison_contract": {
+    "comparator_backend": "native_transformers_peft_lora",
+    "comparator_run_id": "sft-common-balanced-word-s2026-0649b4deeb",
+    "declared_unavoidable_difference": "historical PEFT LoRA trainables were FP32 while full-model trainables use BF16; the forward base revision and BF16 model path remain fixed",
+    "intended_difference": "all model parameters trainable instead of rank-16 LoRA parameters",
+    "interpretation": "single-seed matched trainable-scope ablation",
+    "matched": true,
+    "matched_to_lora": [
+      "base_model_revision",
+      "training_rows_and_order",
+      "seed",
+      "learning_rate",
+      "batch_size_and_accumulation",
+      "effective_batch_size",
+      "max_length",
+      "word_token_weighted_objective",
+      "optimizer_and_scheduler",
+      "prompt_representation",
+      "development_evaluation",
+      "checkpoint_doses"
+    ]
+  },
+  "experiment_id": "GEMMA-270M-LORA-VS-FULL-001",
+  "experiment_mode": "matched_primary",
+  "full_parameter_condition": {
+    "backend": "GEMMA-270M-FULL-FINETUNE-001",
+    "batch_size": 4,
+    "checkpoint_steps": [
+      150,
+      300,
+      450,
+      600
+    ],
+    "data": {
+      "canonical_sha256": "6bfefc11ce390048ca3cfcb8d44db4f583501d5174dc89d3140caccc49cf958f",
+      "dev_secret_count": 32,
+      "dev_secrets_sha256": "e94dea81d06f464a55ea7463b36837c998d1e405ef3f1e6e0500c78ea627c8a2",
+      "locked_test_access": false,
+      "manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+      "rendered_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+      "rows": 512,
+      "state_manifest_sha256": "4ab23b5cd883d8ad9b542befadc23c2aec3a3d631b78f239bb551ca998fd6a3c",
+      "train_secret_count": 96,
+      "train_secrets_sha256": "e8ace1e06a6f35a1b600702099c029e232b6124fe76265a5cf4da2d981386a4e",
+      "universe_sha256": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac"
+    },
+    "effective_batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 5e-05,
+    "max_length": 320,
+    "max_steps": 600,
+    "model": {
+      "architecture": "Gemma3ForCausalLM",
+      "downloaded_at": "2026-08-14T12:40:39.993342+00:00",
+      "gemma_270m_only": true,
+      "hidden_size": 640,
+      "local_path": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\models\\base\\google--gemma-3-270m-it",
+      "model_id": "google/gemma-3-270m-it",
+      "model_type": "gemma3_text",
+      "num_hidden_layers": 18,
+      "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3"
+    },
+    "optimizer": "torch.optim.AdamW",
+    "protocol": {
+      "allowed_words_sha256": "9df5dad1b44cf1b9e0fa7c3ebff94d69ff7efb59f8691ac88e74e1c7b3da121e",
+      "component_files": {
+        "env.py": "9764ead89aee0332b385a63a6859b49f2bcd8317941b8d9813e4ae0621dd0871",
+        "evaluator.py": "ea5d3205cfb59f81e2fe68593440a6a581e30a14dd777ca33201258b23b7b53c",
+        "generation.py": "f231f10442ae8c821beb8d4390661c9a218f3c4a333be5e56cb7439daa47210b",
+        "parsing.py": "018757e458b5ad71f9e726a276dadce75e53ea2032b4d9d28c51e19aa7611cd4",
+        "prompting.py": "094a3170e4f97c00e07ccf35e25b1b9760b9932c5c5ed40a9a447b11a88bdd16",
+        "retention.py": "7a76161392cbfd9499b51cbe611f50d9bc00c51c825016bb9588b9dcce3fe011"
+      },
+      "lock_file_sha256": "afb074f6aafa5d30b16595890c1087556c0b8078c92bceacc283a296c3a462e7",
+      "locked_test_access": false,
+      "protocol_id": "WORDLE-PROTOCOL-002",
+      "protocol_sha256": "afb9884a341f51fbf9c902e07bb130c0a4d742f189aadb3dd0f9ce92fa0f681a",
+      "retention_probes_sha256": "f510af87dfb67f3200ec39982e3470a5b08c40ac3e444f35712c603da07975c6",
+      "status": "passed"
+    },
+    "scheduler": "linear_warmup_5pct_cosine",
+    "seed": 2026,
+    "trainable_scope": "all_model_parameters",
+    "word_token_weight": 8.0
+  },
+  "full_spec_sha256": "57ba532ae7666eac2f873fb5599c18b4b66d078240f24b5dbaaa2695f42e729f",
+  "locked_test_access": false,
+  "matched": true,
+  "native_transformers_lora": {
+    "accounting": {
+      "checkpoint_steps": [
+        150,
+        300,
+        450,
+        600
+      ],
+      "effective_batch_size": 4,
+      "loss_mode": "word_focused",
+      "optimizer_steps": 600,
+      "total_parameters": 271895168,
+      "train_examples": 512,
+      "trainable_parameters": 3796992,
+      "word_token_weight": 8.0
+    },
+    "accounting_sha256": "4a46e116d8d998ec20c6f05ebd74b2cd8c4525feb52f9dad8cc22327940625b4",
+    "backend": "native_transformers_peft_lora",
+    "checkpoint_adapter_tree_sha256": {
+      "final": "7deadbb541d4059d5e90958cf4d83670da490b97b63512509fe45498da6c665a",
+      "step-000150": "6b40afa18ff3d737adafe03d5f8c282d5dbc5ee230aed4b80e8048a6ca2b59cc",
+      "step-000300": "c4e6c516ca3d5fa80955da591379121a372e5ea1905c6e90fb5f433b3c04ba08",
+      "step-000450": "38d1bb27cf0474d0e38b969338e595fd32ea9b51d249debb6fbe25dcba02450e",
+      "step-000600": "7deadbb541d4059d5e90958cf4d83670da490b97b63512509fe45498da6c665a"
+    },
+    "dataset_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+    "final_adapter_files": {
+      "README.md": {
+        "bytes": 5330,
+        "sha256": "f92aa7225d62d0b865fb23b7d8b67b06905fcb879c842c3c5dfd4e98a45fe3d4"
+      },
+      "adapter_config.json": {
+        "bytes": 1279,
+        "sha256": "dd992d61ccb2ffbf4ca814c073033f731c1fb51674143daa6060e427525d36e5"
+      },
+      "adapter_model.safetensors": {
+        "bytes": 15220968,
+        "sha256": "6404d0d4c06f2c2cc2dcd871fc7a6dd7b05201057d11d6be613e3188c76a2817"
+      },
+      "chat_template.jinja": {
+        "bytes": 1579,
+        "sha256": "e0a1e0983c75b0198f1045cbb20c64506a9ffb30925bd44feba0b91acf2d4f43"
+      },
+      "tokenizer.json": {
+        "bytes": 33384567,
+        "sha256": "daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726"
+      },
+      "tokenizer_config.json": {
+        "bytes": 754,
+        "sha256": "fbdef0b792b86f66d068f34b7aff57bac5704dd265e1adc9f22596c9207a4555"
+      }
+    },
+    "final_adapter_tree_sha256": "7deadbb541d4059d5e90958cf4d83670da490b97b63512509fe45498da6c665a",
+    "locked_test_access": false,
+    "provenance_limitations": [
+      "artifact directory is git-ignored and has no source-commit binding",
+      "optimizer, scheduler, RNG, and trainer state were not saved for deterministic resume",
+      "historical summary curriculum label was corrected after evaluation; spec and dataset hashes are primary evidence",
+      "historical comparator summary has no retention result or embedded protocol hash"
+    ],
+    "recipe": {
+      "batch_size": 4,
+      "gradient_accumulation_steps": 1,
+      "learning_rate": 5e-05,
+      "lora": {
+        "alpha": 32,
+        "dropout": 0.05,
+        "r": 16,
+        "target_modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "gate_proj",
+          "up_proj",
+          "down_proj"
+        ]
+      },
+      "max_length": 320,
+      "max_steps": 600,
+      "method": "sft",
+      "prompt_version": "explicit-constraints-v2-compact",
+      "representation": "common_balanced_curriculum",
+      "seed": 2026,
+      "word_token_weight": 8.0
+    },
+    "run_directory": "artifacts/runs/sft-common-balanced-word-s2026-0649b4deeb",
+    "run_id": "sft-common-balanced-word-s2026-0649b4deeb",
+    "spec_sha256": "655972a100f33ca26d0e7834f602de9856f88aed89107aed67e6426f9d8c95bc",
+    "status": "passed",
+    "summary_sha256": "5501c697996717e9a67be75e90f1ee57dbaefa90a29899b733bbdd8f0d093b9d",
+    "tree_hash_algorithm": "sha256(canonical_json({relative_path: {bytes, sha256}}))"
+  },
+  "schema_version": "gemma-270m-lora-vs-full-v1"
+}

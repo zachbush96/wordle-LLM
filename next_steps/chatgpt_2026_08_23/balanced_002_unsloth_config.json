@@ -1,0 +1,97 @@
+{
+  "experiment_id": "UNSLOTH-BALANCED-002-WORD8-001",
+  "protocol_id": "WORDLE-PROTOCOL-002",
+  "protocol_sha256": "afb9884a341f51fbf9c902e07bb130c0a4d742f189aadb3dd0f9ce92fa0f681a",
+  "protocol_lock": "data/protocol-002/protocol_lock.json",
+  "protocol_component_hashes": {
+    "env.py": "9764ead89aee0332b385a63a6859b49f2bcd8317941b8d9813e4ae0621dd0871",
+    "evaluator.py": "ea5d3205cfb59f81e2fe68593440a6a581e30a14dd777ca33201258b23b7b53c",
+    "generation.py": "f231f10442ae8c821beb8d4390661c9a218f3c4a333be5e56cb7439daa47210b",
+    "parsing.py": "018757e458b5ad71f9e726a276dadce75e53ea2032b4d9d28c51e19aa7611cd4",
+    "prompting.py": "094a3170e4f97c00e07ccf35e25b1b9760b9932c5c5ed40a9a447b11a88bdd16",
+    "retention.py": "7a76161392cbfd9499b51cbe611f50d9bc00c51c825016bb9588b9dcce3fe011"
+  },
+  "backend": "UNSLOTH-GEMMA-WEIGHTED-SFT-002",
+  "model": {
+    "model_id": "google/gemma-3-270m-it",
+    "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3"
+  },
+  "data": {
+    "curriculum_id": "COMMON-WORD-CURRICULUM-002",
+    "directory": "data/common-curriculum-002/u128-train96",
+    "comparison_split_directory": "data/gemma-270m-comparison-v1/u128-train96-n4096",
+    "training_file": "train.jsonl",
+    "training_rows": 512,
+    "hashes": {
+      "canonical.jsonl": "6bfefc11ce390048ca3cfcb8d44db4f583501d5174dc89d3140caccc49cf958f",
+      "dev_secrets.json": "e94dea81d06f464a55ea7463b36837c998d1e405ef3f1e6e0500c78ea627c8a2",
+      "manifest.json": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+      "recovery_states.jsonl": "5e4fa0388a85c55c47f99626cff8843953fcaaf2c5531277567b91d1c7eafa3b",
+      "state_manifest.jsonl": "4ab23b5cd883d8ad9b542befadc23c2aec3a3d631b78f239bb551ca998fd6a3c",
+      "train.jsonl": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+      "train_secrets.json": "e8ace1e06a6f35a1b600702099c029e232b6124fe76265a5cf4da2d981386a4e",
+      "universe.json": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac"
+    },
+    "prompt_renderer": "explicit-constraints-v2-compact",
+    "state_copy_cap": 4,
+    "target_word_cap": 8,
+    "universe_size": 128,
+    "train_secret_count": 96,
+    "dev_secret_count": 32
+  },
+  "seed": 2026,
+  "max_steps": 600,
+  "learning_rate": 0.00005,
+  "batch_size": 4,
+  "gradient_accumulation_steps": 1,
+  "max_length": 320,
+  "precision": "bfloat16",
+  "quantization": "none_16bit",
+  "gradient_checkpointing": "unsloth",
+  "word_token_weight": 8.0,
+  "checkpoint_steps": [150, 300, 450, 600],
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "evaluation": {
+    "allowed_words": "data/wordlists/tabatkins_wordle_list_pinned.txt",
+    "allowed_words_sha256": "9df5dad1b44cf1b9e0fa7c3ebff94d69ff7efb59f8691ac88e74e1c7b3da121e",
+    "dev_games": 32,
+    "diagnostic_items": 128,
+    "prompt_variant": "explicit_feedback",
+    "primary_decoder": "greedy",
+    "sensitivity_decoder": "greedy_rep105",
+    "checkpoints": [
+      "step-000150",
+      "step-000300",
+      "step-000450",
+      "step-000600"
+    ],
+    "retention_probes": "data/protocol-002/retention_probes_v1.jsonl",
+    "retention_probe_count": 200
+  },
+  "promotion_gates": {
+    "terminal_compliance_min": 0.99,
+    "turn_2_constraint_violation_max": 0.30,
+    "singleton_answer_accuracy_min": 0.80
+  },
+  "locked_test_access": false,
+  "candidate_injection": false,
+  "vocabulary_masking": false,
+  "reranking": false,
+  "repeat_ban": false,
+  "output_repair": false,
+  "harness_selected_guess": false,
+  "output_root": "artifacts/runs"
+}

@@ -1,0 +1,54 @@
+{
+  "audit": {
+    "checks": [
+      "exact_content_hashes",
+      "matched_u128_train96_dev32_split",
+      "training_only_secret_provenance",
+      "feedback_recomputed",
+      "secret_retained_in_posterior",
+      "oracle_target_and_completion_match",
+      "explicit_prompt_exact_match",
+      "state_manifest_exact_projection",
+      "state_and_target_caps",
+      "allowed_word_hash"
+    ],
+    "curriculum_id": "COMMON-WORD-CURRICULUM-002",
+    "dev_secret_count": 32,
+    "directory": "C:\\Users\\zachb\\OneDrive\\Documents\\ChatGPT\\Wordle LLM\\data\\common-curriculum-002\\u128-train96",
+    "hashes": {
+      "canonical.jsonl": "6bfefc11ce390048ca3cfcb8d44db4f583501d5174dc89d3140caccc49cf958f",
+      "dev_secrets.json": "e94dea81d06f464a55ea7463b36837c998d1e405ef3f1e6e0500c78ea627c8a2",
+      "manifest.json": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+      "recovery_states.jsonl": "5e4fa0388a85c55c47f99626cff8843953fcaaf2c5531277567b91d1c7eafa3b",
+      "state_manifest.jsonl": "4ab23b5cd883d8ad9b542befadc23c2aec3a3d631b78f239bb551ca998fd6a3c",
+      "train.jsonl": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+      "train_secrets.json": "e8ace1e06a6f35a1b600702099c029e232b6124fe76265a5cf4da2d981386a4e",
+      "universe.json": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac"
+    },
+    "locked_test_file_read": false,
+    "prompt_renderer": "explicit-constraints-v2-compact",
+    "split_identity_with_comparison_bundle": true,
+    "state_copy_max": 4,
+    "status": "passed",
+    "target_word_max": 8,
+    "train_dev_overlap": 0,
+    "train_secret_count": 96,
+    "training_rows": 512,
+    "unique_source_states": 378
+  },
+  "curriculum_id": "COMMON-WORD-CURRICULUM-002",
+  "dev_probe_role": "evaluation_only_never_training",
+  "experiment_id": "UNSLOTH-BALANCED-002-WORD8-001",
+  "hashes": {
+    "canonical.jsonl": "6bfefc11ce390048ca3cfcb8d44db4f583501d5174dc89d3140caccc49cf958f",
+    "dev_secrets.json": "e94dea81d06f464a55ea7463b36837c998d1e405ef3f1e6e0500c78ea627c8a2",
+    "manifest.json": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+    "recovery_states.jsonl": "5e4fa0388a85c55c47f99626cff8843953fcaaf2c5531277567b91d1c7eafa3b",
+    "state_manifest.jsonl": "4ab23b5cd883d8ad9b542befadc23c2aec3a3d631b78f239bb551ca998fd6a3c",
+    "train.jsonl": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+    "train_secrets.json": "e8ace1e06a6f35a1b600702099c029e232b6124fe76265a5cf4da2d981386a4e",
+    "universe.json": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac"
+  },
+  "locked_test_access": false,
+  "source_directory": "data/common-curriculum-002/u128-train96"
+}

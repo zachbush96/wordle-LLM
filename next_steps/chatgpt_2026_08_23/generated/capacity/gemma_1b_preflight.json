@@ -1,0 +1,20 @@
+{
+  "credentials_recorded": false,
+  "download_attempted": false,
+  "experiment_id": "GEMMA-SAME-FAMILY-CAPACITY-001",
+  "gated": "manual",
+  "huggingface_authenticated": false,
+  "local": {
+    "available": false,
+    "reason": "local_snapshot_missing"
+  },
+  "locked_test_access": false,
+  "model_id": "google/gemma-3-1b-it",
+  "pinned_revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+  "private": false,
+  "ready": false,
+  "reason": "no Hugging Face token is configured; gated files cannot be downloaded",
+  "remote_revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+  "remote_revision_matches": true,
+  "status": "blocked_missing_huggingface_auth_for_gated_model"
+}

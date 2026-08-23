@@ -95,8 +95,16 @@ def weighted_causal_lm_loss(logits: torch.Tensor, labels: torch.Tensor, weights:
     return (token_losses * active_weights).sum() / active_weights.sum().clamp_min(1.0)
 
 
-def train_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[object, dict]:
-    tokenizer = load_tokenizer()
+def train_sft(
+    rows: list[dict],
+    run_dir: Path,
+    spec: dict,
+    *,
+    tokenizer_loader=None,
+    model_loader=None,
+) -> tuple[object, dict]:
+    """Train SFT with the pinned loaders, or explicit loaders for a declared ablation."""
+    tokenizer = (tokenizer_loader or load_tokenizer)()
     word_token_weight = float(spec.get("word_token_weight", 1.0))
     dataset = CompletionDataset(rows, tokenizer, int(spec["max_length"]), word_token_weight=word_token_weight)
     generator = torch.Generator().manual_seed(int(spec["seed"]))
@@ -104,7 +112,7 @@ def train_sft(rows: list[dict], run_dir: Path, spec: dict) -> tuple[object, dict
         dataset, batch_size=int(spec["batch_size"]), shuffle=spec["representation"] != "mixed_curriculum", generator=generator,
         collate_fn=Collator(tokenizer.pad_token_id), drop_last=False,
     )
-    model = load_base_model(training=True)
+    model = (model_loader or load_base_model)(training=True)
     adapter_config = normalize_adapter_config(spec)
     parent = spec.get("parent_checkpoint", "base")
     if parent != "base":

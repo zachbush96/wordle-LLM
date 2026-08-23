@@ -1,0 +1,93 @@
+{
+  "experiment_id": "QSFT-BALANCED-002-FROZEN-001",
+  "protocol_id": "WORDLE-PROTOCOL-002",
+  "protocol_sha256": "afb9884a341f51fbf9c902e07bb130c0a4d742f189aadb3dd0f9ce92fa0f681a",
+  "model": {
+    "model_id": "google/gemma-3-270m-it",
+    "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3"
+  },
+  "method": "q_sft",
+  "objective": "bellman_likelihood_uniform_wce",
+  "target": {
+    "target_id": "WORDLE-CONSERVATIVE-BELLMAN-001",
+    "formula": "V0=0; Vk=1/P+(1-1/P)*gamma*V(k-1)",
+    "gamma": 0.99,
+    "universe_size": 128,
+    "max_valid_guesses": 6,
+    "inputs": [
+      "posterior_size",
+      "turn"
+    ]
+  },
+  "behavior_provenance": {
+    "policy_id": "BALANCED-002-EMPIRICAL-UNIFORM-001",
+    "source_state_id": "top-level state_id exactly equal to source_state.state_id",
+    "behavior_action": "top-level target_word exactly equal to the completion final answer",
+    "behavior_support": "distinct behavior_action values grouped by source_state_id",
+    "behavior_probability": "1 / behavior_support_size",
+    "support_commitment": "sha256(canonical_json(sorted(behavior_support)))",
+    "uniform": true
+  },
+  "data": {
+    "curriculum_id": "COMMON-WORD-CURRICULUM-002",
+    "directory": "data/common-curriculum-002/u128-train96",
+    "training_file": "train.jsonl",
+    "training_rows": 512,
+    "source_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+    "source_training_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+    "state_manifest_sha256": "4ab23b5cd883d8ad9b542befadc23c2aec3a3d631b78f239bb551ca998fd6a3c"
+  },
+  "warm_start": {
+    "required": true,
+    "expected_parent_run_id": "sft-common-balanced-word-s2026-0649b4deeb",
+    "expected_checkpoint": "final",
+    "expected_parent_method": "sft",
+    "expected_parent_curriculum_id": "COMMON-WORD-CURRICULUM-002",
+    "expected_parent_seed": 2026,
+    "expected_parent_word_token_weight": 8.0,
+    "expected_parent_spec_sha256": "655972a100f33ca26d0e7834f602de9856f88aed89107aed67e6426f9d8c95bc",
+    "expected_parent_dataset_manifest_sha256": "091681fd66f3af5b1e329fe457de6ffac0247421e83a04c8d68d95489be26889",
+    "expected_parent_adapter_tree_sha256": "074f3a7fe657e34a50cb67f1bf121d61a7c5d5978234c2cc203604ba20e8b833"
+  },
+  "training": {
+    "seed": 2026,
+    "max_steps": 100,
+    "learning_rate": 0.00005,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "max_length": 320,
+    "warmup_fraction": 0.05,
+    "max_grad_norm": 1.0,
+    "discount": 0.99,
+    "lora": {
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ]
+    }
+  },
+  "evaluation": {
+    "split": "dev",
+    "dev_games": 32,
+    "diagnostic_items": 128,
+    "retention_probes": "data/protocol-002/retention_probes_v1.jsonl",
+    "natural_generation": true,
+    "prompt_version": "reasoning-envelope-v1",
+    "decoder": "frozen_greedy"
+  },
+  "locked_test_access": false,
+  "candidate_injection": false,
+  "vocabulary_masking": false,
+  "reranking": false,
+  "repeat_ban": false,
+  "output_repair": false,
+  "harness_selected_guess": false
+}

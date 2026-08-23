@@ -1,0 +1,58 @@
+{
+  "causal_claim_boundary": "matched single-seed diagnostic; not replicated superiority",
+  "checkpoint": "step-000600",
+  "delta_full_minus_lora": {
+    "action_target_accuracy": 0.2265625,
+    "invalid_guess_rate": -0.10795454545454546,
+    "posterior_constraint_violation_rate": -0.21875,
+    "repeat_guess_rate": -0.1597913905869277,
+    "singleton_answer_accuracy": -0.02702702702702703,
+    "terminal_marker_compliance": 0.10795454545454541,
+    "turn_2_posterior_constraint_violation_rate": -0.4482758620689655,
+    "win_rate": 0.1875,
+    "wins": 6
+  },
+  "experiment_id": "GEMMA-270M-LORA-VS-FULL-001",
+  "full_parameter": {
+    "evaluation_summary_sha256": "8074f82255e4e523b36165b32a105820bf47291b84f3820877409416e7a1ac0d",
+    "metrics": {
+      "action_target_accuracy": 0.3671875,
+      "invalid_guess_rate": 0.0,
+      "posterior_constraint_violation_rate": 0.609375,
+      "repeat_guess_rate": 0.11409395973154363,
+      "singleton_answer_accuracy": 0.02702702702702703,
+      "terminal_marker_compliance": 1.0,
+      "turn_2_posterior_constraint_violation_rate": 0.3448275862068966,
+      "win_rate": 0.4375,
+      "wins": 14
+    },
+    "run_directory": "artifacts/runs/full-finetune-balanced-word-primary-s2026-57ba532ae7"
+  },
+  "intended_difference": "all model parameters trainable instead of rank-16 LoRA parameters",
+  "locked_test_access": false,
+  "native_transformers_lora": {
+    "metrics": {
+      "action_target_accuracy": 0.140625,
+      "invalid_guess_rate": 0.10795454545454546,
+      "posterior_constraint_violation_rate": 0.828125,
+      "repeat_guess_rate": 0.27388535031847133,
+      "singleton_answer_accuracy": 0.05405405405405406,
+      "terminal_marker_compliance": 0.8920454545454546,
+      "turn_2_posterior_constraint_violation_rate": 0.7931034482758621,
+      "win_rate": 0.25,
+      "wins": 8
+    },
+    "provenance_limitations": [
+      "artifact directory is git-ignored and has no source-commit binding",
+      "optimizer, scheduler, RNG, and trainer state were not saved for deterministic resume",
+      "historical summary curriculum label was corrected after evaluation; spec and dataset hashes are primary evidence",
+      "historical comparator summary has no retention result or embedded protocol hash"
+    ],
+    "run_id": "sft-common-balanced-word-s2026-0649b4deeb",
+    "summary_sha256": "5501c697996717e9a67be75e90f1ee57dbaefa90a29899b733bbdd8f0d093b9d"
+  },
+  "retention_comparison": "unavailable: historical comparator summary has no retention result",
+  "single_seed": true,
+  "split": "balanced_002_dev_32",
+  "status": "paired_development_comparison_ready"
+}

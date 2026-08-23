@@ -1,0 +1,51 @@
+{
+  "backend": "UNSLOTH-GEMMA-SFT-001",
+  "batch_size": 16,
+  "candidate_injection": false,
+  "data": {
+    "bundle_directory": "next_steps/chatgpt_2026_08_23/generated/structured_microtasks_v1",
+    "config_sha256": "5d121d99a63f0b6b866c7f101286bc9aed682cab2fb2cde4cc31643892934ba8",
+    "dev_role": "evaluation_only_never_training",
+    "development_file": "dev/mixed.jsonl",
+    "development_sha256": "39f80bf9b5ef28e810817ba254a1127f134b2b5d4a85a40341406d3bb68fcf1b",
+    "training_file": "train/mixed.jsonl",
+    "training_rows": 1216,
+    "training_sha256": "f46ee9bc586c8a2383f038220522849374194de16f95169ddd5e848074ebd5e0"
+  },
+  "experiment_id": "STRUCTURED-MICROTASKS-SFT-001",
+  "gradient_accumulation_steps": 1,
+  "harness_selected_guess": false,
+  "learning_rate": 5e-05,
+  "locked_test_access": false,
+  "lora": {
+    "alpha": 32,
+    "dropout": 0.0,
+    "r": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "max_length": 768,
+  "max_steps": 600,
+  "method": "structured-microtasks-unsloth-completion-sft",
+  "model": {
+    "model_id": "google/gemma-3-270m-it",
+    "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3"
+  },
+  "output_repair": false,
+  "precision": "bfloat16",
+  "protocol_id": "WORDLE-PROTOCOL-002",
+  "quantization": "none_16bit",
+  "repeat_ban": false,
+  "representation": "structured_microtasks_mixed",
+  "reranking": false,
+  "seed": 2026,
+  "vocabulary_masking": false,
+  "word_token_weight": 1.0
+}

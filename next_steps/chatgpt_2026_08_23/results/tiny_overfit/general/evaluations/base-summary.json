@@ -1,0 +1,21 @@
+{
+  "bundle_manifest_sha256": "b01b108efd913edb99ffb7c116f7feb6b6404817044336926e0484c63012ac99",
+  "checkpoint": "base",
+  "contrast_pair_exact_accuracy": 0.0,
+  "elapsed_s": 35.845819899986964,
+  "evaluation_label": "base",
+  "experiment_id": "GEMMA-270M-TINY-OVERFIT-001",
+  "items": 32,
+  "items_sha256": "f372fc5ffb9c84679e44ec3b7e90b8f6419087ab7eb8dff06f77bd2b4f7d6ee2",
+  "locked_test_access": false,
+  "mean_reciprocal_rank": 0.0618198352432416,
+  "mean_target_probability": 0.009592794176398994,
+  "mean_target_rank": 63,
+  "median_target_rank": 65.0,
+  "natural_exact_accuracy": 0.0,
+  "rows_sha256": "911767a1feda7ab3320fb97ef6870e305447811f2359b038b50a5aea7168fd3b",
+  "task": "state_action",
+  "terminal_compliance": 0.0,
+  "top_1_rank_accuracy": 0.0,
+  "universe_sha256": "1256cd1c1075246251cafb4d01612dae26a73808a4915c3d88006478f3f736ac"
+}
