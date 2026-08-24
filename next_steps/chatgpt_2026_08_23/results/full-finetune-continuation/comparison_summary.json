@@ -1,0 +1,81 @@
+{
+  "decision_scope": "development_only_single_seed",
+  "experiment_id": "GEMMA-270M-FULL-FINETUNE-CONTINUATION-002",
+  "final_steps": 1200,
+  "locked_test_access": false,
+  "metrics_by_total_step": {
+    "600": {
+      "action_target_accuracy": 0.3671875,
+      "posterior_constraint_violation_rate": 0.609375,
+      "repeat_guess_rate": 0.11409395973154363,
+      "retention": 0.0,
+      "singleton_answer_accuracy": 0.02702702702702703,
+      "terminal_marker_compliance": 1.0,
+      "turn_2_posterior_constraint_violation_rate": 0.3448275862068966,
+      "wins": 14
+    },
+    "750": {
+      "action_target_accuracy": 0.2890625,
+      "invalid_guess_rate": 0.04046242774566474,
+      "posterior_constraint_violation_rate": 0.6796875,
+      "repeat_guess_rate": 0.18674698795180722,
+      "retention": 0.0,
+      "singleton_answer_accuracy": 0.02702702702702703,
+      "terminal_marker_compliance": 0.9595375722543352,
+      "turn_2_posterior_constraint_violation_rate": 0.5,
+      "win_rate": 0.21875,
+      "wins": 7
+    },
+    "900": {
+      "action_target_accuracy": 0.392,
+      "invalid_guess_rate": 0.15846994535519127,
+      "posterior_constraint_violation_rate": 0.6,
+      "repeat_guess_rate": 0.1038961038961039,
+      "retention": 0.0,
+      "singleton_answer_accuracy": 0.013513513513513514,
+      "terminal_marker_compliance": 0.8797814207650273,
+      "turn_2_posterior_constraint_violation_rate": 0.3090909090909091,
+      "win_rate": 0.28125,
+      "wins": 9
+    },
+    "1050": {
+      "action_target_accuracy": 0.4094488188976378,
+      "invalid_guess_rate": 0.15976331360946747,
+      "posterior_constraint_violation_rate": 0.5905511811023623,
+      "repeat_guess_rate": 0.11971830985915492,
+      "retention": 0.0,
+      "singleton_answer_accuracy": 0.0,
+      "terminal_marker_compliance": 0.8402366863905325,
+      "turn_2_posterior_constraint_violation_rate": 0.2807017543859649,
+      "win_rate": 0.375,
+      "wins": 12
+    },
+    "1200": {
+      "action_target_accuracy": 0.4094488188976378,
+      "invalid_guess_rate": 0.1588235294117647,
+      "posterior_constraint_violation_rate": 0.5905511811023623,
+      "repeat_guess_rate": 0.1258741258741259,
+      "retention": 0.0,
+      "singleton_answer_accuracy": 0.0,
+      "terminal_marker_compliance": 0.8411764705882353,
+      "turn_2_posterior_constraint_violation_rate": 0.2807017543859649,
+      "win_rate": 0.34375,
+      "wins": 11
+    }
+  },
+  "optimizer_restart_declared": true,
+  "parent_steps": 600,
+  "run_directory": "artifacts/runs/full-finetune-balanced-word-continuation-s2026-8d08e31818",
+  "training": {
+    "continuation_optimizer_steps": 600,
+    "continuation_optimizer_tokens": 363758,
+    "effective_batch_size": 4,
+    "final_continuation_loss": 0.0012874285457655787,
+    "initial_continuation_loss": 0.04362061992287636,
+    "peak_allocated_vram_bytes": 4422610432,
+    "train_examples": 512,
+    "trainable_parameters": 268098176,
+    "wall_time_s": 138.81223450001562,
+    "word_token_weight": 8.0
+  }
+}

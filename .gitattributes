@@ -1,0 +1,2 @@
+examples/training_data/*.jsonl text eol=lf
+examples/training_data/manifest.json text eol=lf

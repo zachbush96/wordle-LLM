@@ -22,7 +22,7 @@ The Q-SFT and 1B rows are not missing zero-valued experiments. They are explicit
 
 ## Folder layout
 
-- `generated/`: deterministic, content-addressed train/dev bundles and blocker evidence.
+- `generated/`: local deterministic train/dev bundles plus small tracked manifests/blocker evidence; full JSONL corpora are ignored. Representative rows live in the repository-level `examples/training_data/` folder.
 - `results/`: compact Git-tracked run specifications, accounting, training traces, raw development outputs, evaluation summaries, and collection provenance. Model checkpoints remain outside Git.
 - `tests/`: leakage, provenance, objective, evaluator, threshold, and lifecycle tests for this suite.
 - [STRUCTURED_MICROTASKS.md](STRUCTURED_MICROTASKS.md): schema, duplicate-letter logic, data balance, and measured microtask results.

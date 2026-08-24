@@ -1,0 +1,248 @@
+{
+  "entries": [
+    {
+      "matching_source_rows": 154,
+      "sample": "examples/training_data/balanced_002_later_on_policy.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "ffd20b0fdd879d3c733811c4b622390bd8996eabe6128cb5826c65c38a727fa7",
+      "source": "data/common-curriculum-002/u128-train96/train.jsonl",
+      "source_filter": {
+        "state_type": "later_on_policy"
+      },
+      "source_rows": 512,
+      "source_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+      "training_type": "balanced_002_later_on_policy"
+    },
+    {
+      "matching_source_rows": 102,
+      "sample": "examples/training_data/balanced_002_recovery_singleton.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "a3f6aa5d585716f5627e22b7cbbe8c317301e5cdb7e65bee07d57c669ad54c9f",
+      "source": "data/common-curriculum-002/u128-train96/train.jsonl",
+      "source_filter": {
+        "state_type": "recovery_singleton"
+      },
+      "source_rows": 512,
+      "source_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+      "training_type": "balanced_002_recovery_singleton"
+    },
+    {
+      "matching_source_rows": 4,
+      "sample": "examples/training_data/balanced_002_root.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "0bf5b0ec6d94d556681bb103a8cd8480cbbbe30feb954595f7b07bffc45d464e",
+      "source": "data/common-curriculum-002/u128-train96/train.jsonl",
+      "source_filter": {
+        "state_type": "root"
+      },
+      "source_rows": 512,
+      "source_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+      "training_type": "balanced_002_root"
+    },
+    {
+      "matching_source_rows": 252,
+      "sample": "examples/training_data/balanced_002_turn_2.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "41312542efe335e1c4f70c2153466c3fbc24cb7af481db46498834e618fe196a",
+      "source": "data/common-curriculum-002/u128-train96/train.jsonl",
+      "source_filter": {
+        "state_type": "turn_2"
+      },
+      "source_rows": 512,
+      "source_sha256": "8a5741e061349243bc9467ba53254fec648b83dafb5944f65c0d61ab65466e7f",
+      "training_type": "balanced_002_turn_2"
+    },
+    {
+      "sample": "examples/training_data/comparison_direct_single_step.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "edc5587eded2e871f44d7ae8e6f7d5afa2b5c40c063976f510fa9a25d5b12226",
+      "source": "data/gemma-270m-comparison-v1/u128-train96-n4096/non_reasoning_single_step.jsonl",
+      "source_rows": 4096,
+      "source_sha256": "51c51c47097024dc829fd733d668cf70ae1d7ccb878c5b0fee4b3c88831731ad",
+      "training_type": "comparison_direct_single_step"
+    },
+    {
+      "sample": "examples/training_data/comparison_multi_turn.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "64ac9dd6a005fa2660008ca5f55abe4343c2e24826a8572dc9b58a9f32143573",
+      "source": "data/gemma-270m-comparison-v1/u128-train96-n4096/non_reasoning_multi_step.jsonl",
+      "source_rows": 4096,
+      "source_sha256": "5ea3953a5455682f49193460f252575cb0e7d5f89f93bdcb47f2a05a93a33075",
+      "training_type": "comparison_multi_turn"
+    },
+    {
+      "sample": "examples/training_data/comparison_visible_reasoning.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "74f2435e991ce7350f4a2e29b949670d02e979a1a3cad5490f8058db91138dfb",
+      "source": "data/gemma-270m-comparison-v1/u128-train96-n4096/reasoning_single_step.jsonl",
+      "source_rows": 4096,
+      "source_sha256": "3137a2c2cd588b1c4557bfa595fb4cedb4cff4507a56892f1ce2fdb38fce6c03",
+      "training_type": "comparison_visible_reasoning"
+    },
+    {
+      "sample": "examples/training_data/constraint_first_full_policy.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "5ba00ee76d028dab9d717e1bdec34486ab81113258af9fe9b9ef357a1fb68e13",
+      "source": "next_steps/chatgpt_2026_08_23/generated/constraint_first/train.jsonl",
+      "source_rows": 1018,
+      "source_sha256": "6b72c2917a9f529c7ce89d4c7e0e0cacfc45d778466d13194fb02098173b9fec",
+      "training_type": "constraint_first_full_policy"
+    },
+    {
+      "matching_source_rows": 1996,
+      "sample": "examples/training_data/coverage_growth_later_broad.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "be22eb7448a1087112d47f842f16bb2e0e897d5b59231a0602e7ea70b9ff6067",
+      "source": "data/common-curriculum-008/u128-train96-growth-07168-to-20480/train.jsonl",
+      "source_filter": {
+        "state_type": "later_broad"
+      },
+      "source_rows": 13312,
+      "source_sha256": "61addf8f6234690a9a5f7f3e0d70452b27f96536e11046e6e7eb27647dd78fae",
+      "training_type": "coverage_growth_later_broad"
+    },
+    {
+      "matching_source_rows": 7274,
+      "sample": "examples/training_data/coverage_growth_low_posterior.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "49e4afd65a8d704783fb8b644263acb250930f50ee1ca67c86610902de46ca5d",
+      "source": "data/common-curriculum-008/u128-train96-growth-07168-to-20480/train.jsonl",
+      "source_filter": {
+        "state_type": "low_posterior"
+      },
+      "source_rows": 13312,
+      "source_sha256": "61addf8f6234690a9a5f7f3e0d70452b27f96536e11046e6e7eb27647dd78fae",
+      "training_type": "coverage_growth_low_posterior"
+    },
+    {
+      "matching_source_rows": 3994,
+      "sample": "examples/training_data/coverage_growth_true_singleton.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "dbb062eac59c6cd40bb638b3fda4e8c487c43e623f3855528d7eb8a52c1513f4",
+      "source": "data/common-curriculum-008/u128-train96-growth-07168-to-20480/train.jsonl",
+      "source_filter": {
+        "state_type": "true_singleton"
+      },
+      "source_rows": 13312,
+      "source_sha256": "61addf8f6234690a9a5f7f3e0d70452b27f96536e11046e6e7eb27647dd78fae",
+      "training_type": "coverage_growth_true_singleton"
+    },
+    {
+      "matching_source_rows": 48,
+      "sample": "examples/training_data/coverage_growth_turn_2.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "419be240e6cb125a10bf890e3509690b34e0f1b3950e6962fe5eab28ee9f1b0f",
+      "source": "data/common-curriculum-008/u128-train96-growth-07168-to-20480/train.jsonl",
+      "source_filter": {
+        "state_type": "turn_2"
+      },
+      "source_rows": 13312,
+      "source_sha256": "61addf8f6234690a9a5f7f3e0d70452b27f96536e11046e6e7eb27647dd78fae",
+      "training_type": "coverage_growth_turn_2"
+    },
+    {
+      "sample": "examples/training_data/q_sft_frozen_target.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "dca427d4ab826a69825bd911049164df7877b9a176189f75df735a236ccdaf42",
+      "source": "next_steps/chatgpt_2026_08_23/generated/q_sft_frozen/training_rows.jsonl",
+      "source_rows": 512,
+      "source_sha256": "090e05b445a72b61e80ed33c7da552c1ec730e9863f7397cb8601ea93e328566",
+      "training_type": "q_sft_frozen_target"
+    },
+    {
+      "sample": "examples/training_data/structured_candidate_validity.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "8b2e6b482e11a347eb582cf7a1cfe16f2729fed3e1cc812f7f59adb4a579c733",
+      "source": "next_steps/chatgpt_2026_08_23/generated/structured_microtasks_v1/train/candidate_validity.jsonl",
+      "source_rows": 288,
+      "source_sha256": "7bfc33f35220e2a1f34f7d2bfeef7fba3c9a782cb565ef77f17fe322f3dea87b",
+      "training_type": "structured_candidate_validity"
+    },
+    {
+      "sample": "examples/training_data/structured_constraint_merge.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "2be7e71c25a1282cd456a943eb6062fe8b713da6217503e1433e433f122858f5",
+      "source": "next_steps/chatgpt_2026_08_23/generated/structured_microtasks_v1/train/constraint_merge.jsonl",
+      "source_rows": 192,
+      "source_sha256": "35053e44fc4da50ab37ad557ac27850c7257e092dc413793f24b8252c60a4b86",
+      "training_type": "structured_constraint_merge"
+    },
+    {
+      "sample": "examples/training_data/structured_feedback_decode.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "548811a77b56091a2fe779a22465ad5d54257561821229bd84daa0a0b05c33fe",
+      "source": "next_steps/chatgpt_2026_08_23/generated/structured_microtasks_v1/train/feedback_decode.jsonl",
+      "source_rows": 256,
+      "source_sha256": "dc3a01a69fe5a4681016078107e4e32610bd9a3ca457ee7c574f9e0a2f4436e8",
+      "training_type": "structured_feedback_decode"
+    },
+    {
+      "sample": "examples/training_data/structured_full_policy.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "612676e46df05007b3dd77e9d5f75a179d8f8bc3d4198d3f1cc2c3552c22b587",
+      "source": "next_steps/chatgpt_2026_08_23/generated/structured_microtasks_v1/train/full_policy.jsonl",
+      "source_rows": 400,
+      "source_sha256": "326a5d357416d43c23a5c7ab25f7ee71d55ec358456a0392d25c91531f3a4bcb",
+      "training_type": "structured_full_policy"
+    },
+    {
+      "sample": "examples/training_data/structured_singleton_solve.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "f0d4a68dfb5e35d700faaf37c76609d1536304c13c6382e3b2c997ecb57e3ee2",
+      "source": "next_steps/chatgpt_2026_08_23/generated/structured_microtasks_v1/train/singleton_solve.jsonl",
+      "source_rows": 80,
+      "source_sha256": "b1d8c965ccff1fef98a0a347886afed33c619d5c066dbab43cb17caf282093aa",
+      "training_type": "structured_singleton_solve"
+    },
+    {
+      "sample": "examples/training_data/tiny_overfit_general.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "e8574d24ccc6aac658b3d80b5620f034489eb1870b32e31c7978e8e6a4c8f2fe",
+      "source": "next_steps/chatgpt_2026_08_23/generated/tiny_overfit/general_32.jsonl",
+      "source_rows": 32,
+      "source_sha256": "911767a1feda7ab3320fb97ef6870e305447811f2359b038b50a5aea7168fd3b",
+      "training_type": "tiny_overfit_general"
+    },
+    {
+      "sample": "examples/training_data/tiny_overfit_singleton.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "7ebcb302d347ec8a54dd528c6d79e4f9cc576bdaab2cb103e8169dd931ba701b",
+      "source": "next_steps/chatgpt_2026_08_23/generated/tiny_overfit/singleton_32.jsonl",
+      "source_rows": 32,
+      "source_sha256": "f2c4a92299a0bdf69e3c6fe034e2fced572903d138763c39991138a2a0c33266",
+      "training_type": "tiny_overfit_singleton"
+    },
+    {
+      "sample": "examples/training_data/unsloth_direct_single_step.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "bb72554ff3c788157ddc9187b8f513abdd562ff671e404779dede08fd273af79",
+      "source": "data/gemma-270m-unsloth-alpaca-v2/u160-train120-n2000/non_reasoning_single_step.jsonl",
+      "source_rows": 2000,
+      "source_sha256": "c6c1b3d4745904df17ac8a0738cdc7f4dba6d58e07d7339368d149a5467d0451",
+      "training_type": "unsloth_direct_single_step"
+    },
+    {
+      "sample": "examples/training_data/unsloth_multi_turn.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "b980b97c4c102f865482887e96e4a5a2961a7ad8b07e5c7ea516b69f80e2f41b",
+      "source": "data/gemma-270m-unsloth-alpaca-v2/u160-train120-n2000/non_reasoning_multi_step.jsonl",
+      "source_rows": 2000,
+      "source_sha256": "306e79edd3f232b60ffb8637a1b09a7ade89e9c36befc99e92fcf3569ac950b2",
+      "training_type": "unsloth_multi_turn"
+    },
+    {
+      "sample": "examples/training_data/unsloth_visible_reasoning.jsonl",
+      "sample_rows": 3,
+      "sample_sha256": "31c1f9f95cf395b99c800409f905fe6ec6df04cf3c6320e1d3681db1fcca4b1a",
+      "source": "data/gemma-270m-unsloth-alpaca-v2/u160-train120-n2000/reasoning_single_step.jsonl",
+      "source_rows": 2000,
+      "source_sha256": "585b91c45de8e842aa5a911c67d5cee5fcc4ad7463714451f7d2e5f737c8ef4d",
+      "training_type": "unsloth_visible_reasoning"
+    }
+  ],
+  "policy": "examples_only_full_corpora_local_and_gitignored",
+  "sample_rows_per_type": 3,
+  "schema_version": "wordle-training-samples-v1",
+  "selection": "first N rows in deterministic generated order; grouped sources select first N matching rows",
+  "training_types": 23
+}

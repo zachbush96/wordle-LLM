@@ -206,3 +206,19 @@ Any follow-up should use at least three matched seeds before a promotion claim. 
 - [STRUCTURED_MICROTASKS.md](STRUCTURED_MICROTASKS.md): microtask definitions and data design.
 
 All committed evidence is development or training evidence. Checkpoints remain local and ignored; no model weights or locked-test payloads are collected into Git.
+
+## 2026-08-23 coverage-scaling update
+
+The Gemma 3 270M full-parameter recipe was subsequently scaled by unique feedback-conditioned data coverage rather than by repeating epochs. A 4,096-row, one-pass curriculum reached 17/32 development wins and 10/74 singleton accuracy with perfect terminal compliance, improving the prior 512-row full-tune result of 14/32 and 2/74. This is the first meaningful same-model coverage gain.
+
+A second one-pass phase added 4,096 states disjoint from phase one. Wins plateaued at 17/32. The 7,168 cumulative-example checkpoint preserved 17/32 wins, perfect compliance, and 10/74 singleton accuracy while reducing turn-2 posterior violations from the 4,096 checkpoint's 67.2% to 60.3%. The 8,192 endpoint retained 17 wins but fell to 94.6% compliance and is rejected. Retention remained zero throughout, and no coverage checkpoint met the turn-2 legality gate; the locked test remained closed.
+
+See [COVERAGE_MAX_EXPERIMENT.md](COVERAGE_MAX_EXPERIMENT.md) and [results/coverage-max/comparison_summary.json](results/coverage-max/comparison_summary.json) for the complete curve, data composition, limitations, and checkpoint decisions. The current repository regression is `258 passed`.
+
+### Conditional 10K-20K extension
+
+A further ladder was prepared for 10,240, 12,288, 15,360, and 20,480 cumulative unique examples using 13,312 audited, disjoint, multi-turn-only states. Its preregistered stop policy required reliable output, no win regression, and a material strategic or legality gain at each milestone.
+
+The 10,240 checkpoint held 17/32 wins and 100% compliance, but singleton accuracy fell to 9/74, target accuracy fell to 18.0%, overall violations rose to 71.1%, and repeats rose to 18.1%. Turn-2 violations improved only 3.4 percentage points to 56.9%, below the declared 5-point threshold. The conditional ladder therefore stopped correctly at 10,240.
+
+The user then explicitly overrode the stop and requested 15K. A forced continuation used the next 5,120 unseen ordered rows and evaluated 12,288 and 15,360 coverage. The midpoint reached 18/32 wins but only 95.3% compliance. The 15,360 endpoint recovered to 100% compliance and reached **19/32 wins**, the new gameplay development high; turn-2 violations improved to 53.4%. Singleton accuracy remained 9/74, repeats were 18.6%, target accuracy was 18.8%, and retention remained zero. The 15K checkpoint is therefore a meaningful gameplay leader but still fails strategic promotion gates. The 20K condition remains unavailable, and the locked test remains closed.

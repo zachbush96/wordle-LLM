@@ -1,0 +1,99 @@
+{
+  "experiment_id": "UNSLOTH-GEMMA-MULTITURN-SCALE-003",
+  "date": "2026-08-23",
+  "decision": "stop_before_8000_no_meaningful_5000_improvement",
+  "locked_test_access": false,
+  "comparison": {
+    "representation": "non_reasoning_multi_step",
+    "baseline_training_rows": 2000,
+    "candidate_training_rows": 5000,
+    "baseline_optimizer_steps": 300,
+    "candidate_optimizer_steps": 750,
+    "effective_batch_size": 16,
+    "matched_epochs": 2.4,
+    "dev_games": 40,
+    "diagnostic_items": 512,
+    "retention_probes": 200,
+    "dev_probe_sha256": "52950b96e136f886300818ebd3eb32bc7ce12b3cba1e715121c61c3264a33d11"
+  },
+  "data": {
+    "directory": "data/gemma-270m-unsloth-alpaca-v2/u160-train120-n5000",
+    "source_rows": 5000,
+    "unique_source_states": 4845,
+    "multi_turn_partition_sha256": "13a71b59ee8494f12a4cbadc69aa2de717e9787ad6b98535ecb6d51b6ae39300",
+    "manifest_sha256": "bac2b89d9e8f24097244cb13a4b190442b6752ca308e281d44803336efcc1208",
+    "audit_status": "passed",
+    "audit_check_count": 10
+  },
+  "run": {
+    "directory": "artifacts/runs/unsloth-sft-non_reasoning_multi_step-s2026-c083e18bf8",
+    "seed": 2026,
+    "optimizer_steps": 750,
+    "optimizer_tokens": 2235118,
+    "wall_time_s": 697.4330844000215,
+    "peak_allocated_vram_bytes": 5018763264,
+    "initial_train_loss": 3.7339582443237305,
+    "final_train_loss": 0.7867187857627869,
+    "step_750_adapter_sha256": "647dd3ddcb476c58a77791e81ef73d4cc3dc290a3dc4b6a47759b4885934ed80"
+  },
+  "baseline_2000_step_300": {
+    "wins": 0,
+    "terminal_compliance": 1.0,
+    "gameplay_constraint_violation_rate": 0.8333333333333334,
+    "gameplay_repeat_rate": 0.8333333333333334,
+    "fixed_state_posterior_violation_rate": 0.982421875,
+    "singleton_answer_accuracy": 0.0,
+    "action_target_accuracy": 0.005859375,
+    "retention": 0.125
+  },
+  "candidate_checkpoints": [
+    {
+      "step": 188,
+      "wins": 0,
+      "terminal_compliance": 1.0,
+      "gameplay_constraint_violation_rate": 0.8333333333333334,
+      "gameplay_repeat_rate": 0.8333333333333334,
+      "fixed_state_posterior_violation_rate": 0.982421875,
+      "singleton_answer_accuracy": 0.0,
+      "action_target_accuracy": 0.005859375,
+      "retention": 0.125
+    },
+    {
+      "step": 375,
+      "wins": 0,
+      "terminal_compliance": 1.0,
+      "gameplay_constraint_violation_rate": 0.8333333333333334,
+      "gameplay_repeat_rate": 0.8333333333333334,
+      "fixed_state_posterior_violation_rate": 0.982421875,
+      "singleton_answer_accuracy": 0.0,
+      "action_target_accuracy": 0.005859375,
+      "retention": 0.075
+    },
+    {
+      "step": 562,
+      "wins": 0,
+      "terminal_compliance": 1.0,
+      "gameplay_constraint_violation_rate": 0.8333333333333334,
+      "gameplay_repeat_rate": 0.8333333333333334,
+      "fixed_state_posterior_violation_rate": 0.982421875,
+      "singleton_answer_accuracy": 0.0,
+      "action_target_accuracy": 0.005859375,
+      "retention": 0.125
+    },
+    {
+      "step": 750,
+      "wins": 0,
+      "terminal_compliance": 1.0,
+      "gameplay_constraint_violation_rate": 0.8333333333333334,
+      "gameplay_repeat_rate": 0.8333333333333334,
+      "fixed_state_posterior_violation_rate": 0.982421875,
+      "singleton_answer_accuracy": 0.0,
+      "action_target_accuracy": 0.005859375,
+      "retention": 0.125
+    }
+  ],
+  "eight_thousand_run": {
+    "launched": false,
+    "reason": "The 5000-row run did not meet any preregistered meaningful-improvement criterion."
+  }
+}

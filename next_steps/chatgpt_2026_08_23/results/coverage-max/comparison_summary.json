@@ -1,0 +1,40 @@
+{
+  "decision": {
+    "development_only_single_seed": true,
+    "locked_test_opened": false,
+    "promotion": "blocked",
+    "reason": "Forced continuation to 15360 produced a new 19-win development high, but posterior legality and singleton solving remain poor, retention is zero, and only one seed was run.",
+    "gameplay_leader": "artifacts/runs/gemma-270m-coverage-forced-15k-s2026-4689310577/checkpoints/coverage-015360",
+    "early_coverage_leader": "artifacts/runs/gemma-270m-coverage-max-s2026-b452e4f6a5/checkpoints/step-001024",
+    "balanced_coverage_checkpoint": "artifacts/runs/gemma-270m-coverage-stack-s2026-99814e6413/checkpoints/coverage-007168"
+  },
+  "experiment_ids": [
+    "GEMMA-270M-COVERAGE-MAX-001",
+    "GEMMA-270M-COVERAGE-STACK-002",
+    "GEMMA-270M-COVERAGE-GROWTH-003",
+    "GEMMA-270M-COVERAGE-FORCED-15K-004"
+  ],
+  "metrics": {
+    "prior_512_repeated": {"examples_seen": 2400, "wins": 14, "terminal_marker_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_guess_rate": 0.1140939597, "posterior_constraint_violation_rate": 0.609375, "turn_2_posterior_constraint_violation_rate": 0.3448275862, "singleton_correct": 2, "singleton_total": 74, "action_target_accuracy": 0.3671875, "retention": 0.0},
+    "coverage_1024": {"unique_examples": 1024, "wins": 7, "terminal_marker_compliance": 0.9944444444, "invalid_guess_rate": 0.0055555556, "repeat_guess_rate": 0.2178770950, "posterior_constraint_violation_rate": 0.875, "turn_2_posterior_constraint_violation_rate": 0.7758620690, "singleton_correct": 2, "singleton_total": 74, "action_target_accuracy": 0.0390625, "retention": 0.0},
+    "coverage_2048": {"unique_examples": 2048, "wins": 12, "terminal_marker_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_guess_rate": 0.21875, "posterior_constraint_violation_rate": 0.7734375, "turn_2_posterior_constraint_violation_rate": 0.6724137931, "singleton_correct": 6, "singleton_total": 74, "action_target_accuracy": 0.109375, "retention": 0.0},
+    "coverage_3072": {"unique_examples": 3072, "wins": 15, "terminal_marker_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_guess_rate": 0.1768707483, "posterior_constraint_violation_rate": 0.7578125, "turn_2_posterior_constraint_violation_rate": 0.6896551724, "singleton_correct": 8, "singleton_total": 74, "action_target_accuracy": 0.171875, "retention": 0.0},
+    "coverage_4096": {"unique_examples": 4096, "wins": 17, "terminal_marker_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_guess_rate": 0.1408450704, "posterior_constraint_violation_rate": 0.734375, "turn_2_posterior_constraint_violation_rate": 0.6724137931, "singleton_correct": 10, "singleton_total": 74, "action_target_accuracy": 0.1953125, "retention": 0.0},
+    "coverage_5120": {"unique_examples": 5120, "wins": 15, "terminal_marker_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_guess_rate": 0.1830985915, "posterior_constraint_violation_rate": 0.6875, "turn_2_posterior_constraint_violation_rate": 0.5862068966, "singleton_correct": 13, "singleton_total": 74, "action_target_accuracy": 0.234375, "retention": 0.0},
+    "coverage_6144": {"unique_examples": 6144, "wins": 17, "terminal_marker_compliance": 0.9459459459, "invalid_guess_rate": 0.0540540541, "repeat_guess_rate": 0.1428571429, "posterior_constraint_violation_rate": 0.703125, "turn_2_posterior_constraint_violation_rate": 0.5689655172, "singleton_correct": 9, "singleton_total": 74, "action_target_accuracy": 0.1953125, "retention": 0.0},
+    "coverage_7168": {"unique_examples": 7168, "wins": 17, "terminal_marker_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_guess_rate": 0.1678321678, "posterior_constraint_violation_rate": 0.703125, "turn_2_posterior_constraint_violation_rate": 0.6034482759, "singleton_correct": 10, "singleton_total": 74, "action_target_accuracy": 0.2109375, "retention": 0.0},
+    "coverage_8192": {"unique_examples": 8192, "wins": 17, "terminal_marker_compliance": 0.9455782313, "invalid_guess_rate": 0.0544217687, "repeat_guess_rate": 0.1438848921, "posterior_constraint_violation_rate": 0.6953125, "turn_2_posterior_constraint_violation_rate": 0.6034482759, "singleton_correct": 11, "singleton_total": 74, "action_target_accuracy": 0.21875, "retention": 0.0},
+    "coverage_10240": {"unique_examples": 10240, "wins": 17, "terminal_marker_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_guess_rate": 0.1805555556, "posterior_constraint_violation_rate": 0.7109375, "turn_2_posterior_constraint_violation_rate": 0.5689655172, "singleton_correct": 9, "singleton_total": 74, "action_target_accuracy": 0.1796875, "retention": 0.0},
+    "coverage_12288": {"unique_examples": 12288, "wins": 18, "terminal_marker_compliance": 0.9527027027, "invalid_guess_rate": 0.0472972973, "repeat_guess_rate": 0.1418439716, "posterior_constraint_violation_rate": 0.703125, "turn_2_posterior_constraint_violation_rate": 0.5689655172, "singleton_correct": 10, "singleton_total": 74, "action_target_accuracy": 0.1953125, "retention": 0.0},
+    "coverage_15360": {"unique_examples": 15360, "wins": 19, "terminal_marker_compliance": 1.0, "invalid_guess_rate": 0.0, "repeat_guess_rate": 0.1857142857, "posterior_constraint_violation_rate": 0.703125, "turn_2_posterior_constraint_violation_rate": 0.5344827586, "singleton_correct": 9, "singleton_total": 74, "action_target_accuracy": 0.1875, "retention": 0.0}
+  },
+  "training": {
+    "model": "google/gemma-3-270m-it",
+    "phase_1": {"rows": 4096, "epochs": 1.0, "optimizer_steps": 1024, "word_token_weight": 8.0, "wall_time_s": 227.5000023},
+    "phase_2": {"new_disjoint_rows": 4096, "epochs": 1.0, "optimizer_steps": 1024, "learning_rate": 0.00001, "fresh_optimizer": true, "word_token_weight": 8.0, "wall_time_s": 222.8990109},
+    "phase_3": {"planned_new_disjoint_rows": 13312, "examples_seen_before_conditional_stop": 3072, "optimizer_steps": 768, "learning_rate": 0.000005, "fresh_optimizer": true, "word_token_weight": 8.0, "wall_time_s": 175.0557109, "stop_reason": "no_meaningful_growth_at_10240"},
+    "phase_4_forced_15k": {"new_disjoint_rows": 5120, "optimizer_steps": 1280, "learning_rate": 0.000005, "fresh_optimizer": true, "word_token_weight": 8.0, "wall_time_s": 296.5773025, "forced_override": true},
+    "maximum_evaluated_unique_examples": 15360,
+    "unavailable_milestones": [20480]
+  }
+}

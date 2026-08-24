@@ -6,7 +6,7 @@ This project asks a deliberately difficult question: **can a small language mode
 
 The short answer is: not reliably yet. The strongest historical Gemma 3 270M run solved **8 of 32 development games (25%)**. A matched Qwen2.5 1.5B run reached **14 of 32 (43.75%)** and made much stronger feedback-dependent choices, but it still missed the reliability gates. Because it also changes model family, it is a useful capacity signal—not a clean Gemma result. Some Qwen2.5 3B checkpoints won 15–16 games, but too often failed to return a usable answer. That is why this project treats a win count as one important metric, not the verdict.
 
-The active work is a stricter, Gemma-only comparison. It includes audited training bundles; launchers for LoRA, rsLoRA, and DoRA; implementations of SFT, DPO, ORPO, GRPO, and Q-SFT; a gated SFT-to-GRPO path; and **79 passing tests**. The latest Unsloth experiment generated 2,000 examples each for direct single-step, multi-step, and reasoning training, then trained and evaluated all three. Every checkpoint scored **0/40** held-out wins and 0% singleton accuracy. See the [data-format and representation report](docs/UNSLOTH_GEMMA_ALPACA_V2_EXPERIMENT.md).
+The active work is a stricter, Gemma-only comparison. It includes audited training bundles; launchers for LoRA, rsLoRA, and DoRA; implementations of SFT, DPO, ORPO, GRPO, and Q-SFT; a gated SFT-to-GRPO path; and **262 passing tests**. The latest coverage experiment scaled distinct feedback-conditioned examples rather than epochs. At 15,360 cumulative examples, full-parameter Gemma 3 270M reached **19/32 development wins** with 100% terminal compliance, but still had 53.4% turn-2 violations, only 9/74 singleton accuracy, and zero retention. It is the gameplay leader, not a promotable model. See the [coverage report](next_steps/chatgpt_2026_08_23/COVERAGE_MAX_EXPERIMENT.md).
 
 One safeguard matters above all: no trained checkpoint has seen the frozen 1,000-answer test. That door stays closed until a candidate reaches at least 99% terminal compliance, fewer than 30% turn-2 posterior violations, clearly positive singleton accuracy, and the same result across three matched seeds.
 
@@ -28,11 +28,12 @@ One safeguard matters above all: no trained checkpoint has seen the frozen 1,000
 There are two different statuses worth keeping separate:
 
 1. **Best historical development model:** Qwen2.5 1.5B with the balanced curriculum. It is the strongest multi-metric artifact produced so far, but it is not accepted as a general Wordle result.
-2. **Current canonical study:** Gemma 3 270M only, pinned to one exact model revision. The first Unsloth backend run and the three-way data-representation screen are complete; none produced strategic development improvement.
+2. **Current canonical study:** Gemma 3 270M only, pinned to one exact model revision. Unique feedback-conditioned coverage produced the strongest Gemma gameplay result at 15,360 examples, but the legality, singleton, retention, and replication gates remain open.
 
 | Model / condition | Development wins | Terminal compliance | Repeat rate | Turn-2 violations | Singleton accuracy | Action-target accuracy | Decision |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Gemma 3 270M, balanced-002 + word-focused SFT | 8/32 | 89.2% | 27.4% | 79.3% | 4/74 | 14.1% | Best historical Gemma strategy result; not promotable |
+| Gemma 3 270M, full tune, 15,360-example coverage | **19/32** | 100% | 18.6% | 53.4% | 9/74 | 18.8% | Gameplay leader; not promotable |
+| Gemma 3 270M, balanced-002 + word-focused SFT | 8/32 | 89.2% | 27.4% | 79.3% | 4/74 | 14.1% | Best historical Gemma strategy result before coverage scaling; not promotable |
 | Gemma 3 270M, Unsloth direct SFT, step 300 | 0/32 | 100% | 54.2% | 96.7% | 0/326 | 0.2% | Rejected: learned format, not strategy |
 | Gemma 3 270M, new Unsloth single-step, step 300 | 0/40 | 100% | 82.9% | — | 0/299 | 0.59% | Rejected: wider audited data, same strategy failure |
 | Gemma 3 270M, new Unsloth multi-step, step 300 | 0/40 | 100% | 83.3% | — | 0/299 | 0.59% | Rejected: multi-turn history did not help |
@@ -175,7 +176,7 @@ The 3B experiment demonstrates why wins are not enough: the final model reached 
 
 ### 7. Current Gemma-only framework validation
 
-The current matched bundle contains 4,096 source states, three separate 4,096-row representations, and 512 evaluation-only development probes. Its manifest records hashes, split isolation, feedback recomputation, posterior checks, oracle-fact checks, and matched target IDs. See [the data manifest](data/gemma-270m-comparison-v1/u128-train96-n4096/manifest.json) and [design note](docs/research/GEMMA_270M_COMPARISON_DATA.md).
+The current matched bundle contains 4,096 source states, three separate 4,096-row representations, and 512 evaluation-only development probes. Its manifest records hashes, split isolation, feedback recomputation, posterior checks, oracle-fact checks, and matched target IDs. Full JSONL corpora are generated locally and ignored; Git contains only manifests and [small representative samples](examples/training_data/). See [the data manifest](data/gemma-270m-comparison-v1/u128-train96-n4096/manifest.json), [publication policy](docs/TRAINING_DATA_POLICY.md), and [design note](docs/research/GEMMA_270M_COMPARISON_DATA.md).
 
 The automated suite currently covers 79 cases across:
 
@@ -201,7 +202,8 @@ Implemented and tested code is not experimental evidence. The first current-stud
 ├── scripts/                  One-purpose data and training launchers
 ├── configs/                  Versioned study, objective, and adapter configurations
 ├── tests/                    Fast protocol and training-contract tests
-├── data/                     Audited, tracked comparison data plus ignored local datasets
+├── data/                     Small manifests/wordlists plus ignored generated corpora
+├── examples/training_data/   Three representative rows per training type
 ├── tiny_llm_wordle_lab.py    Historical all-in-one baseline/LoRA runner
 └── requirements.txt          Windows/CUDA Python environment
 ```
@@ -216,7 +218,7 @@ Useful entry points:
 - [Test suite](tests)
 - [Paper/reproducibility notes](docs/research/paper_evidence_log.md)
 
-Models, checkpoints, raw runs, plots, and most generated datasets are local-only and ignored by Git. They remain under `models/`, `artifacts/`, `results/`, `plots/`, `experiments/`, and `checkpoints/` when created. This keeps the source repository readable without discarding local experimental evidence.
+Models, checkpoints, raw runs, plots, and all full generated training/dev corpora are local-only and ignored by Git. They remain under `models/`, `artifacts/`, `data/`, `results/`, `plots/`, `experiments/`, `checkpoints/`, and the next-step `generated/` folder when created. Git keeps deterministic builders, manifests, compact metrics, and only a few [training examples](examples/training_data/) per representation. See [the training-data publication policy](docs/TRAINING_DATA_POLICY.md).
 
 ## Setup and common commands
 
