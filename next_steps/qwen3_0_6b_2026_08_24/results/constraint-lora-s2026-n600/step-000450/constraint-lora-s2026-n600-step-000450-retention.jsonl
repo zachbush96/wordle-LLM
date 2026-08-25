@@ -1,0 +1,200 @@
+{"category":"language","correct":false,"expected":"cats","normalized_output":"milk","probe_id":"retention-v1-000","prompt":"Make 'cat' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"dogs","normalized_output":"milk","probe_id":"retention-v1-001","prompt":"Make 'dog' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"books","normalized_output":"book","probe_id":"retention-v1-002","prompt":"Make 'book' plural. Return one word only.","raw_output":"book"}
+{"category":"language","correct":false,"expected":"trees","normalized_output":"tree","probe_id":"retention-v1-003","prompt":"Make 'tree' plural. Return one word only.","raw_output":"tree"}
+{"category":"language","correct":false,"expected":"cars","normalized_output":"woman","probe_id":"retention-v1-004","prompt":"Make 'car' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":false,"expected":"apples","normalized_output":"males","probe_id":"retention-v1-005","prompt":"Make 'apple' plural. Return one word only.","raw_output":"males"}
+{"category":"language","correct":false,"expected":"rivers","normalized_output":"water","probe_id":"retention-v1-006","prompt":"Make 'river' plural. Return one word only.","raw_output":"water"}
+{"category":"language","correct":false,"expected":"chairs","normalized_output":"chair","probe_id":"retention-v1-007","prompt":"Make 'chair' plural. Return one word only.","raw_output":"chair"}
+{"category":"language","correct":false,"expected":"stars","normalized_output":"woman","probe_id":"retention-v1-008","prompt":"Make 'star' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":true,"expected":"clouds","normalized_output":"clouds","probe_id":"retention-v1-009","prompt":"Make 'cloud' plural. Return one word only.","raw_output":"clouds"}
+{"category":"language","correct":false,"expected":"cats","normalized_output":"milk","probe_id":"retention-v1-010","prompt":"Make 'cat' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"dogs","normalized_output":"milk","probe_id":"retention-v1-011","prompt":"Make 'dog' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"books","normalized_output":"book","probe_id":"retention-v1-012","prompt":"Make 'book' plural. Return one word only.","raw_output":"book"}
+{"category":"language","correct":false,"expected":"trees","normalized_output":"tree","probe_id":"retention-v1-013","prompt":"Make 'tree' plural. Return one word only.","raw_output":"tree"}
+{"category":"language","correct":false,"expected":"cars","normalized_output":"woman","probe_id":"retention-v1-014","prompt":"Make 'car' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":false,"expected":"apples","normalized_output":"males","probe_id":"retention-v1-015","prompt":"Make 'apple' plural. Return one word only.","raw_output":"males"}
+{"category":"language","correct":false,"expected":"rivers","normalized_output":"water","probe_id":"retention-v1-016","prompt":"Make 'river' plural. Return one word only.","raw_output":"water"}
+{"category":"language","correct":false,"expected":"chairs","normalized_output":"chair","probe_id":"retention-v1-017","prompt":"Make 'chair' plural. Return one word only.","raw_output":"chair"}
+{"category":"language","correct":false,"expected":"stars","normalized_output":"woman","probe_id":"retention-v1-018","prompt":"Make 'star' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":true,"expected":"clouds","normalized_output":"clouds","probe_id":"retention-v1-019","prompt":"Make 'cloud' plural. Return one word only.","raw_output":"clouds"}
+{"category":"language","correct":false,"expected":"cats","normalized_output":"milk","probe_id":"retention-v1-020","prompt":"Make 'cat' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"dogs","normalized_output":"milk","probe_id":"retention-v1-021","prompt":"Make 'dog' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"books","normalized_output":"book","probe_id":"retention-v1-022","prompt":"Make 'book' plural. Return one word only.","raw_output":"book"}
+{"category":"language","correct":false,"expected":"trees","normalized_output":"tree","probe_id":"retention-v1-023","prompt":"Make 'tree' plural. Return one word only.","raw_output":"tree"}
+{"category":"language","correct":false,"expected":"cars","normalized_output":"woman","probe_id":"retention-v1-024","prompt":"Make 'car' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":false,"expected":"apples","normalized_output":"males","probe_id":"retention-v1-025","prompt":"Make 'apple' plural. Return one word only.","raw_output":"males"}
+{"category":"language","correct":false,"expected":"rivers","normalized_output":"water","probe_id":"retention-v1-026","prompt":"Make 'river' plural. Return one word only.","raw_output":"water"}
+{"category":"language","correct":false,"expected":"chairs","normalized_output":"chair","probe_id":"retention-v1-027","prompt":"Make 'chair' plural. Return one word only.","raw_output":"chair"}
+{"category":"language","correct":false,"expected":"stars","normalized_output":"woman","probe_id":"retention-v1-028","prompt":"Make 'star' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":true,"expected":"clouds","normalized_output":"clouds","probe_id":"retention-v1-029","prompt":"Make 'cloud' plural. Return one word only.","raw_output":"clouds"}
+{"category":"language","correct":false,"expected":"cats","normalized_output":"milk","probe_id":"retention-v1-030","prompt":"Make 'cat' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"dogs","normalized_output":"milk","probe_id":"retention-v1-031","prompt":"Make 'dog' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"books","normalized_output":"book","probe_id":"retention-v1-032","prompt":"Make 'book' plural. Return one word only.","raw_output":"book"}
+{"category":"language","correct":false,"expected":"trees","normalized_output":"tree","probe_id":"retention-v1-033","prompt":"Make 'tree' plural. Return one word only.","raw_output":"tree"}
+{"category":"language","correct":false,"expected":"cars","normalized_output":"woman","probe_id":"retention-v1-034","prompt":"Make 'car' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":false,"expected":"apples","normalized_output":"males","probe_id":"retention-v1-035","prompt":"Make 'apple' plural. Return one word only.","raw_output":"males"}
+{"category":"language","correct":false,"expected":"rivers","normalized_output":"water","probe_id":"retention-v1-036","prompt":"Make 'river' plural. Return one word only.","raw_output":"water"}
+{"category":"language","correct":false,"expected":"chairs","normalized_output":"chair","probe_id":"retention-v1-037","prompt":"Make 'chair' plural. Return one word only.","raw_output":"chair"}
+{"category":"language","correct":false,"expected":"stars","normalized_output":"woman","probe_id":"retention-v1-038","prompt":"Make 'star' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":true,"expected":"clouds","normalized_output":"clouds","probe_id":"retention-v1-039","prompt":"Make 'cloud' plural. Return one word only.","raw_output":"clouds"}
+{"category":"language","correct":false,"expected":"cats","normalized_output":"milk","probe_id":"retention-v1-040","prompt":"Make 'cat' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"dogs","normalized_output":"milk","probe_id":"retention-v1-041","prompt":"Make 'dog' plural. Return one word only.","raw_output":"milk"}
+{"category":"language","correct":false,"expected":"books","normalized_output":"book","probe_id":"retention-v1-042","prompt":"Make 'book' plural. Return one word only.","raw_output":"book"}
+{"category":"language","correct":false,"expected":"trees","normalized_output":"tree","probe_id":"retention-v1-043","prompt":"Make 'tree' plural. Return one word only.","raw_output":"tree"}
+{"category":"language","correct":false,"expected":"cars","normalized_output":"woman","probe_id":"retention-v1-044","prompt":"Make 'car' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":false,"expected":"apples","normalized_output":"males","probe_id":"retention-v1-045","prompt":"Make 'apple' plural. Return one word only.","raw_output":"males"}
+{"category":"language","correct":false,"expected":"rivers","normalized_output":"water","probe_id":"retention-v1-046","prompt":"Make 'river' plural. Return one word only.","raw_output":"water"}
+{"category":"language","correct":false,"expected":"chairs","normalized_output":"chair","probe_id":"retention-v1-047","prompt":"Make 'chair' plural. Return one word only.","raw_output":"chair"}
+{"category":"language","correct":false,"expected":"stars","normalized_output":"woman","probe_id":"retention-v1-048","prompt":"Make 'star' plural. Return one word only.","raw_output":"woman"}
+{"category":"language","correct":true,"expected":"clouds","normalized_output":"clouds","probe_id":"retention-v1-049","prompt":"Make 'cloud' plural. Return one word only.","raw_output":"clouds"}
+{"category":"arithmetic","correct":false,"expected":"53","normalized_output":"10 + 43 = 53","probe_id":"retention-v1-050","prompt":"10 + 43 = ? Return only the number.","raw_output":"10 + 43 = 53"}
+{"category":"arithmetic","correct":false,"expected":"21","normalized_output":"11","probe_id":"retention-v1-051","prompt":"11 + 10 = ? Return only the number.","raw_output":"11"}
+{"category":"arithmetic","correct":false,"expected":"29","normalized_output":"19","probe_id":"retention-v1-052","prompt":"12 + 17 = ? Return only the number.","raw_output":"19"}
+{"category":"arithmetic","correct":false,"expected":"37","normalized_output":"24","probe_id":"retention-v1-053","prompt":"13 + 24 = ? Return only the number.","raw_output":"24"}
+{"category":"arithmetic","correct":false,"expected":"45","normalized_output":"35","probe_id":"retention-v1-054","prompt":"14 + 31 = ? Return only the number.","raw_output":"35"}
+{"category":"arithmetic","correct":false,"expected":"53","normalized_output":"38","probe_id":"retention-v1-055","prompt":"15 + 38 = ? Return only the number.","raw_output":"38"}
+{"category":"arithmetic","correct":false,"expected":"61","normalized_output":"45","probe_id":"retention-v1-056","prompt":"16 + 45 = ? Return only the number.","raw_output":"45"}
+{"category":"arithmetic","correct":true,"expected":"29","normalized_output":"29","probe_id":"retention-v1-057","prompt":"17 + 12 = ? Return only the number.","raw_output":"29"}
+{"category":"arithmetic","correct":false,"expected":"37","normalized_output":"19","probe_id":"retention-v1-058","prompt":"18 + 19 = ? Return only the number.","raw_output":"19"}
+{"category":"arithmetic","correct":false,"expected":"45","normalized_output":"26","probe_id":"retention-v1-059","prompt":"19 + 26 = ? Return only the number.","raw_output":"26"}
+{"category":"arithmetic","correct":false,"expected":"53","normalized_output":"20","probe_id":"retention-v1-060","prompt":"20 + 33 = ? Return only the number.","raw_output":"20"}
+{"category":"arithmetic","correct":false,"expected":"61","normalized_output":"21 + 40 = 61","probe_id":"retention-v1-061","prompt":"21 + 40 = ? Return only the number.","raw_output":"21 + 40 = 61"}
+{"category":"arithmetic","correct":false,"expected":"69","normalized_output":"47","probe_id":"retention-v1-062","prompt":"22 + 47 = ? Return only the number.","raw_output":"47"}
+{"category":"arithmetic","correct":false,"expected":"37","normalized_output":"23 + 14 = 37","probe_id":"retention-v1-063","prompt":"23 + 14 = ? Return only the number.","raw_output":"23 + 14 = 37"}
+{"category":"arithmetic","correct":false,"expected":"45","normalized_output":"21","probe_id":"retention-v1-064","prompt":"24 + 21 = ? Return only the number.","raw_output":"21"}
+{"category":"arithmetic","correct":false,"expected":"53","normalized_output":"28","probe_id":"retention-v1-065","prompt":"25 + 28 = ? Return only the number.","raw_output":"28"}
+{"category":"arithmetic","correct":false,"expected":"61","normalized_output":"35","probe_id":"retention-v1-066","prompt":"26 + 35 = ? Return only the number.","raw_output":"35"}
+{"category":"arithmetic","correct":false,"expected":"69","normalized_output":"42","probe_id":"retention-v1-067","prompt":"27 + 42 = ? Return only the number.","raw_output":"42"}
+{"category":"arithmetic","correct":false,"expected":"77","normalized_output":"49","probe_id":"retention-v1-068","prompt":"28 + 49 = ? Return only the number.","raw_output":"49"}
+{"category":"arithmetic","correct":false,"expected":"45","normalized_output":"29 + 16 = 45","probe_id":"retention-v1-069","prompt":"29 + 16 = ? Return only the number.","raw_output":"29 + 16 = 45"}
+{"category":"arithmetic","correct":false,"expected":"53","normalized_output":"23","probe_id":"retention-v1-070","prompt":"30 + 23 = ? Return only the number.","raw_output":"23"}
+{"category":"arithmetic","correct":false,"expected":"61","normalized_output":"31 + 30 = 61","probe_id":"retention-v1-071","prompt":"31 + 30 = ? Return only the number.","raw_output":"31 + 30 = 61"}
+{"category":"arithmetic","correct":false,"expected":"69","normalized_output":"37","probe_id":"retention-v1-072","prompt":"32 + 37 = ? Return only the number.","raw_output":"37"}
+{"category":"arithmetic","correct":false,"expected":"77","normalized_output":"33 + 44 = 77","probe_id":"retention-v1-073","prompt":"33 + 44 = ? Return only the number.","raw_output":"33 + 44 = 77"}
+{"category":"arithmetic","correct":false,"expected":"45","normalized_output":"34 + 11 = 45","probe_id":"retention-v1-074","prompt":"34 + 11 = ? Return only the number.","raw_output":"34 + 11 = 45"}
+{"category":"arithmetic","correct":false,"expected":"53","normalized_output":"35 + 18 = 53","probe_id":"retention-v1-075","prompt":"35 + 18 = ? Return only the number.","raw_output":"35 + 18 = 53"}
+{"category":"arithmetic","correct":false,"expected":"61","normalized_output":"25","probe_id":"retention-v1-076","prompt":"36 + 25 = ? Return only the number.","raw_output":"25"}
+{"category":"arithmetic","correct":false,"expected":"69","normalized_output":"37 + 32 = 69","probe_id":"retention-v1-077","prompt":"37 + 32 = ? Return only the number.","raw_output":"37 + 32 = 69"}
+{"category":"arithmetic","correct":false,"expected":"77","normalized_output":"38 + 39 = 77","probe_id":"retention-v1-078","prompt":"38 + 39 = ? Return only the number.","raw_output":"38 + 39 = 77"}
+{"category":"arithmetic","correct":false,"expected":"85","normalized_output":"46","probe_id":"retention-v1-079","prompt":"39 + 46 = ? Return only the number.","raw_output":"46"}
+{"category":"arithmetic","correct":false,"expected":"53","normalized_output":"13","probe_id":"retention-v1-080","prompt":"40 + 13 = ? Return only the number.","raw_output":"13"}
+{"category":"arithmetic","correct":false,"expected":"61","normalized_output":"20","probe_id":"retention-v1-081","prompt":"41 + 20 = ? Return only the number.","raw_output":"20"}
+{"category":"arithmetic","correct":false,"expected":"69","normalized_output":"27","probe_id":"retention-v1-082","prompt":"42 + 27 = ? Return only the number.","raw_output":"27"}
+{"category":"arithmetic","correct":false,"expected":"77","normalized_output":"37","probe_id":"retention-v1-083","prompt":"43 + 34 = ? Return only the number.","raw_output":"37"}
+{"category":"arithmetic","correct":false,"expected":"85","normalized_output":"41","probe_id":"retention-v1-084","prompt":"44 + 41 = ? Return only the number.","raw_output":"41"}
+{"category":"arithmetic","correct":false,"expected":"93","normalized_output":"48","probe_id":"retention-v1-085","prompt":"45 + 48 = ? Return only the number.","raw_output":"48"}
+{"category":"arithmetic","correct":false,"expected":"61","normalized_output":"15","probe_id":"retention-v1-086","prompt":"46 + 15 = ? Return only the number.","raw_output":"15"}
+{"category":"arithmetic","correct":false,"expected":"69","normalized_output":"29","probe_id":"retention-v1-087","prompt":"47 + 22 = ? Return only the number.","raw_output":"29"}
+{"category":"arithmetic","correct":false,"expected":"77","normalized_output":"29","probe_id":"retention-v1-088","prompt":"48 + 29 = ? Return only the number.","raw_output":"29"}
+{"category":"arithmetic","correct":false,"expected":"85","normalized_output":"49 + 36 = 85","probe_id":"retention-v1-089","prompt":"49 + 36 = ? Return only the number.","raw_output":"49 + 36 = 85"}
+{"category":"arithmetic","correct":false,"expected":"93","normalized_output":"50 + 43 = 93","probe_id":"retention-v1-090","prompt":"50 + 43 = ? Return only the number.","raw_output":"50 + 43 = 93"}
+{"category":"arithmetic","correct":false,"expected":"61","normalized_output":"51 + 10 = 61","probe_id":"retention-v1-091","prompt":"51 + 10 = ? Return only the number.","raw_output":"51 + 10 = 61"}
+{"category":"arithmetic","correct":false,"expected":"69","normalized_output":"17","probe_id":"retention-v1-092","prompt":"52 + 17 = ? Return only the number.","raw_output":"17"}
+{"category":"arithmetic","correct":false,"expected":"77","normalized_output":"24","probe_id":"retention-v1-093","prompt":"53 + 24 = ? Return only the number.","raw_output":"24"}
+{"category":"arithmetic","correct":false,"expected":"85","normalized_output":"31","probe_id":"retention-v1-094","prompt":"54 + 31 = ? Return only the number.","raw_output":"31"}
+{"category":"arithmetic","correct":false,"expected":"93","normalized_output":"38","probe_id":"retention-v1-095","prompt":"55 + 38 = ? Return only the number.","raw_output":"38"}
+{"category":"arithmetic","correct":false,"expected":"101","normalized_output":"45","probe_id":"retention-v1-096","prompt":"56 + 45 = ? Return only the number.","raw_output":"45"}
+{"category":"arithmetic","correct":false,"expected":"69","normalized_output":"12","probe_id":"retention-v1-097","prompt":"57 + 12 = ? Return only the number.","raw_output":"12"}
+{"category":"arithmetic","correct":false,"expected":"77","normalized_output":"19","probe_id":"retention-v1-098","prompt":"58 + 19 = ? Return only the number.","raw_output":"19"}
+{"category":"arithmetic","correct":false,"expected":"85","normalized_output":"26","probe_id":"retention-v1-099","prompt":"59 + 26 = ? Return only the number.","raw_output":"26"}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-100","prompt":"All daxes are wugs. Bob is a dax. Is Bob a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-101","prompt":"No daxes are wugs. Ada is a dax. Is Ada a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-102","prompt":"All daxes are wugs. Mia is a dax. Is Mia a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-103","prompt":"No daxes are wugs. Kai is a dax. Is Kai a wug? Answer yes or no only.","raw_output":"Yes"}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-104","prompt":"All daxes are wugs. Noa is a dax. Is Noa a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-105","prompt":"No daxes are wugs. Ivy is a dax. Is Ivy a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-106","prompt":"All daxes are wugs. Sam is a dax. Is Sam a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-107","prompt":"No daxes are wugs. Zoe is a dax. Is Zoe a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-108","prompt":"All daxes are wugs. Leo is a dax. Is Leo a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-109","prompt":"No daxes are wugs. Rae is a dax. Is Rae a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-110","prompt":"All daxes are wugs. Bob is a dax. Is Bob a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-111","prompt":"No daxes are wugs. Ada is a dax. Is Ada a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-112","prompt":"All daxes are wugs. Mia is a dax. Is Mia a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-113","prompt":"No daxes are wugs. Kai is a dax. Is Kai a wug? Answer yes or no only.","raw_output":"Yes"}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-114","prompt":"All daxes are wugs. Noa is a dax. Is Noa a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-115","prompt":"No daxes are wugs. Ivy is a dax. Is Ivy a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-116","prompt":"All daxes are wugs. Sam is a dax. Is Sam a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-117","prompt":"No daxes are wugs. Zoe is a dax. Is Zoe a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-118","prompt":"All daxes are wugs. Leo is a dax. Is Leo a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-119","prompt":"No daxes are wugs. Rae is a dax. Is Rae a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-120","prompt":"All daxes are wugs. Bob is a dax. Is Bob a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-121","prompt":"No daxes are wugs. Ada is a dax. Is Ada a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-122","prompt":"All daxes are wugs. Mia is a dax. Is Mia a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-123","prompt":"No daxes are wugs. Kai is a dax. Is Kai a wug? Answer yes or no only.","raw_output":"Yes"}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-124","prompt":"All daxes are wugs. Noa is a dax. Is Noa a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-125","prompt":"No daxes are wugs. Ivy is a dax. Is Ivy a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-126","prompt":"All daxes are wugs. Sam is a dax. Is Sam a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-127","prompt":"No daxes are wugs. Zoe is a dax. Is Zoe a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-128","prompt":"All daxes are wugs. Leo is a dax. Is Leo a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-129","prompt":"No daxes are wugs. Rae is a dax. Is Rae a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-130","prompt":"All daxes are wugs. Bob is a dax. Is Bob a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-131","prompt":"No daxes are wugs. Ada is a dax. Is Ada a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-132","prompt":"All daxes are wugs. Mia is a dax. Is Mia a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-133","prompt":"No daxes are wugs. Kai is a dax. Is Kai a wug? Answer yes or no only.","raw_output":"Yes"}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-134","prompt":"All daxes are wugs. Noa is a dax. Is Noa a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-135","prompt":"No daxes are wugs. Ivy is a dax. Is Ivy a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-136","prompt":"All daxes are wugs. Sam is a dax. Is Sam a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-137","prompt":"No daxes are wugs. Zoe is a dax. Is Zoe a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-138","prompt":"All daxes are wugs. Leo is a dax. Is Leo a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-139","prompt":"No daxes are wugs. Rae is a dax. Is Rae a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-140","prompt":"All daxes are wugs. Bob is a dax. Is Bob a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-141","prompt":"No daxes are wugs. Ada is a dax. Is Ada a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-142","prompt":"All daxes are wugs. Mia is a dax. Is Mia a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-143","prompt":"No daxes are wugs. Kai is a dax. Is Kai a wug? Answer yes or no only.","raw_output":"Yes"}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-144","prompt":"All daxes are wugs. Noa is a dax. Is Noa a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-145","prompt":"No daxes are wugs. Ivy is a dax. Is Ivy a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-146","prompt":"All daxes are wugs. Sam is a dax. Is Sam a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-147","prompt":"No daxes are wugs. Zoe is a dax. Is Zoe a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":true,"expected":"yes","normalized_output":"yes","probe_id":"retention-v1-148","prompt":"All daxes are wugs. Leo is a dax. Is Leo a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"logic","correct":false,"expected":"no","normalized_output":"yes","probe_id":"retention-v1-149","prompt":"No daxes are wugs. Rae is a dax. Is Rae a wug? Answer yes or no only.","raw_output":"Yes."}
+{"category":"instructions","correct":true,"expected":"blue","normalized_output":"blue","probe_id":"retention-v1-150","prompt":"Return the word BLUE and nothing else.","raw_output":"BLUE"}
+{"category":"instructions","correct":false,"expected":"green","normalized_output":"nothing else","probe_id":"retention-v1-151","prompt":"Return the word GREEN and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"violet","normalized_output":"nothing else","probe_id":"retention-v1-152","prompt":"Return the word VIOLET and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"orange","normalized_output":"nothing else","probe_id":"retention-v1-153","prompt":"Return the word ORANGE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"silver","normalized_output":"nothing else","probe_id":"retention-v1-154","prompt":"Return the word SILVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"gold","normalized_output":"nothing else","probe_id":"retention-v1-155","prompt":"Return the word GOLD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"circle","normalized_output":"nothing else","probe_id":"retention-v1-156","prompt":"Return the word CIRCLE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"square","normalized_output":"nothing else","probe_id":"retention-v1-157","prompt":"Return the word SQUARE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"river","normalized_output":"nothing else","probe_id":"retention-v1-158","prompt":"Return the word RIVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"cloud","normalized_output":"nothing else","probe_id":"retention-v1-159","prompt":"Return the word CLOUD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":true,"expected":"blue","normalized_output":"blue","probe_id":"retention-v1-160","prompt":"Return the word BLUE and nothing else.","raw_output":"BLUE"}
+{"category":"instructions","correct":false,"expected":"green","normalized_output":"nothing else","probe_id":"retention-v1-161","prompt":"Return the word GREEN and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"violet","normalized_output":"nothing else","probe_id":"retention-v1-162","prompt":"Return the word VIOLET and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"orange","normalized_output":"nothing else","probe_id":"retention-v1-163","prompt":"Return the word ORANGE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"silver","normalized_output":"nothing else","probe_id":"retention-v1-164","prompt":"Return the word SILVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"gold","normalized_output":"nothing else","probe_id":"retention-v1-165","prompt":"Return the word GOLD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"circle","normalized_output":"nothing else","probe_id":"retention-v1-166","prompt":"Return the word CIRCLE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"square","normalized_output":"nothing else","probe_id":"retention-v1-167","prompt":"Return the word SQUARE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"river","normalized_output":"nothing else","probe_id":"retention-v1-168","prompt":"Return the word RIVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"cloud","normalized_output":"nothing else","probe_id":"retention-v1-169","prompt":"Return the word CLOUD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":true,"expected":"blue","normalized_output":"blue","probe_id":"retention-v1-170","prompt":"Return the word BLUE and nothing else.","raw_output":"BLUE"}
+{"category":"instructions","correct":false,"expected":"green","normalized_output":"nothing else","probe_id":"retention-v1-171","prompt":"Return the word GREEN and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"violet","normalized_output":"nothing else","probe_id":"retention-v1-172","prompt":"Return the word VIOLET and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"orange","normalized_output":"nothing else","probe_id":"retention-v1-173","prompt":"Return the word ORANGE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"silver","normalized_output":"nothing else","probe_id":"retention-v1-174","prompt":"Return the word SILVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"gold","normalized_output":"nothing else","probe_id":"retention-v1-175","prompt":"Return the word GOLD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"circle","normalized_output":"nothing else","probe_id":"retention-v1-176","prompt":"Return the word CIRCLE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"square","normalized_output":"nothing else","probe_id":"retention-v1-177","prompt":"Return the word SQUARE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"river","normalized_output":"nothing else","probe_id":"retention-v1-178","prompt":"Return the word RIVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"cloud","normalized_output":"nothing else","probe_id":"retention-v1-179","prompt":"Return the word CLOUD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":true,"expected":"blue","normalized_output":"blue","probe_id":"retention-v1-180","prompt":"Return the word BLUE and nothing else.","raw_output":"BLUE"}
+{"category":"instructions","correct":false,"expected":"green","normalized_output":"nothing else","probe_id":"retention-v1-181","prompt":"Return the word GREEN and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"violet","normalized_output":"nothing else","probe_id":"retention-v1-182","prompt":"Return the word VIOLET and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"orange","normalized_output":"nothing else","probe_id":"retention-v1-183","prompt":"Return the word ORANGE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"silver","normalized_output":"nothing else","probe_id":"retention-v1-184","prompt":"Return the word SILVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"gold","normalized_output":"nothing else","probe_id":"retention-v1-185","prompt":"Return the word GOLD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"circle","normalized_output":"nothing else","probe_id":"retention-v1-186","prompt":"Return the word CIRCLE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"square","normalized_output":"nothing else","probe_id":"retention-v1-187","prompt":"Return the word SQUARE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"river","normalized_output":"nothing else","probe_id":"retention-v1-188","prompt":"Return the word RIVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"cloud","normalized_output":"nothing else","probe_id":"retention-v1-189","prompt":"Return the word CLOUD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":true,"expected":"blue","normalized_output":"blue","probe_id":"retention-v1-190","prompt":"Return the word BLUE and nothing else.","raw_output":"BLUE"}
+{"category":"instructions","correct":false,"expected":"green","normalized_output":"nothing else","probe_id":"retention-v1-191","prompt":"Return the word GREEN and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"violet","normalized_output":"nothing else","probe_id":"retention-v1-192","prompt":"Return the word VIOLET and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"orange","normalized_output":"nothing else","probe_id":"retention-v1-193","prompt":"Return the word ORANGE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"silver","normalized_output":"nothing else","probe_id":"retention-v1-194","prompt":"Return the word SILVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"gold","normalized_output":"nothing else","probe_id":"retention-v1-195","prompt":"Return the word GOLD and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"circle","normalized_output":"nothing else","probe_id":"retention-v1-196","prompt":"Return the word CIRCLE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"square","normalized_output":"nothing else","probe_id":"retention-v1-197","prompt":"Return the word SQUARE and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"river","normalized_output":"nothing else","probe_id":"retention-v1-198","prompt":"Return the word RIVER and nothing else.","raw_output":"Nothing else."}
+{"category":"instructions","correct":false,"expected":"cloud","normalized_output":"nothing else","probe_id":"retention-v1-199","prompt":"Return the word CLOUD and nothing else.","raw_output":"Nothing else."}

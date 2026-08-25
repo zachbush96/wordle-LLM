@@ -1,0 +1,219 @@
+{
+  "action_target_accuracy": null,
+  "artifact_id": "594ef03031c1",
+  "by_posterior_size": {
+    "1": {
+      "action_target_accuracy": null,
+      "items": 74,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": 0.0,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "10": {
+      "action_target_accuracy": null,
+      "items": 2,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "12": {
+      "action_target_accuracy": null,
+      "items": 1,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "128": {
+      "action_target_accuracy": null,
+      "items": 1,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 1.0,
+      "valid_word_accuracy": 0.0
+    },
+    "15": {
+      "action_target_accuracy": null,
+      "items": 1,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "2": {
+      "action_target_accuracy": null,
+      "items": 22,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "3": {
+      "action_target_accuracy": null,
+      "items": 7,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "33": {
+      "action_target_accuracy": null,
+      "items": 1,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "4": {
+      "action_target_accuracy": null,
+      "items": 5,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "43": {
+      "action_target_accuracy": null,
+      "items": 1,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "5": {
+      "action_target_accuracy": null,
+      "items": 4,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "6": {
+      "action_target_accuracy": null,
+      "items": 4,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "8": {
+      "action_target_accuracy": null,
+      "items": 2,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "9": {
+      "action_target_accuracy": null,
+      "items": 3,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    }
+  },
+  "by_turn": {
+    "1": {
+      "action_target_accuracy": null,
+      "items": 1,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": null,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 1.0,
+      "valid_word_accuracy": 0.0
+    },
+    "2": {
+      "action_target_accuracy": null,
+      "items": 58,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": 0.0,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "3": {
+      "action_target_accuracy": null,
+      "items": 62,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": 0.0,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    },
+    "4": {
+      "action_target_accuracy": null,
+      "items": 7,
+      "posterior_consistency": null,
+      "posterior_constraint_violation_rate": null,
+      "repeat_rate": null,
+      "singleton_answer_accuracy": 0.0,
+      "terminal_compliance": 0.0,
+      "train_state_coverage": 0.0,
+      "valid_word_accuracy": 0.0
+    }
+  },
+  "diagnostic_id": "COMMON-STATE-DIAGNOSTICS-001",
+  "error_counts": {
+    "format": 128
+  },
+  "items": 128,
+  "items_sha256": "bfc220edbcaaf38b2b7788618992decae99019d89e552ca837fd9346fa8857a6",
+  "posterior_consistency": null,
+  "posterior_constraint_violation_rate": null,
+  "repeat_rate": null,
+  "singleton_answer_accuracy": 0.0,
+  "terminal_compliance": 0.0,
+  "train_state_coverage": 0.0078125,
+  "valid_word_accuracy": 0.0
+}

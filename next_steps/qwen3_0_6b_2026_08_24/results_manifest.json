@@ -1,0 +1,585 @@
+{
+  "declared_files": 143,
+  "experiment_id": "QWEN3-0.6B-WORDLE-001",
+  "files": {
+    "results/balanced-dora-s2026-n600/step-000150/balanced-dora-s2026-n600-step-000150-fixed-states/diagnostics/443e70e69887/items.jsonl": {
+      "bytes": 61035,
+      "sha256": "7602cba132f3c8204b786240668e4b873e4cc063cbd9bf32280a5b28002263a4"
+    },
+    "results/balanced-dora-s2026-n600/step-000150/balanced-dora-s2026-n600-step-000150-fixed-states/diagnostics/443e70e69887/summary.json": {
+      "bytes": 7289,
+      "sha256": "acc7715297668c49aec2d39f2deaf6f38917fca75648c73c3a7313e1b9efb4e4"
+    },
+    "results/balanced-dora-s2026-n600/step-000150/balanced-dora-s2026-n600-step-000150-games.jsonl": {
+      "bytes": 75737,
+      "sha256": "58d98d11a0ca8ac5fcf6f987a4b6a56935c487f6c0f0133246c124c5796b7df5"
+    },
+    "results/balanced-dora-s2026-n600/step-000150/balanced-dora-s2026-n600-step-000150-retention.jsonl": {
+      "bytes": 39527,
+      "sha256": "b5bea0cb426cf24f84726bbaf169a2363aaec36a0ad363985250bebc0a600a6c"
+    },
+    "results/balanced-dora-s2026-n600/step-000150/balanced-dora-s2026-n600-step-000150-summary.json": {
+      "bytes": 9307,
+      "sha256": "5113712d4840f056803da6f54efe8280e9d1f201ddbffd901902053a5fa435c6"
+    },
+    "results/balanced-dora-s2026-n600/step-000300/balanced-dora-s2026-n600-step-000300-fixed-states/diagnostics/a572f19ab9f2/items.jsonl": {
+      "bytes": 61236,
+      "sha256": "a2d78029dff070f599d7288b62fdaf1fcc0f41cf758193fc963e0079af82e80f"
+    },
+    "results/balanced-dora-s2026-n600/step-000300/balanced-dora-s2026-n600-step-000300-fixed-states/diagnostics/a572f19ab9f2/summary.json": {
+      "bytes": 7403,
+      "sha256": "938cee2c1239c63fd2a94c3fdb634ef99053555f1a8ed3ffc84417bfdff6a889"
+    },
+    "results/balanced-dora-s2026-n600/step-000300/balanced-dora-s2026-n600-step-000300-games.jsonl": {
+      "bytes": 75940,
+      "sha256": "e2c51495b4a71cde7e2225e96df15a7fd03b352d82db4e1f9ad39edaeeccd8b3"
+    },
+    "results/balanced-dora-s2026-n600/step-000300/balanced-dora-s2026-n600-step-000300-retention.jsonl": {
+      "bytes": 39685,
+      "sha256": "74b9de5dcb56e500755fc9341d979c417fea2b01a4b8d28e49996fec4720887b"
+    },
+    "results/balanced-dora-s2026-n600/step-000300/balanced-dora-s2026-n600-step-000300-summary.json": {
+      "bytes": 9441,
+      "sha256": "c77247b44e1fa901d5ac360d3c5ffa0a34645c7ab5864c10e94fe144f7c8b841"
+    },
+    "results/balanced-dora-s2026-n600/step-000450/balanced-dora-s2026-n600-step-000450-fixed-states/diagnostics/ffeb6a882696/items.jsonl": {
+      "bytes": 61143,
+      "sha256": "d03760f2cedef097e01b7b3a401230f2f132797adf5386b9e80bde039f644af3"
+    },
+    "results/balanced-dora-s2026-n600/step-000450/balanced-dora-s2026-n600-step-000450-fixed-states/diagnostics/ffeb6a882696/summary.json": {
+      "bytes": 7378,
+      "sha256": "cc43ede8750ba556fbb2f1b47b8faf3811b1e68c2fbfec3868b2929ddfe3a419"
+    },
+    "results/balanced-dora-s2026-n600/step-000450/balanced-dora-s2026-n600-step-000450-games.jsonl": {
+      "bytes": 75331,
+      "sha256": "4076a3ca92d8299f253c0133aa556bfe155a3df144c2f0e55ec4669c8b4081dc"
+    },
+    "results/balanced-dora-s2026-n600/step-000450/balanced-dora-s2026-n600-step-000450-retention.jsonl": {
+      "bytes": 39591,
+      "sha256": "ca8c3e337b17b60829743d09186ae6b69cf725c08da82b25e79236b68eeb81f7"
+    },
+    "results/balanced-dora-s2026-n600/step-000450/balanced-dora-s2026-n600-step-000450-summary.json": {
+      "bytes": 9405,
+      "sha256": "aed0f3decb860d3812d29cd7dae825bb3549ee5d1f9cd658e477efb5a4c0e2d8"
+    },
+    "results/balanced-dora-s2026-n600/step-000600/balanced-dora-s2026-n600-step-000600-fixed-states/diagnostics/ebbdc9fed24c/items.jsonl": {
+      "bytes": 61162,
+      "sha256": "5017e758ccbf5dc39cf9e217003ffdfb6ee29a51f4b79f0545c7cc34a4b1a262"
+    },
+    "results/balanced-dora-s2026-n600/step-000600/balanced-dora-s2026-n600-step-000600-fixed-states/diagnostics/ebbdc9fed24c/summary.json": {
+      "bytes": 7360,
+      "sha256": "53a838c0410b7ab5eda19aed20558bc0a34000c2467781ae8243215947fc3d40"
+    },
+    "results/balanced-dora-s2026-n600/step-000600/balanced-dora-s2026-n600-step-000600-games.jsonl": {
+      "bytes": 83550,
+      "sha256": "5da0fa78c1d850bd0d98c8907a46fa97a148182a8124d1d8de73af9822ef4bca"
+    },
+    "results/balanced-dora-s2026-n600/step-000600/balanced-dora-s2026-n600-step-000600-retention.jsonl": {
+      "bytes": 39672,
+      "sha256": "4c14d27cf34841a4c0ce8f42120203e62b040bfaa6fad97c2f1fc48332cc5904"
+    },
+    "results/balanced-dora-s2026-n600/step-000600/balanced-dora-s2026-n600-step-000600-summary.json": {
+      "bytes": 9397,
+      "sha256": "d435d483eb3e3f5dbe36655369af8f1922bffabd834e8fe757f5234520df0cf0"
+    },
+    "results/balanced-full-s2026-n600/step-000150/balanced-full-s2026-n600-step-000150-fixed-states/diagnostics/b1e54d965ce9/items.jsonl": {
+      "bytes": 61056,
+      "sha256": "0c34be25ad116865e49a83189262fd062fbed22d4c59e6455f64916b0caa4d97"
+    },
+    "results/balanced-full-s2026-n600/step-000150/balanced-full-s2026-n600-step-000150-fixed-states/diagnostics/b1e54d965ce9/summary.json": {
+      "bytes": 7314,
+      "sha256": "19c0a00fcee197323fa2d09c0262d5b4d5f8a2c6000f54522d41d3f41d81b4d2"
+    },
+    "results/balanced-full-s2026-n600/step-000150/balanced-full-s2026-n600-step-000150-games.jsonl": {
+      "bytes": 63239,
+      "sha256": "ee970412e7012c636af14ee1eae07dbe55c8fc93a0ec4cc0f3176cd896644283"
+    },
+    "results/balanced-full-s2026-n600/step-000150/balanced-full-s2026-n600-step-000150-retention.jsonl": {
+      "bytes": 43135,
+      "sha256": "a1bb196ec299653ac90daccef956cddbf064ff1933188f0e82d0ddd5fd533db4"
+    },
+    "results/balanced-full-s2026-n600/step-000150/balanced-full-s2026-n600-step-000150-summary.json": {
+      "bytes": 9255,
+      "sha256": "58ed90c7174c64422105cb775164d8887be14f350acefd631e0e9673c5fa55f0"
+    },
+    "results/balanced-full-s2026-n600/step-000300/balanced-full-s2026-n600-step-000300-fixed-states/diagnostics/ab42504dd859/items.jsonl": {
+      "bytes": 60977,
+      "sha256": "2f6edaecea6571f78a7dcc79e04b6fa40ad85152bac9b05e4bae5bb236cfd247"
+    },
+    "results/balanced-full-s2026-n600/step-000300/balanced-full-s2026-n600-step-000300-fixed-states/diagnostics/ab42504dd859/summary.json": {
+      "bytes": 7207,
+      "sha256": "297c00b6e535921b5730797e58e431c37b8f935b94f95e4dcce47c3596ac5efe"
+    },
+    "results/balanced-full-s2026-n600/step-000300/balanced-full-s2026-n600-step-000300-games.jsonl": {
+      "bytes": 61937,
+      "sha256": "ce897d011744584bf98bd737526a7b6aa26b1d47ae279aca27bc359212a327b4"
+    },
+    "results/balanced-full-s2026-n600/step-000300/balanced-full-s2026-n600-step-000300-retention.jsonl": {
+      "bytes": 44681,
+      "sha256": "54ef10a5a336d0a44cb054f832371a349d0e383134e0b2f94bde4ad797eb949a"
+    },
+    "results/balanced-full-s2026-n600/step-000300/balanced-full-s2026-n600-step-000300-summary.json": {
+      "bytes": 9153,
+      "sha256": "1a2d7caad2ec92bf00edb73bc754d0c7251558dc6f380f9a96a023b11d711d3a"
+    },
+    "results/balanced-full-s2026-n600/step-000450-rep1.05/balanced-full-s2026-n600-step-000450-rep1.05-fixed-states/diagnostics/27dd3395dd06/items.jsonl": {
+      "bytes": 60989,
+      "sha256": "165e1f2f67bc003698f92098e5571269d0bd7a20337f0d38bad61cfd752a7347"
+    },
+    "results/balanced-full-s2026-n600/step-000450-rep1.05/balanced-full-s2026-n600-step-000450-rep1.05-fixed-states/diagnostics/27dd3395dd06/summary.json": {
+      "bytes": 7352,
+      "sha256": "237b6911c362077548fd31915efe9ddd6fda511a0e8e252032c31cc489bc8219"
+    },
+    "results/balanced-full-s2026-n600/step-000450-rep1.05/balanced-full-s2026-n600-step-000450-rep1.05-games.jsonl": {
+      "bytes": 62062,
+      "sha256": "b04ed1d4509daa4ba1833277048bffd3fd2b4ce4601006bf81a0aaa7d9d9362c"
+    },
+    "results/balanced-full-s2026-n600/step-000450-rep1.05/balanced-full-s2026-n600-step-000450-rep1.05-retention.jsonl": {
+      "bytes": 45869,
+      "sha256": "f55c28eb0d0f52f5e539c1d5d0c716c986b1975fab1d6c78f00fc2aca64d6b1b"
+    },
+    "results/balanced-full-s2026-n600/step-000450-rep1.05/balanced-full-s2026-n600-step-000450-rep1.05-summary.json": {
+      "bytes": 9487,
+      "sha256": "c3d5c202fc368abe7f2fba27b4bad544a635ffe9c6366e6a1d35eb36780420a0"
+    },
+    "results/balanced-full-s2026-n600/step-000450-rep1.05/balanced-full-s2026-n600-step-000450-summary.json": {
+      "bytes": 9519,
+      "sha256": "ff7698bec47bf4e4de41b723c9e06c461b448157c90da704285b243aba553532"
+    },
+    "results/balanced-full-s2026-n600/step-000450/balanced-full-s2026-n600-step-000450-fixed-states/diagnostics/5442af98433f/items.jsonl": {
+      "bytes": 60976,
+      "sha256": "1052ecf8b80f03dfc4b4a0b78cedf87e386a6ab04abb1a643844fd4e4a581bf7"
+    },
+    "results/balanced-full-s2026-n600/step-000450/balanced-full-s2026-n600-step-000450-fixed-states/diagnostics/5442af98433f/summary.json": {
+      "bytes": 7351,
+      "sha256": "ff0d18312afeae8c8a9deb872c1a1cdd3f96880f8f0344d8dd35b2349fa9e44a"
+    },
+    "results/balanced-full-s2026-n600/step-000450/balanced-full-s2026-n600-step-000450-games.jsonl": {
+      "bytes": 59608,
+      "sha256": "b8bbb15c665d11b6b51591ac2cafbaf0843257e3acc52b531d4c56df2c203352"
+    },
+    "results/balanced-full-s2026-n600/step-000450/balanced-full-s2026-n600-step-000450-retention.jsonl": {
+      "bytes": 45869,
+      "sha256": "f55c28eb0d0f52f5e539c1d5d0c716c986b1975fab1d6c78f00fc2aca64d6b1b"
+    },
+    "results/balanced-full-s2026-n600/step-000450/balanced-full-s2026-n600-step-000450-summary.json": {
+      "bytes": 9375,
+      "sha256": "61a6424d33ce37dd0d54ddadd10452d6a8b313b1603c47cd827b821f4473d1c8"
+    },
+    "results/balanced-full-s2026-n600/step-000600/balanced-full-s2026-n600-step-000600-fixed-states/diagnostics/6a9e576343e8/items.jsonl": {
+      "bytes": 60975,
+      "sha256": "0b077c2ba7a830f86350a0d28663714e16ec4d22f5d69df661e3b700b7ea7b39"
+    },
+    "results/balanced-full-s2026-n600/step-000600/balanced-full-s2026-n600-step-000600-fixed-states/diagnostics/6a9e576343e8/summary.json": {
+      "bytes": 7350,
+      "sha256": "5453b857adf547596d0688ce651a297a9f6060d10b3f70abf84d25c9cd5a971e"
+    },
+    "results/balanced-full-s2026-n600/step-000600/balanced-full-s2026-n600-step-000600-games.jsonl": {
+      "bytes": 61490,
+      "sha256": "ed311d6933526260a24b27678d8fa10beb28fd1a024cac3f93909bf69280f6e1"
+    },
+    "results/balanced-full-s2026-n600/step-000600/balanced-full-s2026-n600-step-000600-retention.jsonl": {
+      "bytes": 45396,
+      "sha256": "edfb766c0ba58729b5a412d9714851ae5b61e1ff86ba7d4d979901295e182316"
+    },
+    "results/balanced-full-s2026-n600/step-000600/balanced-full-s2026-n600-step-000600-summary.json": {
+      "bytes": 9375,
+      "sha256": "2c3674638355b71c5cfac1b48f1ac4172d9c105379c3203c36d6edaa0bc9a290"
+    },
+    "results/balanced-lora-s2026-n600/step-000150/balanced-lora-s2026-n600-step-000150-fixed-states/diagnostics/638ab7a0b2a4/items.jsonl": {
+      "bytes": 61055,
+      "sha256": "79040d61e65a8519cf2d0d5b4d49ccd19f34465d01f2b7dde9687fb090daaea1"
+    },
+    "results/balanced-lora-s2026-n600/step-000150/balanced-lora-s2026-n600-step-000150-fixed-states/diagnostics/638ab7a0b2a4/summary.json": {
+      "bytes": 7247,
+      "sha256": "80d57cc8386fae2d228a4130526907e0a3742088441aa1c49ba20136070dbb68"
+    },
+    "results/balanced-lora-s2026-n600/step-000150/balanced-lora-s2026-n600-step-000150-games.jsonl": {
+      "bytes": 158310,
+      "sha256": "de0187463de2b56019b39a7f7b6d09e30a712ede8cd33f97b87fc4d9456d7933"
+    },
+    "results/balanced-lora-s2026-n600/step-000150/balanced-lora-s2026-n600-step-000150-retention.jsonl": {
+      "bytes": 39305,
+      "sha256": "32063f622719d8551aae5a314f97e2839bb93d1591deada2e149d6445755dcd4"
+    },
+    "results/balanced-lora-s2026-n600/step-000150/balanced-lora-s2026-n600-step-000150-summary.json": {
+      "bytes": 9140,
+      "sha256": "2124f074372b2b7e9e1f12a1c839d6800d45ed1b386f4ebba338f84f05a710cd"
+    },
+    "results/balanced-lora-s2026-n600/step-000300/balanced-lora-s2026-n600-step-000300-fixed-states/diagnostics/c38f53b65dd6/items.jsonl": {
+      "bytes": 61192,
+      "sha256": "1c754cfc04a7fda2ea0d484dc6568c5bc6b89919fecba0808cd6df014e13bcdf"
+    },
+    "results/balanced-lora-s2026-n600/step-000300/balanced-lora-s2026-n600-step-000300-fixed-states/diagnostics/c38f53b65dd6/summary.json": {
+      "bytes": 7425,
+      "sha256": "647ee8c443e2141a55f1a922a72bff136eef0cb9f7ef4cc11d5f30ae7daecc9d"
+    },
+    "results/balanced-lora-s2026-n600/step-000300/balanced-lora-s2026-n600-step-000300-games.jsonl": {
+      "bytes": 73228,
+      "sha256": "c66fdd8f8cf1f6dd313628f491957f39c0ac89fc8d333e83ac8e53523a80bda9"
+    },
+    "results/balanced-lora-s2026-n600/step-000300/balanced-lora-s2026-n600-step-000300-retention.jsonl": {
+      "bytes": 39461,
+      "sha256": "5a85f5f42f5cb0641bba244714b14a25d37963caab9e844f2be0c1b96db099ba"
+    },
+    "results/balanced-lora-s2026-n600/step-000300/balanced-lora-s2026-n600-step-000300-summary.json": {
+      "bytes": 9448,
+      "sha256": "c1bacf10581125cb092b48a4e26e2dc93a79c070d2910200a5c2aaa62891ffdd"
+    },
+    "results/balanced-lora-s2026-n600/step-000450/balanced-lora-s2026-n600-step-000450-fixed-states/diagnostics/5832f4d05537/items.jsonl": {
+      "bytes": 61096,
+      "sha256": "ccdf5944eb69bad2fa1099158e16c67c44f654e727c22320f7541add4508bc6f"
+    },
+    "results/balanced-lora-s2026-n600/step-000450/balanced-lora-s2026-n600-step-000450-fixed-states/diagnostics/5832f4d05537/summary.json": {
+      "bytes": 7341,
+      "sha256": "6b3f1414a2ad0ad5968dba53f07b6699fc92d52a2546e596c6936510f9bfb539"
+    },
+    "results/balanced-lora-s2026-n600/step-000450/balanced-lora-s2026-n600-step-000450-games.jsonl": {
+      "bytes": 77152,
+      "sha256": "e4f96e03715e784bd7ccbd104739f91e7ded783d3b55e83a48eade356ae9e7e3"
+    },
+    "results/balanced-lora-s2026-n600/step-000450/balanced-lora-s2026-n600-step-000450-retention.jsonl": {
+      "bytes": 39603,
+      "sha256": "d0c68a1aa954fe6f3e39b0b155d279a0961863e27ce2ee5bca8fe2c4b9b66e7d"
+    },
+    "results/balanced-lora-s2026-n600/step-000450/balanced-lora-s2026-n600-step-000450-summary.json": {
+      "bytes": 9380,
+      "sha256": "92ccb9cecc24937fb0c3e42a41d9b2b284c01aeafdeeb4aed637d422e37b8285"
+    },
+    "results/balanced-lora-s2026-n600/step-000600/balanced-lora-s2026-n600-step-000600-fixed-states/diagnostics/88f516ee7947/items.jsonl": {
+      "bytes": 61190,
+      "sha256": "c28f888ceadf0abe94ead399bf6e7b49c22d79bce29880f40783358a024dcb91"
+    },
+    "results/balanced-lora-s2026-n600/step-000600/balanced-lora-s2026-n600-step-000600-fixed-states/diagnostics/88f516ee7947/summary.json": {
+      "bytes": 7383,
+      "sha256": "160ef1f325a8888b6bf9006e2171fff783db95bf992bc4547d986d7eda51a16a"
+    },
+    "results/balanced-lora-s2026-n600/step-000600/balanced-lora-s2026-n600-step-000600-games.jsonl": {
+      "bytes": 75616,
+      "sha256": "d336ba5e7ce08820d74916f319d1c8225a430f14e717cb2d713d43af428fed12"
+    },
+    "results/balanced-lora-s2026-n600/step-000600/balanced-lora-s2026-n600-step-000600-retention.jsonl": {
+      "bytes": 39712,
+      "sha256": "883b1c6aac4aba300c22a3b40280391f21baf2bf47e043d11b086372ed201d20"
+    },
+    "results/balanced-lora-s2026-n600/step-000600/balanced-lora-s2026-n600-step-000600-summary.json": {
+      "bytes": 9406,
+      "sha256": "42fd2b27a1e5d2deb9b11687372511347fcdb5a4acd4972db5fd511b660b17bf"
+    },
+    "results/balanced-rslora-s2026-n600/step-000150/balanced-rslora-s2026-n600-step-000150-fixed-states/diagnostics/892e9cfee52b/items.jsonl": {
+      "bytes": 61192,
+      "sha256": "0f568a30a170d3aeedce5c4ced5dff9f2c0223adc3efbfa9fe704d417395ee4a"
+    },
+    "results/balanced-rslora-s2026-n600/step-000150/balanced-rslora-s2026-n600-step-000150-fixed-states/diagnostics/892e9cfee52b/summary.json": {
+      "bytes": 7402,
+      "sha256": "7c078c3e5ad75682cfb2bb5cc1f83202dee4c011d9cad21b2ed7207adb3851de"
+    },
+    "results/balanced-rslora-s2026-n600/step-000150/balanced-rslora-s2026-n600-step-000150-games.jsonl": {
+      "bytes": 89326,
+      "sha256": "ae97b5e46594a4eb69ca0f8a58a6af01af31947a23e007cb001844133792a807"
+    },
+    "results/balanced-rslora-s2026-n600/step-000150/balanced-rslora-s2026-n600-step-000150-retention.jsonl": {
+      "bytes": 39640,
+      "sha256": "0811e18e42fdb5252e2545536cd26e5f34bee93891e94897eb64337f63141350"
+    },
+    "results/balanced-rslora-s2026-n600/step-000150/balanced-rslora-s2026-n600-step-000150-summary.json": {
+      "bytes": 9428,
+      "sha256": "4c546b75b9f45fdad8d551528d1326d7669690f1feba2105b92a80ac58b66ac8"
+    },
+    "results/balanced-rslora-s2026-n600/step-000300/balanced-rslora-s2026-n600-step-000300-fixed-states/diagnostics/f02279e41888/items.jsonl": {
+      "bytes": 61075,
+      "sha256": "d89515a9a63cbb231c86695f23f32839bf11df8e08dfc9aa73c25af87b4b2d0d"
+    },
+    "results/balanced-rslora-s2026-n600/step-000300/balanced-rslora-s2026-n600-step-000300-fixed-states/diagnostics/f02279e41888/summary.json": {
+      "bytes": 7415,
+      "sha256": "0865ab7ec586a18a1c7a849978e412eb58f810b1b4dce8008aab1aed1325471b"
+    },
+    "results/balanced-rslora-s2026-n600/step-000300/balanced-rslora-s2026-n600-step-000300-games.jsonl": {
+      "bytes": 68419,
+      "sha256": "e3910b073f77ddfc886a50c6fea5fb36757956d3e2414d95c1d2ee2daa0f8f20"
+    },
+    "results/balanced-rslora-s2026-n600/step-000300/balanced-rslora-s2026-n600-step-000300-retention.jsonl": {
+      "bytes": 39925,
+      "sha256": "d0fc7a1b05fe9be32ec7cc56804bffa4e4cd6a606708aca8d00bdac54965e8e4"
+    },
+    "results/balanced-rslora-s2026-n600/step-000300/balanced-rslora-s2026-n600-step-000300-summary.json": {
+      "bytes": 9460,
+      "sha256": "bf0e286860f83a71fc1fa0eff259269fda0a5156bed3d53e8c632beb79c913ed"
+    },
+    "results/balanced-rslora-s2026-n600/step-000450/balanced-rslora-s2026-n600-step-000450-fixed-states/diagnostics/106d2d189343/items.jsonl": {
+      "bytes": 61071,
+      "sha256": "3e626c2e49df166e811b19ccc1f925153c5de76cd1edbe9a69fa1ecb37afa3f0"
+    },
+    "results/balanced-rslora-s2026-n600/step-000450/balanced-rslora-s2026-n600-step-000450-fixed-states/diagnostics/106d2d189343/summary.json": {
+      "bytes": 7405,
+      "sha256": "ffb6e8f1fff795519c7c9126584f987a4c5ab5d47561eebc790cb49e62f89067"
+    },
+    "results/balanced-rslora-s2026-n600/step-000450/balanced-rslora-s2026-n600-step-000450-games.jsonl": {
+      "bytes": 79823,
+      "sha256": "ab4797393d4a042d8e73b335093d30c0e0e9ac46fb96381ade306bfec1ff99e2"
+    },
+    "results/balanced-rslora-s2026-n600/step-000450/balanced-rslora-s2026-n600-step-000450-retention.jsonl": {
+      "bytes": 39658,
+      "sha256": "73631a417f3357eb75296f5a8d82712480ccc08359d076d540cfd5746e07e6c9"
+    },
+    "results/balanced-rslora-s2026-n600/step-000450/balanced-rslora-s2026-n600-step-000450-summary.json": {
+      "bytes": 9424,
+      "sha256": "596e1d254d8134f18ec08a3c8010e8f05af7f293ce38897c232ad27d8fbeeecd"
+    },
+    "results/balanced-rslora-s2026-n600/step-000600/balanced-rslora-s2026-n600-step-000600-fixed-states/diagnostics/f74bc5a1a586/items.jsonl": {
+      "bytes": 61045,
+      "sha256": "46a211d3b35480f63651e8a2585838a6a5c14008126bcce88255c89e64f25f51"
+    },
+    "results/balanced-rslora-s2026-n600/step-000600/balanced-rslora-s2026-n600-step-000600-fixed-states/diagnostics/f74bc5a1a586/summary.json": {
+      "bytes": 7273,
+      "sha256": "d6f2ae662e6c045ee972621800f49a4edc2fea08b80cb19fe173e6219f09e93b"
+    },
+    "results/balanced-rslora-s2026-n600/step-000600/balanced-rslora-s2026-n600-step-000600-games.jsonl": {
+      "bytes": 87597,
+      "sha256": "68d3b7a31a7320d41e1b647c9d5a9105a228ebc4777c834d38ffa906b37acfd2"
+    },
+    "results/balanced-rslora-s2026-n600/step-000600/balanced-rslora-s2026-n600-step-000600-retention.jsonl": {
+      "bytes": 39718,
+      "sha256": "c19f043d54068796cebb7837f24cf2a259fa441a0f63ae2fd93dfc2a87ed7d3c"
+    },
+    "results/balanced-rslora-s2026-n600/step-000600/balanced-rslora-s2026-n600-step-000600-summary.json": {
+      "bytes": 9316,
+      "sha256": "a2bd5e4bbe9476280174ad98d4504ccd1667aae085d5c87b8c8888cbfa26902d"
+    },
+    "results/base-nonthinking/base-nonthinking-fixed-states/diagnostics/594ef03031c1/items.jsonl": {
+      "bytes": 68203,
+      "sha256": "bfc220edbcaaf38b2b7788618992decae99019d89e552ca837fd9346fa8857a6"
+    },
+    "results/base-nonthinking/base-nonthinking-fixed-states/diagnostics/594ef03031c1/summary.json": {
+      "bytes": 6752,
+      "sha256": "f18cc3087a6c7475762b7dd998a7b0ab69c77e209ed1f97e347068b3c391e460"
+    },
+    "results/base-nonthinking/base-nonthinking-games.jsonl": {
+      "bytes": 188166,
+      "sha256": "99bad4ed3162e93f1c9305ec8dae69be176a8eefd2283c60897cd14a634b0b5a"
+    },
+    "results/base-nonthinking/base-nonthinking-retention.jsonl": {
+      "bytes": 39867,
+      "sha256": "8fe4e6c7614b8b12f34c49e3eca87ac19b69e083a5e680558a2bf0e32a3e9d75"
+    },
+    "results/base-nonthinking/base-nonthinking-summary.json": {
+      "bytes": 8571,
+      "sha256": "9296f1a90745fcb81d4fa259f947fbae89ce968349e4b4e08df2e59ed4fc2b3c"
+    },
+    "results/base-thinking/base-thinking-fixed-states/diagnostics/ea535e1deeb1/items.jsonl": {
+      "bytes": 125748,
+      "sha256": "d21d2e178c10fbfcde189c8ecb5125ced53f8032d67a90357d4d030647bc9328"
+    },
+    "results/base-thinking/base-thinking-fixed-states/diagnostics/ea535e1deeb1/summary.json": {
+      "bytes": 6752,
+      "sha256": "26194ad8b58accf397f405d152c50d328ce0da58592c164e23ed62cf3591dc53"
+    },
+    "results/base-thinking/base-thinking-games.jsonl": {
+      "bytes": 559654,
+      "sha256": "4b645a38c88350145b4357754d3510c4ffeae9708c78b4b03543e4365988a4b7"
+    },
+    "results/base-thinking/base-thinking-retention.jsonl": {
+      "bytes": 60361,
+      "sha256": "e4ffbbb67ae42e8390892cb789a97e38e60e12c77ddaff7e0718d18a5f960f5e"
+    },
+    "results/base-thinking/base-thinking-summary.json": {
+      "bytes": 8569,
+      "sha256": "74bd1009ce0cf8b640898ffe1b5861a25b3409edb78d341c0cec80116bae4311"
+    },
+    "results/constraint-lora-s2026-n600/step-000150/constraint-lora-s2026-n600-step-000150-fixed-states/diagnostics/dc000dfd1002/items.jsonl": {
+      "bytes": 61097,
+      "sha256": "3f09a40085999ecf5539a83b7aba3333455dde798b4b37fec9e426ff648d7e0b"
+    },
+    "results/constraint-lora-s2026-n600/step-000150/constraint-lora-s2026-n600-step-000150-fixed-states/diagnostics/dc000dfd1002/summary.json": {
+      "bytes": 7297,
+      "sha256": "6bfc9045f73775c267efb510e41ec8fdc7ac0b5bdb98fb1c821f38ba9c46f085"
+    },
+    "results/constraint-lora-s2026-n600/step-000150/constraint-lora-s2026-n600-step-000150-games.jsonl": {
+      "bytes": 103317,
+      "sha256": "b38dff31c7756cbefe992c079eb80c5578baa771094a6437616a6fb727494b10"
+    },
+    "results/constraint-lora-s2026-n600/step-000150/constraint-lora-s2026-n600-step-000150-retention.jsonl": {
+      "bytes": 39497,
+      "sha256": "247590d8656c138c64eaea38b09d6bd9f39e26b23e58c69eada75740dbfbf225"
+    },
+    "results/constraint-lora-s2026-n600/step-000150/constraint-lora-s2026-n600-step-000150-summary.json": {
+      "bytes": 9322,
+      "sha256": "983770f0c3d7edaed4130c9f35365820a8128a3bedf3ba92ed417139d5d0a9cb"
+    },
+    "results/constraint-lora-s2026-n600/step-000300/constraint-lora-s2026-n600-step-000300-fixed-states/diagnostics/2002ba1b1f08/items.jsonl": {
+      "bytes": 61124,
+      "sha256": "0cb7b126ead81de3090e67a39917a69be5ff04a45d3fcd583bae700dbfd21bbf"
+    },
+    "results/constraint-lora-s2026-n600/step-000300/constraint-lora-s2026-n600-step-000300-fixed-states/diagnostics/2002ba1b1f08/summary.json": {
+      "bytes": 7354,
+      "sha256": "6ae3912f622369b1fe2f039afdd6348cf96125131fdb120d709cbb315a10684c"
+    },
+    "results/constraint-lora-s2026-n600/step-000300/constraint-lora-s2026-n600-step-000300-games.jsonl": {
+      "bytes": 76685,
+      "sha256": "0f401ffd0cdc785aff36af9d4f7ced07ce4b877ae1a8ea436aa1878f2eb4ebc4"
+    },
+    "results/constraint-lora-s2026-n600/step-000300/constraint-lora-s2026-n600-step-000300-retention.jsonl": {
+      "bytes": 39471,
+      "sha256": "dc4695726bf7dee72e24b0043a637413217943d9c346fe771f397ab2be9e29de"
+    },
+    "results/constraint-lora-s2026-n600/step-000300/constraint-lora-s2026-n600-step-000300-summary.json": {
+      "bytes": 9384,
+      "sha256": "7e6503b5fd4df0bb904488d5786516fe519a793700dcc64ffb41b6255a7afa26"
+    },
+    "results/constraint-lora-s2026-n600/step-000450/constraint-lora-s2026-n600-step-000450-fixed-states/diagnostics/a8a8a1ec3c09/items.jsonl": {
+      "bytes": 61051,
+      "sha256": "64a661f06f132f19259f4238ff3de3122cdb63c192da79e05855db5dff9677fd"
+    },
+    "results/constraint-lora-s2026-n600/step-000450/constraint-lora-s2026-n600-step-000450-fixed-states/diagnostics/a8a8a1ec3c09/summary.json": {
+      "bytes": 7267,
+      "sha256": "034296703a71af4b352de28b0c34f8863cdee8b43c1fa66485c424875f56aca4"
+    },
+    "results/constraint-lora-s2026-n600/step-000450/constraint-lora-s2026-n600-step-000450-games.jsonl": {
+      "bytes": 72335,
+      "sha256": "395a49cb310972b1d9793965bc6c95ec40d5eaeeb55a4e636ef9743d8a5a21a3"
+    },
+    "results/constraint-lora-s2026-n600/step-000450/constraint-lora-s2026-n600-step-000450-retention.jsonl": {
+      "bytes": 39545,
+      "sha256": "01dcde2a21cb7c1373d9cc3a4e00225a73b5fcac19425117553d2f9c415ed65e"
+    },
+    "results/constraint-lora-s2026-n600/step-000450/constraint-lora-s2026-n600-step-000450-summary.json": {
+      "bytes": 9310,
+      "sha256": "fb353f3f96cf2c62d1e902e82377498da86101af088e8f12c91ef7f548b98fd7"
+    },
+    "results/constraint-lora-s2026-n600/step-000600/constraint-lora-s2026-n600-step-000600-fixed-states/diagnostics/9ad9447a5d0f/items.jsonl": {
+      "bytes": 61045,
+      "sha256": "d52bbdd35d5c5f93bf0f78631c06283dab5241fd36595ca3501f3ce3fbb165f9"
+    },
+    "results/constraint-lora-s2026-n600/step-000600/constraint-lora-s2026-n600-step-000600-fixed-states/diagnostics/9ad9447a5d0f/summary.json": {
+      "bytes": 7356,
+      "sha256": "f2a9dad83176572b4a5ae01765e69fc53b534502f04a09af52ae2007af843b5f"
+    },
+    "results/constraint-lora-s2026-n600/step-000600/constraint-lora-s2026-n600-step-000600-games.jsonl": {
+      "bytes": 69487,
+      "sha256": "8fbca5ac00731b905db9620ed4448ec362661d71caa7c9ae016cbf3a7b54a8d7"
+    },
+    "results/constraint-lora-s2026-n600/step-000600/constraint-lora-s2026-n600-step-000600-retention.jsonl": {
+      "bytes": 39526,
+      "sha256": "51caa7aa857833480608a9381a54fb66675dda1ae473950709c0101eb5a138aa"
+    },
+    "results/constraint-lora-s2026-n600/step-000600/constraint-lora-s2026-n600-step-000600-summary.json": {
+      "bytes": 9359,
+      "sha256": "d844c36407db5f9cc1c6e761db687a279491e5f360ede771c819820f0540e223"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000064/coverage4096-lora-s2026-n256-step-000064-fixed-states/diagnostics/f84954ecd566/items.jsonl": {
+      "bytes": 61364,
+      "sha256": "40a8cc50e84160aa66ead653d269e910e55ffc64b4ccf443c4f57a67090147d8"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000064/coverage4096-lora-s2026-n256-step-000064-fixed-states/diagnostics/f84954ecd566/summary.json": {
+      "bytes": 7054,
+      "sha256": "3e549123ac9b9afa02425aff37d873a2f0c10682225816fcc5744c0880f1c5fa"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000064/coverage4096-lora-s2026-n256-step-000064-games.jsonl": {
+      "bytes": 98684,
+      "sha256": "7b46d2a17f986e93711203ac607f0e3fe682358ac6c9117c8d9df9eccfda9a5e"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000064/coverage4096-lora-s2026-n256-step-000064-retention.jsonl": {
+      "bytes": 39496,
+      "sha256": "f4eda76b5fcdf96ce1b6048dbe356a87e769916bc478c8e7141b211ea5e7d193"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000064/coverage4096-lora-s2026-n256-step-000064-summary.json": {
+      "bytes": 9085,
+      "sha256": "ee26fb811d7410e0bd57a229dbadf37a33ec4268ed119bc74c790ac533267154"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000128/coverage4096-lora-s2026-n256-step-000128-fixed-states/diagnostics/7db65cb89300/items.jsonl": {
+      "bytes": 61219,
+      "sha256": "5c55d86b70d566398736dd288adbbec105ee071a60ee3020861aa82314a5e794"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000128/coverage4096-lora-s2026-n256-step-000128-fixed-states/diagnostics/7db65cb89300/summary.json": {
+      "bytes": 7306,
+      "sha256": "8e2596d3e812b1fa48a7c518b3cdfb2df252eecd339ba8b0d01bba36516f635b"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000128/coverage4096-lora-s2026-n256-step-000128-games.jsonl": {
+      "bytes": 73283,
+      "sha256": "638639bad878671fb93b6d8400ea00b588f866d59260668222b483c62cd5b8bf"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000128/coverage4096-lora-s2026-n256-step-000128-retention.jsonl": {
+      "bytes": 39462,
+      "sha256": "370a32ca1fd9d22b5a2b3d790ba4240a7b7a42063bfcabdab1aa0ebf09757064"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000128/coverage4096-lora-s2026-n256-step-000128-summary.json": {
+      "bytes": 9338,
+      "sha256": "732980361efab4ea1ece8e3dd68c180ded591ab8ad48309591e1ecff43756fa1"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000192/coverage4096-lora-s2026-n256-step-000192-fixed-states/diagnostics/b30ec9922e1c/items.jsonl": {
+      "bytes": 61117,
+      "sha256": "8081ffdb30641d7ea9d4cf9efa14fd5449e154506a9592e507e51ef11937be00"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000192/coverage4096-lora-s2026-n256-step-000192-fixed-states/diagnostics/b30ec9922e1c/summary.json": {
+      "bytes": 7218,
+      "sha256": "4fb3f040c147be913c6b681bc7c17f59ca30041342b2c324fafb9734869b961a"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000192/coverage4096-lora-s2026-n256-step-000192-games.jsonl": {
+      "bytes": 72559,
+      "sha256": "3367affe448c56547ead00e2da8b2b63b3d7d0faae9651903693dd8be4cdd604"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000192/coverage4096-lora-s2026-n256-step-000192-retention.jsonl": {
+      "bytes": 39439,
+      "sha256": "f1c125ead226159ec3e8898f32539006ea44d19bc4b6983c64a674f5034b10f8"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000192/coverage4096-lora-s2026-n256-step-000192-summary.json": {
+      "bytes": 9267,
+      "sha256": "c9f50f8c7e68cacd454a1639797685af198ca6e13e97534bdeef10e8ed9978bf"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000256/coverage4096-lora-s2026-n256-step-000256-fixed-states/diagnostics/a72d5fc7dac6/items.jsonl": {
+      "bytes": 61121,
+      "sha256": "c26ebd6ecd74352421d6b3451deb3f63e49993dfd6741990ad970435a6fd59f5"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000256/coverage4096-lora-s2026-n256-step-000256-fixed-states/diagnostics/a72d5fc7dac6/summary.json": {
+      "bytes": 7236,
+      "sha256": "56b0cb0cdad43eeddb65b30e1726ba3ab8d25b58b358927c16bbc1b0292af4bb"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000256/coverage4096-lora-s2026-n256-step-000256-games.jsonl": {
+      "bytes": 69713,
+      "sha256": "1487e27d3382a42a286b16d629e69b78720b9e48c4a1d82c9d6ff7428de386ba"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000256/coverage4096-lora-s2026-n256-step-000256-retention.jsonl": {
+      "bytes": 39636,
+      "sha256": "3de2e6cd329da9f9c82990ee7a093e395494b130be57dd47c7d8d88d760b47a8"
+    },
+    "results/coverage4096-lora-s2026-n256/step-000256/coverage4096-lora-s2026-n256-step-000256-summary.json": {
+      "bytes": 9269,
+      "sha256": "db65989d3b0795cf90570e6340134c16d3d47d35421e594ffbfe521aecef4522"
+    },
+    "results/structured-lora-s2026-n608/final/parsed-outputs.jsonl": {
+      "bytes": 342472,
+      "sha256": "24f68fd31868a11853ba79458cffdd5f0083db8e87236720edd787ae28ca32f2"
+    },
+    "results/structured-lora-s2026-n608/final/raw-outputs.jsonl": {
+      "bytes": 137031,
+      "sha256": "fddfbdd9719dfbbd785a9afdb295873be8d26e7eda88b9425248067390b31106"
+    },
+    "results/structured-lora-s2026-n608/final/structured-summary.json": {
+      "bytes": 2490,
+      "sha256": "10346ac7a40d475f64291d913ca160c31e0ae434fda9b641e95bb4442dcc7142"
+    },
+    "results/tiny-general-lora-s2026-n400/memorization-items.jsonl": {
+      "bytes": 12752,
+      "sha256": "9c2c5306c16258a26f564eeb4aea5cb967a1961b57d1905945c20df254eb3639"
+    },
+    "results/tiny-general-lora-s2026-n400/memorization-summary.json": {
+      "bytes": 585,
+      "sha256": "ffdee4ff334b72ca9bb25489ba0e6f74f4ce36a4d6e01ad4bd0b0b11fb073063"
+    },
+    "results/tiny-singleton-lora-s2026-n400/memorization-items.jsonl": {
+      "bytes": 12374,
+      "sha256": "a80335143c0ecbad44584844dbd8ec76359263a3ec49ca51992a092d974f020a"
+    },
+    "results/tiny-singleton-lora-s2026-n400/memorization-summary.json": {
+      "bytes": 584,
+      "sha256": "d09159223eb197157646b6601ad4d8d2f839d4bd315ed48c3cb077f0d4964f41"
+    }
+  },
+  "locked_test_access": false,
+  "matrix_sha256": "ecd5f594679646de0424034e6e95fb88a01d9a8df7f4f11d4567cade34376c42",
+  "model": {
+    "model_id": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca"
+  },
+  "protocol_id": "WORDLE-PROTOCOL-002"
+}
